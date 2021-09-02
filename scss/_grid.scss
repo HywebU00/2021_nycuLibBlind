@@ -1,7 +1,7 @@
 ////////// 期刊瀏覽 //////////
 .grid{
   @extend %mainSection;
-  margin-bottom: 50px;
+  padding: 0;
   a{color: $font-color;}
   ol.list, ul.list{
     list-style: none; margin: 0; padding: 0; line-height: 1.5;
