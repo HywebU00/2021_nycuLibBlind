@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帳號維護【國立陽明交通大學圖書館 愛盲有聲無障礙網站】</title>
+
+  <link rel="stylesheet" href="css/design.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/effect.js"></script>
+  <script src="js/tabs.js"></script>
+</head>
+<body>
+
+  <a class="goCenter" href="#aC" tabindex="0">跳至內容區</a>
+
+  <!-- 側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="上方功能區塊" >:::</a>
+
+    <h1><a href="mp.html"><img src="images/h1.png" alt="國立陽明交通大學圖書館 愛盲有聲無障礙網站"></a></h1>
+    <nav class="topLinks">
+      <ul>
+        <li class="assistant"><a href="javascript:void(0);">輔助偏好設定</a>
+          <div class="preferences">
+            <div class="label">字體大小</div>
+            <ul class="fontSize">
+              <li class="small"><a href="javascript:void(0);">小</a></li>
+              <li class="normal active"><a href="javascript:void(0);">中</a></li>
+              <li class="large"><a href="javascript:void(0);">大</a></li>
+            </ul>
+            <div class="label">文字對比</div>
+            <ul class="colorSet">
+              <li class="color0 active"><a href="javascript:void(0);">預設</a></li>
+              <li class="color1"><a href="javascript:void(0);">中</a></li>
+              <li class="color2"><a href="javascript:void(0);">中</a></li>
+              <li class="color3"><a href="javascript:void(0);">中</a></li>
+              <li class="color4"><a href="javascript:void(0);">中</a></li>
+            </ul>
+            <span class="closeBtn"><a href="javascript:void(0);" title="">關閉</a></span>
+          </div>
+        </li>
+        <li class="loginBtn showLightbox" data-id="loginHere"><a href="javascript:void(0);">登入</a>
+        
+        </li>
+        <li><a href="xx.html">線上註冊</a></li>
+        <li><a href="sitemap.html">網站導覽</a></li>
+      </ul>
+    </nav>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li class="hasChild"><a href="#">期刊瀏覽</a>
+          <ul>
+            <li><a href="#">第二層選單</a></li>
+            <li><a href="#">第二層選單</a></li>
+            <li class="hasChild"><a href="#">第二層選單</a>
+              <ul>
+                <li><a href="#">第三層選單</a></li>
+                <li><a href="#">第三層選單第三層選單第三層選單第三層選單</a></li>
+                <li><a href="#">第三層選單</a>
+                  <ul>
+                    <li><a href="#">第四層選單</a></li>
+                    <li><a href="#">第四層選單</a></li>
+                    <li><a href="#">第四層選單</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">第三層選單</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">網站介紹</a></li>
+        <li><a href="#">意見回饋</a></li>
+        <li><a href="#">操作說明</a></li>
+      </ul>
+    </nav>
+
+    <button class="sidebarCtrl" type="button" aria-label="側欄開關"></button><!-- 行動版控制側欄選單開合 -->
+  </header>
+ 
+
+  <div class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="中央內容區塊">:::</a>
+    
+    <div class="breadcrumb" title="現在位置">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li><a href="#">網路辦證</a></li>
+      </ul>
+    </div>
+    
+    <section class="formA">
+      <h2 class="pageHeader">網路辦證</h2>
+
+      <fieldset><legend>個人資料</legend>
+  
+        <table class="formLayout">
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 身分證字號</td>
+            <td>
+              <input type="text" class="full" placeholder="請輸入身份證字號">
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 姓名</td>
+            <td>
+              <input type="text" class="full" placeholder="請輸入姓名">
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 性別</td>
+            <td>
+              <div class="optionGroup">
+                <label><input type="radio" name="xyz">女</label>
+                <label><input type="radio" name="xyz">男</label>
+                <label><input type="radio" name="xyz">未知</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 密碼</td>
+            <td>
+              <input type="password" class="full">
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 確認密碼</td>
+            <td>
+              <input type="password" class="full">
+            </td>
+          </tr>
+          <tr>
+            <td>職業</td>
+            <td>
+              <select class="half">
+                <option value="預設">預設</option>
+                <option value="學齡前">學齡前</option>
+                <option value="醫護">醫護</option>
+                <option value="農林漁牧">農林漁牧</option>
+                <option value="自由業">自由業</option>
+                <option value="公教">公教</option>
+                <option value="家管">家管</option>
+                <option value="職工">職工</option>
+                <option value="圖書館">圖書館</option>
+                <option value="工商">工商</option>
+                <option value="其他">其他</option>
+                <option value="軍警">軍警</option>
+                <option value="學生">學生</option>
+                <option value="義工">義工</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>學歷</td>
+            <td>
+              <select class="half">
+                <option value="學齡前">學齡前</option>
+                <option value="小學">小學</option>
+                <option value="中學">中學</option>
+                <option value="高中職">高中職</option>
+                <option value="大學">大學</option>
+                <option value="碩士">碩士</option>
+                <option value="博士">博士</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>出生日期</td>
+            <td>
+              <input type="date" class="half">
+              <p class="hint">範例：2001-01-01 , 西元年為民國年+1911</p>
+            </td>
+          </tr>
+        </table>
+        
+      </fieldset>
+  
+      <fieldset><legend>聯絡方式</legend>
+  
+        <table class="formLayout">
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> 聯絡地址</td>
+            <td>
+              <div class="addressSet">
+                <select>
+                  <option value="" selected="selected">臺北市</option>
+                  <option value="">基隆市</option>
+                  <option value="">新北市</option>
+                  <option value="">宜蘭縣</option>
+                  <option value="">新竹市</option>
+                  <option value="">新竹縣</option>
+                  <option value="">桃園市</option>
+                  <option value="">苗栗縣</option>
+                  <option value="">臺中市</option>
+                  <option value="">彰化縣</option>
+                  <option value="">南投縣</option>
+                  <option value="">嘉義市</option>
+                  <option value="">嘉義縣</option>
+                  <option value="">雲林縣</option>
+                  <option value="">臺南市</option>
+                  <option value="">高雄市</option>
+                  <option value="">澎湖縣</option>
+                  <option value="">屏東縣</option>
+                  <option value="">臺東縣</option>
+                  <option value="">花蓮縣</option>
+                  <option value="">金門縣</option>
+                  <option value="">連江縣</option>
+                </select>
+                <select>
+                  <option value="">大安區</option>
+                  <option value="">信義區</option>
+                  <option value="">東區</option>
+                  <option value="">南屯區</option>
+                  <option value="">新興區</option>
+                  <option value="">中壢區</option>
+                </select>
+                <input type="text">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>戶籍地址</td>
+            <td>
+              <label class="singleCheck"><input type="checkbox">同聯絡地址</label>
+              <div class="addressSet">
+                <select>
+                  <option value="" selected="selected">臺北市</option>
+                  <option value="">基隆市</option>
+                  <option value="">新北市</option>
+                  <option value="">宜蘭縣</option>
+                  <option value="">新竹市</option>
+                  <option value="">新竹縣</option>
+                  <option value="">桃園市</option>
+                  <option value="">苗栗縣</option>
+                  <option value="">臺中市</option>
+                  <option value="">彰化縣</option>
+                  <option value="">南投縣</option>
+                  <option value="">嘉義市</option>
+                  <option value="">嘉義縣</option>
+                  <option value="">雲林縣</option>
+                  <option value="">臺南市</option>
+                  <option value="">高雄市</option>
+                  <option value="">澎湖縣</option>
+                  <option value="">屏東縣</option>
+                  <option value="">臺東縣</option>
+                  <option value="">花蓮縣</option>
+                  <option value="">金門縣</option>
+                  <option value="">連江縣</option>
+                </select>
+                <select>
+                  <option value="">大安區</option>
+                  <option value="">信義區</option>
+                  <option value="">東區</option>
+                  <option value="">南屯區</option>
+                  <option value="">新興區</option>
+                  <option value="">中壢區</option>
+                </select>
+                <input type="text">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>電話號碼</td>
+            <td><input type="tel" class="full" placeholder="請輸入電話號碼"></td>
+          </tr>
+          <tr>
+            <td>行動電話</td>
+            <td><input type="tel" class="full" placeholder="請輸入行動電話"></td>
+          </tr>
+          <tr>
+            <td>戶籍地電話</td>
+            <td><input type="tel" class="full" placeholder="請輸入戶籍地電話"></td>
+          </tr>
+          <tr>
+            <td>辦公室電話</td>
+            <td><input type="tel" class="full" placeholder="請輸入辦公室電話"></td>
+          </tr>
+          <tr>
+            <td>電子郵件信箱</td>
+            <td><input type="email" class="full" placeholder="請輸入Email"></td>
+          </tr>
+          <tr>
+            <td>常用電子郵件信箱</td>
+            <td><input type="email" class="full" placeholder="請輸入常用電子郵件信箱"></td>
+          </tr>
+
+          <tr>
+            <td>證明影本</td>
+            <td><input type="file" class="full"> <p class="hint">請上傳身心障礙手冊</p></td>
+          </tr>
+            
+          <tr>
+              <td><abbr class="required" title="必填欄位">*</abbr> 驗證碼</td>
+              <td>
+                <div class="captchaSet">
+                  <img alt="驗證碼" class="captcha" id="imgCaptcha" src="images/CaptchaImage.png">
+                  <input type="text" placeholder="輸入驗證碼" aria-label="輸入驗證碼">
+                  <button class="btn" type="button"><i class="i_play"></i>語音播放</button>
+                  <button class="btn" type="button"><i class="i_reflash"></i>更換驗證碼</button>
+                </div>
+              </td>
+            </tr>
+        </table>
+      </fieldset>
+  
+      <div class="btnDv">
+        <input type="submit" value="確認">
+        <span class="button"><a href="mp.html">回首頁</a></span>
+      </div>
+
+    </section>
+
+
+
+    <footer class="webFooter">
+      <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
+
+      <ul class="links">
+        <li><a href="x">隱私權政策</a></li>
+        <li><a href="x">資訊安全政策</a></li>
+      </ul>
+      <p class="info">
+        國立陽明交通大學交大校區圖書館 <br>
+        30010 新竹市大學路1001號, 03-5712121 #52636、#52658
+      </p>
+
+      <div class="aaaBadge">
+        <a target="_blank" href="javascript:void(0);" title="另開視窗">
+          <img src="images/accessibility2.jpg" alt="無障礙標章">
+        </a>
+      </div>
+
+      <div class="visitors">造訪人次：<em>221,714</em></div>
+      <div class="latestUpdate">系統更新日期：<time>2021-07-14</time></div>
+
+    </footer>
+
+    <div class="goTop"><a href="javascript:void(0);">Top</a></div>
+
+  </div>
+
+  <section class="loginFrame lightbox" data-id="loginHere">
+    <span class="closeThis"><a href="javascript:void(0);" title="關閉燈箱"></a></span>
+    <iframe src="loginFrame.html" frameborder="0"></iframe>
+  </section>
+
+</body>
+</html>
