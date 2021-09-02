@@ -1,0 +1,55 @@
+
+// 頁籤樣式
+.tabs{
+  position:relative;overflow:hidden;margin:0;
+  $tabItemH : 2.8em;
+
+
+  .tabItem{
+    position:relative;  float:left;  text-align:center; 
+    display: flex; justify-content: center;
+    height:$tabItemH; line-height: $tabItemH;
+    &>button{
+      background: none; box-shadow: none; border: none; border-radius: 2em;
+      padding:0 .6em; margin: 0;
+      height: 100%; line-height: 2.3;
+      color: $font-color; font-weight: bold;
+      text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+      &:hover{color: $font-color;}
+    }
+    &>a{
+      display: block; text-decoration: none; cursor: pointer;
+      padding:0 .6em; height: 100%; line-height: 2.3;
+
+    }
+    &::before{
+      content:''; position:absolute; bottom: 0; left: 0; right: 0;
+      transition:.3s;
+    }
+
+    &.active{
+      &>button{ color: $secondaryColor; }
+      &::before{background: $secondaryColor;}
+      & + .tabContent{z-index: 90; display: block;}
+    }
+
+
+
+  }
+  // 平均分配頁籤項目寬度
+  &.equal{
+    .tabItem:last-of-type{margin-right: 0; position: absolute; right: 0; top: 0;}
+    .tabItem>a{width: 100%;}
+  }
+
+  .tabContent {
+    display: none;clear: both;overflow: hidden;
+    position: absolute; top: auto; left: 0; right: 0;
+    min-height: 5em;
+  }
+}
+
+.no-js .tabs{
+  .tabItem{float:none;display:block;}
+  .tabContent{position:static;display:block;height:auto;}
+}

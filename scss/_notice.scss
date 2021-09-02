@@ -1,0 +1,16 @@
+.notice{
+  @extend %mainSection;
+  // padding: 40px 4vw;
+  box-shadow: $border-color 0 0 0 1px;
+  border-radius: 8px;
+
+  line-height: 1.8;
+  p+p{margin-top: 2em;}
+  em{ font-weight: bold; font-style: normal; display: inline-block; margin: 0 5px;}
+
+  .btnDv{border: none; padding-bottom: 0;}
+
+  @media screen and (min-width: $wwNormal){
+    width: 800px;
+  }
+}

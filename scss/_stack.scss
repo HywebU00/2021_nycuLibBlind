@@ -1,0 +1,75 @@
+////////// 館藏查詢列表 //////////
+.stack{
+  @extend %mainSection;
+  margin-bottom: 50px; margin-top: 10px;
+  padding: 10px;
+  border: 1px solid $border-color;
+  ul.list, ol.list{list-style: none; margin: 0; padding: 0;}
+  .list{
+    &>li{
+      position: relative; padding: 1.6em 0 1.6em 2.6em;
+      border-top: 1px solid $border-color-light;
+      &:first-child{ border-top: none;}
+
+      a{ 
+        color: $font-color; outline: none;
+        &:hover, &:focus{ color: $primaryColor; text-decoration: none;}
+        &:focus{ outline: 1px solid $importantColor;}
+      }
+      .title{ font-size: 1.2rem;
+        a{display: block;}
+      }
+      .number{
+        font-size: 1.05rem; line-height: 1.8;
+        position: absolute; top: auto; left: -.5em; width: 2.6em; text-align: right;
+        &::after{content: '.';}
+      }
+    }
+
+    .pubInfo{
+      list-style: none; margin:1em 0; padding: 0; font-size: 1rem; line-height: 1.5;
+      li{
+        margin: .6em 0 0;
+        .dt{ display: inline-block; color: $font-color-light;
+          &::after{content: '：';}
+        }
+        em{ font-style: normal;}
+      }
+    }
+
+    // .operation{
+    // }
+
+    ul.operation{
+      list-style: none; margin:1em 0; padding: 0; overflow: hidden;
+      li{
+        float: left; margin: 2px;
+        a{display: block;padding: 0 1em; height: 2.4em; line-height: 2.4em; text-decoration: none; }
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    .list{
+      &>li{ padding-left: 4em;
+        .number{ left: 0; width: 3em;}
+      }
+    }
+    .pubInfo{
+      display: flex; flex-flow: row wrap;
+      li{
+        flex: 1 1 25%;
+        margin: .6em 2em 0 0;
+        &:nth-child(2){flex-basis:calc(75% - 2em); margin-right: 0;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .pubInfo{
+      li:nth-child(n){flex:0 1 auto; margin-right: 2.5em;}
+    }
+  }
+
+}

@@ -1,0 +1,68 @@
+table.formLayout{
+  margin: 0 auto; width: 100%; line-height: 1.5;
+  border: none; border-collapse: collapse;
+  td{  vertical-align: top;
+    &:nth-child(odd){text-align: right; padding: 1.15em 8px 6px 0; width: 20%;font-weight: bold;}
+    &:nth-child(even){padding:6px 0;}
+   
+    textarea {width: 90%;}
+    .duration{ width: calc(90% + 6px);}
+
+    input.full{ width: 90%;}
+    select.full{ width: calc(90% - 32px); width: 90%;}
+
+    input.half{ width: 45%;}
+    select.half{ width: 45%;}
+
+    input.quarter{ width: 22%;}
+    select.quarter{ width: calc(22% - 32px);}
+  }
+  p.hint{ 
+    font-size: .9rem; line-height: 1.4; color: #bd0975;
+    margin: .2em 3px .5em;
+    em{ font-style: normal; color: $importantColor;}
+  }
+
+  & ~ .btnDv{ margin-top: 2em; }
+
+  @media screen and (max-width: $wwNormal - 1px ){
+    tr, td{ display: block;}
+    td{
+      // outline: 1px solid #ccf;
+      &:nth-child(odd){width: auto; text-align: left; padding: 1.6em 6px 0; }
+      &:nth-child(even){padding:3px 0;}
+
+      textarea,
+      input.full,
+      select.full,
+      &>select:only-of-type,
+      &>input.half:only-of-type{width: 98%;}
+      
+      // .duration{ width: calc(98% + 6px);}
+      .duration, .optionGroup, .addressSet { width:  calc(98% + 6px);}
+    }
+  }
+}
+
+// 通用表格樣式Ａ
+.formA{
+  @extend %mainSection;
+  box-shadow: #0003 0 0 8px 1px;
+
+  fieldset {
+    &+.btnDv{border-top: none;}
+  }
+
+  p{line-height: 1.7;}
+  
+  &.compact{
+    max-width: 800px;
+  }
+
+}
+
+
+////////// formRow //////////
+.formRow{
+  margin: 4px auto;
+}

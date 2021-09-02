@@ -1,0 +1,438 @@
+// 文字、數字的input樣式
+%textInput {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: 2.8em;
+  line-height: 2.8em;
+  padding: 0 .8em;
+  margin: 3px;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  vertical-align: middle;
+  font-size: inherit;
+  background-color: #fff;
+
+  &:hover{border-color: $border-color-dark;}
+  &:focus{border-color: $btn-bg1;box-shadow: $btn-bg1 0 0 0 1px;outline: none;}
+}
+// 下拉選單樣式
+%selectStyle {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: 2.8em;
+  line-height: 2.8em;
+  padding: 0 32px 0 .8em;
+  margin: 3px;
+  border: 1px solid $border-color;
+  vertical-align: middle;
+  font-size: inherit;
+  background: #fff url(../images/selectBg.png) no-repeat right 1.2em;
+  background-size: 20px auto;
+  // box-sizing: content-box;
+  border-radius: 4px;
+
+  &:hover{border-color: $border-color-dark;}
+  &:focus{border-color: $btn-bg1;box-shadow: $btn-bg1 0 0 0 1px;outline: none;}
+
+}
+// 顏色
+$disabled-color: #666;
+
+////////// 表單元件基本樣式 //////////
+form {margin: 0;padding: 0;}
+
+label { display: inline-block; font-weight: normal; cursor: pointer;}
+
+input,
+textarea,
+select,
+button {font-size: inherit;font-family: inherit;}
+
+// 文字、數字型態的 input 樣式
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"] { @extend %textInput; }
+
+// 表單中，直接帶入的值
+.knownValue{ @extend %textInput;  border: none; }
+
+// 下拉選單
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @extend %selectStyle;
+}
+
+// 按鈕樣式
+.button>a,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: 2.8em; line-height: 2.8em;
+  padding: 0 1em; margin: 3px;
+  border: 1px solid $btn-bg1;
+  color: $secondaryColor;
+  background-color: $btn-bg1;
+  vertical-align: middle;
+  border-radius: 4px; cursor: pointer; 
+  outline: none; transition: .2s;
+  &:hover {
+    background-color: $btn-bg2;
+    border-color: $btn-bg2;
+    box-shadow: $btn-bg2 0 0 0 1px;
+    color: #fff;
+  }
+  &:focus{
+    background-color: $btn-bg1;
+    border-color: #fff;
+    box-shadow: $btn-bg1 0 0 0 2px;
+  }
+}
+.button{
+  display: inline-block; vertical-align: middle;
+  &>a{display: block; text-decoration: none; text-align: center; white-space: nowrap; }
+}
+
+textarea {
+  @extend %textInput;
+  resize: vertical;
+  line-height: 1.6;
+  height: 8em;
+}
+
+// radio 和 checkbox
+input[type="radio"],
+input[type="checkbox"] {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  box-sizing: border-box;outline: none ;
+  margin:1px 10px 0 4px; vertical-align: middle;
+  width: 1em; height: 1em; line-height: 1; border: 1px solid $grayDark;
+  transition: .1s;
+}
+input[type="radio"] {
+  border-radius: 50%;
+  &:focus, &:checked{
+    border-color: #fff; border-width: 2px;
+    box-shadow:$primaryColor 0 0 0 3px;
+    background-color: $primaryColor;
+  }
+}
+input[type="checkbox"]{ 
+  border-radius: 3px;
+  border: 1px solid $grayDark;
+  &:checked{
+    background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
+    background-size: 96%;
+    box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+  }
+  &:focus{box-shadow: $primaryColor 0 0 0 2px, darken($lightColor, 15%) 0 0 0 4px ; border-color: #fff;}
+}
+
+// disabled
+select[disabled],
+textarea[disabled],
+textarea[disabled]:hover,
+textarea[disabled]:focus,
+input[disabled],
+input[disabled]:hover,
+input[disabled]:focus {
+  background-color: $gray;
+  border-color: $border-color-light;
+  color: $disabled-color;
+  box-shadow: none;
+}
+
+// readonly
+textarea[readonly],
+textarea[readonly]:hover,
+textarea[readonly]:focus,
+input[readonly],
+input[readonly]:hover,
+input[readonly]:focus {
+  background-color: lighten($gray, 8);
+  border-color: $border-color;
+  box-shadow: none;
+}
+select[disabled],
+input[disabled] {
+  color: $font-color-light
+}
+
+/* 按鈕的 readonly and disabled*/
+button[disabled],
+button.disabled,
+input[type="button"][disabled],
+input[type="submit"][disabled],
+button[disabled]:hover,
+input[type="submit"][disabled]:hover,
+button[disabled]:focus,
+input[type="submit"][disabled]:focus {
+  background-color: #ddd;
+  color: #888;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: default;
+}
+
+// fieldset
+fieldset {
+  border: 1px solid $border-color-light; border-radius: 8px;
+  &+fieldset {
+    margin-top: 1em;
+  }
+  legend {
+    font-weight: normal; font-size: 1.4em; 
+    padding: 9px .8em 8px; margin: 0 0 1em; line-height: 1.1;
+    border: 2px solid $border-color-light;
+    border-radius: 2em;
+
+  }
+}
+// 註冊新帳號:系統使用權限申請
+fieldset.authority{
+  table.formLayout{
+    td:first-child{width: 35%; padding-right: 1em;}
+    tr{border-bottom: 1px solid $border-color-light;
+      &:last-child{border-bottom: none;}
+    }
+  }
+}
+
+// 各種標單元件組合 //////////////////////////////
+
+////////// 必填欄位星號 //////////
+.required{
+  text-decoration: none;color: $importantColor ;
+  font-size: 1.3em;line-height: .6; margin-right: 3px;
+}
+
+////////// 單獨存在的 checkbox //////////
+label.singleCheck{
+ padding: 0; margin: 3px; line-height: 2.4em; line-height: 2.4;
+}
+
+
+////////// 表單送出按鈕群 //////////
+.btnDv{
+  clear:both; text-align:center;
+  margin:0 auto;padding: 1.3em 0 5px;
+  border-top: 1px solid $border-color;
+  input[type="button"], input[type="submit"], input[type="reset"], button {
+    margin: 4px; min-width: 6em;
+    &:only-child{min-width: 10em;}
+  }
+  .button{
+    &>a{margin: 4px; min-width: 6em;}
+    &:only-child>a{min-width: 10em;}
+  }
+  input[type="button"], input[type="submit"], input[type="reset"], 
+  button{&:only-child{min-width: 10em;}}
+
+}
+
+////////// 日期區間 //////////
+.duration{
+  display: flex; max-width: 32em;
+  &::before{
+    flex: 0 0 1.5em;width: 1.5em;
+    content: '至'; height: 2em; line-height: 3.4em;
+    order: 1;  text-align: center;
+  }
+  input{
+    flex:0 1 calc(50% - .6em); cursor: pointer;
+  }
+  input:last-child{ order: 2;}
+}
+
+
+
+////////// 驗證碼，captcha //////////
+.captchaSet{
+  display: flex; flex-flow: row wrap; 
+  margin: 10px 0;
+  input[type="text"]{
+    flex: 1 1 calc(100% - 180px);
+    min-width: 6em; margin-top: 5px;
+  }
+  img.captcha{ width: 150px; margin: 3px;}
+
+  button{
+    position: relative; white-space: nowrap;
+    flex: 0 1 auto; padding: 0 .8em 0 50px; margin: 12px 3px 3px;
+    height: 48px; line-height: 50px; 
+    border: none;border-radius: 24px;
+    background-color: #fff; color: #333;
+    box-shadow: $primaryColor 0 0 0 1px inset;
+    transition: .2s;
+    i{ 
+      position: absolute; top: 3px; left: 3px;
+      width: 42px; height: 42px; border-radius: 50%;
+      background-image: url(../images/icons.png);
+       background-color: $primaryColor;
+       background-repeat: no-repeat;
+       background-size: 44px auto;
+       &.i_play{ background-position: center -200px;}
+       &.i_reflash{background-position: center -250px;}
+    }
+
+    &:hover{ 
+      background-color: $primaryColor; color: $secondaryColor;
+      i{background-color: darken($primaryColor, 15%);}
+    }
+    &:focus, &:active{
+      box-shadow: $primaryColor 0 0 0 2px;
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    input[type="text"]{ flex: 1 1 auto; }
+    button{ margin-top: 3px; padding-right: 1em;}
+  }
+  
+  @media screen and (min-width: $wwNormal){
+    flex-wrap: nowrap; 
+    input[type="text"]{ max-width: 10em; }
+  }
+
+}
+
+
+
+////////// checkbox, radio 選項群組 //////////
+.optionGroup{
+  margin:0 3px;
+  label{
+    position: relative;
+    display: inline-block; margin: 4px 1em 4px 0; padding:7px .5em 7px 1.8em;
+    cursor: pointer; border-radius: 4px;
+    &:hover{ color: $font-color-dark; box-shadow: $border-color-light 0 0 0 1px;}
+
+    input[type="radio"], input[type="checkbox"]{
+      position: absolute; left: 3px; top: 10px;
+    }
+    &:last-child {margin-right: 0;}
+  }
+}
+.formLayout td .optionGroup{ width: 90%;}
+
+
+////////// 地址組 //////////
+.addressSet{
+  // background: #eec;
+  display: flex; flex-flow: row wrap;
+  select{flex: 1 1 45%;}
+  input[type="text"] {flex: 1 1 90%}
+
+  @media screen and (min-width: $wwNormal){
+    select{flex: 1 1 10%;}
+    input[type="text"] {flex: 1 1 60%}
+
+  }
+}
+@media screen and (min-width: $wwNormal){
+  .formLayout td .addressSet{
+    width: calc(90% + 6px);
+  }
+}
+
+
+
+
+
+
+
+////////// 進階查詢 //////////
+.searchAdv{ 
+  @extend %mainSection;
+  box-shadow: #0003 0 0 8px 1px;
+
+  .customizeSearch{
+    border-bottom: 1px dashed $border-color;
+    margin: 0 auto; padding: 0 0 15px;
+  }
+
+  @media screen and (min-width: $wwMedium){
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .customizeSearch{ width: 90%; margin: 0 auto 30px;}
+  }
+
+}
+
+////////// 進階查詢：自訂查詢欄位 //////////
+.customizeSearch{
+  .flexRow{
+    display: flex; flex-flow: row wrap;
+    justify-content: flex-start; align-items: center;
+    margin: 3px 0 20px;
+    &:first-child{
+      flex-wrap: nowrap;
+      select {flex: 0 1 30%;}
+      input[type="text"]{flex: 1 0 60%;}
+    }
+    select{flex: 0 0 calc(50% - 58px);}
+    input[type="text"]{flex: 0 0 calc(100% - 110px);}
+
+    button{flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;
+      &.delete, &.add{
+        background-image: url(../images/icons.png);
+        background-repeat: no-repeat;
+        background-size: 44px auto;
+      }
+      &.add { background-position: center -100px;}
+      &.delete { background-position: center -150px;}
+    }
+  }
+  @media screen and (min-width: $wwMedium){
+    .flexRow{ flex-wrap: nowrap;
+      &:first-child{
+        &::before{
+          content: ''; margin: 3px; height: 5px;
+          flex: 0 0 12%; width: 12%;
+        }
+        select {flex: 0 0 12%;}
+        input[type="text"]{flex: 0 0 calc(76% - 140px);}
+      }
+      input[type="text"]{flex: 0 0 calc(76% - 140px);}
+      select{flex: 0 0 12%;}
+      button{flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;}
+    }
+  }
+  @media screen and (min-width: $wwNormal){
+    .flexRow:nth-child(n){
+      input[type="text"]{flex: 0 0 calc(76% - 120px);}
+    }
+  }
+}
+
+////////// 證號輸入（忘記密碼） //////////
+.idInput{
+  margin: 1.5em auto;
+
+  line-height: 1.7;
+  p{ line-height: inherit;}
+  label{
+    height: 2em; line-height: 2em; cursor: pointer;
+    margin: 3px;
+    &+label{ margin-left: 2em;}
+    input[type="radio"]{ margin: -2px 6px 0 5px;}
+  }
+  input[type="text"], input[type="number"] {
+    width: calc(100% - 6px); 
+  }
+}
+

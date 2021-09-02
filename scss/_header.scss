@@ -1,0 +1,221 @@
+.webHeader{
+  position: relative; padding:0;
+  min-height: 52px;
+
+  h1{ margin: 0 110px 0 56px; padding:4px 0; overflow: hidden;
+    a{ display: block; margin: 0 auto;
+      outline: none;
+      &:focus{ box-shadow: $importantColor 0 0 0 2px inset;}
+    }
+    img{ height: 44px; display: block; margin: 0 auto; }
+  }
+
+  .topLinks{
+    position: absolute; right: 4px; top:4px; font-size: .94rem;
+    ul{list-style: none; margin: 0; padding: 0;}
+    &>ul{ 
+      &>li{
+        display: none;
+        margin: 0 4px; padding:0; float: left;
+        &>a{display: block; text-decoration: none; cursor: pointer; transition: .2s;}
+        &.assistant, &.loginBtn{ display: block;
+          &>a{
+            width: 44px; height: 44px; border-radius: 50%; 
+            text-indent: -20em; overflow: hidden;
+            background: lighten($grayDark, 25%) url(../images/icons.png) no-repeat center 0; 
+            background-size: 44px auto;
+            outline: none;
+            &:hover, &:focus{
+              background-color: $primaryColor;
+              box-shadow: $primaryColor 0 0 0 2px;
+            }
+          }
+        }
+        &.loginBtn>a{
+          background-position: center 0;
+        }
+        &.assistant{ position: relative;
+          &>a{
+            background-position: center -50px;
+          }
+        }
+
+      }
+    }
+  }
+
+  .menu{ display: none;
+    ul{list-style: none; margin: 0; padding: 0;}
+    li a{display: block; text-decoration: none;}
+  }
+  
+  // ============================================================
+  @media screen and (min-width: $wwNormal){
+    padding: 2.4em 0 0; z-index: 9; 
+    h1{
+      width: 92vw; max-width: $wwWide; padding: 16px 0 ; margin: 0 auto;
+      a{float: left;}
+      img{ height: 54px; margin: 0;}
+    }
+
+    .topLinks{
+      width: 92vw; max-width: $wwWide; right: 4vw;
+      &>ul{ 
+        float: right;
+        &::after{content: ''; display: block; clear: both;}
+        &>li{ 
+          display: block; margin: 0 14px; padding: 0;
+          &:last-child{margin-right: 0;}
+          &>a{
+            position: relative;
+            height: 2.8em; line-height: 3.6; padding: 0 2px;  color: #000;
+            outline: none;
+            &::after{ content: ''; 
+              position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+              background-color: $primaryColor;
+              transform: scaleX(0); transition: .2s;
+            }
+            &:hover, &:focus{
+              background-color: transparent; 
+              &::after{
+                transform: scaleX(100%);
+              }
+            }
+          }
+
+          &.assistant, &.loginBtn{
+            &>a{
+              width: auto; height: 2.8em; border-radius:0; box-shadow: none;
+              background: none; text-indent: 0; overflow: visible;
+              &:hover, &:focus{
+                box-shadow: none;
+                background: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 主選單 ====================================================
+    .menu{
+      display: block;
+      background: $primaryColor; padding: 8px 20px;;
+      li{ position: relative;
+        a{ color: $secondaryColor; display: block; text-decoration: none; outline: none;
+          &:hover, &:focus{ background-color: darken($primaryColor, 12%);}
+        }
+        &.hasChild{
+          &>a{ position: relative; padding-right: 20px; 
+            &::after{
+              content: ''; position: absolute; right: 13px; top: 50%; 
+              width: 10px; height: 10px;  transform: rotate(45deg);
+              border: 2px solid $secondaryColor; border-left: none; border-top: none;
+            }
+          }
+        }
+      }
+      &>ul{ 
+        // border: 1px solid pink;
+        display: flex; flex-flow: row nowrap; justify-content: space-between;
+         margin: 0 auto; width:92vw ; max-width: $wwWide;
+        font-size: 1.125rem; line-height: 1;
+        &>li{
+          flex: 1 1 auto; margin-right: 15px;
+          &:last-child{ margin-right: 0;}
+          &>a{
+            height: 2.7em; line-height: 2.7em; width: 100%; text-align: center; 
+            padding: 0 1em; margin: 0; white-space: nowrap;
+            transition: .25s;
+          }
+          &.hasChild{
+            &>a::after{ position: relative; display: inline-block; left: 10px; top: -4px;}
+          }
+        }
+
+        ul{ 
+          display: none; 
+          position: absolute; left: 0; top: auto;
+          background: #fff; font-size: 1rem; line-height: 1.3;
+          width: 240px;
+          box-shadow: #0004 0 0 24px;
+          &>li{ position: relative;
+            border-bottom: 1px solid $border-color-light;
+            &::before{ content: ''; 
+              position: absolute; left: 0;bottom: 0; top: 0; width: 5px; 
+              background-color: $primaryColor; z-index: 9;
+            }
+            &:last-child{border: none;}
+            &>a{ 
+              color: $primaryColor; padding: 1.1em 15px 1em; transition: .2s;
+              &:hover, &:focus {color: $secondaryColor; }
+            }
+            &.hasChild{
+              a{position: relative;
+                &::after{
+                  transform: rotate(-45deg); border-color: $primaryColor; margin-top: -5px;
+                }
+                &:hover::after, &:focus::after{ border-color: $secondaryColor;}
+              }
+            }
+          }
+          ul{
+            margin-left: 240px; top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // ============================================================
+  @media screen and (min-width: $wwWide){
+    .topLinks{
+      right: 50%; margin-right: -0.5*$wwWide;
+    }
+  }
+}
+
+
+// 漢堡選單 =================================================
+.sidebarCtrl{
+  position:absolute; left:0; top:0;  z-index:980; cursor:pointer;
+  width:52px; height:52px; box-sizing: content-box;
+  box-shadow: none;
+  transition:  .5s;
+  
+  background:#fff; border:none; border-radius:0; outline:none;
+  margin:0; padding:0; 
+  &:hover, &:focus { background:$lightColor;box-shadow: none; }
+  &::before, &::after{
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width:16px; margin-left: -8px;
+  }
+  &::before{
+    margin-top: -7px;
+    height:10px;
+    border-top: 2px solid $primaryColor;
+    border-bottom: 2px solid $primaryColor;
+  }
+  &::after{
+    height:2px; margin-top: -1px;
+    background: $primaryColor;
+  }
+
+  &.closeIt{
+    background: $lightColor; left: $sidebarWidth;
+    &::before{
+      width: 11px; height: 11px; margin-left: -4px;
+      border: 2px solid $primaryColor;
+      border-top: none; border-right: none; transform: rotate(45deg);
+    }
+    &:hover { background: lighten($lightColor, 20%);
+      // &::before{border-color: #fff;}
+    }
+    &::after { display: none;}
+  }
+
+  @media screen and (min-width:$wwNormal){
+    display: none;
+  }
+
+}

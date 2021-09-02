@@ -1,0 +1,61 @@
+.sidebar{
+  position: fixed; top:0;  z-index: 890;
+  width: $sidebarWidth; left:-1*$sidebarWidth;
+  padding: 0;
+  background: $primaryColor; transition: .5s;
+  height: 100vh;
+  overflow-y: auto;
+
+  // menu ////////////////////////////////////////////////
+  .menu{
+    ul{ list-style: none; margin: 0; padding: 0; line-height: 1.3; }
+    li{ border-bottom: 1px solid transparentize($secondaryColor, .7);
+      a{ 
+        display: block; text-decoration: none;
+        color: $secondaryColor; transition: .2s;
+        &:hover{ background-color: darken($primaryColor, 8%);}
+      }
+    }
+
+    &>ul{ font-size: 1.2rem;
+      ul{ margin-left: 10px; display: none;}
+      &>li{
+        &>a{ padding:15px 16px 14px; }
+        ul{ border-left: 1px solid transparentize($secondaryColor, .7);}
+        li{ font-size: 1.05rem; 
+          &:last-child{ border-bottom: none; }
+          a{ padding:13px 16px 12px 10px; }
+        }
+      }
+
+      li.hasChild{
+        &>a{ padding-right: 20px; position: relative;
+          &::after{
+            content: ''; position: absolute; right: 14px; top: 50%; margin-top: -6px;
+            width: 7px; height: 7px; transform: rotate(45deg);
+            border: 2px solid $secondaryColor; border-left: none; border-top: none;
+            transition: .2s;
+          }
+        }
+        &.closeIt>a{
+          &::after{transform: rotate(225deg);  margin-top: -4px;}
+        }
+      }
+    }
+  }
+
+  &.reveal{
+    left: 0; box-shadow: #0005 0 0 32px;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    display: none;
+  }
+}
+
+// sidebar 專用遮罩
+.sidebarCover {
+  display: none; z-index: 880;
+  position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+}

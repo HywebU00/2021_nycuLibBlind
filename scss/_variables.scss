@@ -1,0 +1,28 @@
+$wwSlim: 500px;
+$wwMedium: 700px;
+$wwNormal: 1000px;
+$wwWide: 1400px;
+// $wwMaximum: 1920px;
+
+// $pdInner:30px; //主要內容區左右邊界
+// $pdOuter:30px; //主要內容區左右邊界
+
+
+// 行動版側欄寬度
+$sidebarWidth: 260px;
+
+
+// .main > section.* 寬度設定
+%mainSection{
+  width: 92vw; margin:0 auto 60px; padding: 40px 4vw;
+  // outline: 1px dashed pink;
+
+  &>.pageHeader{
+    text-align: center;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    max-width: $wwWide;
+    padding:50px;
+  }
+}

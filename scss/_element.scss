@@ -1,0 +1,227 @@
+
+::selection{ background: $btn-bg1; color: #fff;}
+
+// Ｘ //////////////////////////////
+.closeThis {
+  position: absolute; width: 44px; height: 44px;
+  &>a{
+    display: block; height: 100%; width: 100%;
+    background: #fff5; outline: none;
+    transition: .2s;
+    &::before, &::after {
+      content: ''; position: absolute; left: 50%; top: 50%;
+      width: 20px; height: 2px; margin: -1px 0 0 -10px;
+      background: #444;
+      transform: rotate(45deg);
+      transition: .2s;
+    }
+    &::after{
+      transform: rotate(-45deg);
+    }
+    &:hover, &:focus{
+      background: #0008;
+      &::before, &::after{background-color: #fff;}
+    }
+  }
+}
+
+// 遮罩
+.cover {
+  display: none; z-index: 980;
+  position: fixed;left: 0;right: 0;top: 0;bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+
+// <div class="btn_"><a>XXX</a></div>
+*[class^='btn_']{
+  display: inline-block; font-size: 1rem; margin: 0 3px;
+  a{
+    position: relative; display: block;
+    height: 44px; line-height: 44px; padding: 0 1em 0 48px; 
+    background-color: $btn-bg1;color: #fff; text-decoration: none; border-radius: 2em; 
+    transition: .2s;
+    &::selection{ background-color: transparent;}
+
+    &::before{
+      content: ''; position: absolute; left: 2px; top: 2px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background-image: url(../images/icons.png);
+      background-color: $btn-bg2;
+      background-position: center 0;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      transition: .2s;
+    }
+
+    &:hover{
+      background-color: $btn-bg2;
+      &::before{background-color: $lightColor;}
+    }
+  }
+}
+.btn_new a::before, button.btn_new::before { background-position: center -72px; }
+.btn_change a::before, button.btn_change::before { background-position: center -112px; }
+.btn_voice a::before, button.btn_voice::before { background-position: center -152px; }
+
+
+
+.goTop{ 
+  position: fixed; z-index: 900;
+  right: 10px; bottom: -60px;text-indent: -20em; 
+  text-align: center; transition: .8s;
+  &.show{bottom: 10px; transition: .4s;}
+  a{ display: block;
+    width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
+    background-color: #555b;
+    transition:.2s; cursor: pointer; outline: none;
+    &::before, &::after{ content: '';position: absolute;}
+    &::before{
+      left: 50%; top: 50%; margin: -4px auto auto -6px;
+      width: 12px; height: 12px; transform: rotate(45deg);
+      border: 2px solid #fff; border-bottom: none; border-right: none;  
+    }
+    &:hover, &:focus{
+      background-color: $primaryColor;
+    }
+  }
+}
+
+
+// 快捷鍵
+.accesskey{ display: none; }
+@media screen and (min-width: $wwNormal){
+  .accesskey{ display: block;
+    position: absolute; left: 4vw; margin-left: -1.1em;
+    text-decoration: none; color: darken($bodyBgc, 60%);
+    &:focus{ outline: 2px solid $importantColor;}
+  }
+  .webHeader .accesskey{ top: 2em; }
+  .main .accesskey{ top: 0; }
+  .webFooter .accesskey{
+    color: darken($bodyBgc, 40%);
+  }
+}
+@media screen and (min-width: $wwWide + 112){
+  .accesskey{
+    left: calc(50vw - #{$wwWide}/2);
+  }
+}
+
+
+// 現在位置
+.breadcrumb { 
+  display: none;
+
+  @media screen and (min-width: $wwNormal){
+    display: block;
+    line-height: 1.2;
+    width: 92vw; max-width: $wwWide;
+    padding: 0;margin: 0 auto 30px; overflow: hidden;
+    color:lighten($font-color, 40) ;
+    &::before{
+      float: left; content: attr(title)"："; padding: 2px 0 0;
+    }
+    ul, li{ list-style: none; margin: 0;padding: 0;}
+    ul{ float: left; line-height:inherit; overflow: hidden;}
+    li{float: left; position: relative;
+      &:nth-child(n+2){padding-left: 1.5em;
+        &::before{
+          content: '';position: absolute; left: 4px; top: .46em; 
+          width: .4em; height: .4em; border: 2px solid $border-color;
+          transform: rotate(45deg);border-bottom: none; border-left: none;
+        }
+      }
+      &:first-child{ padding-left: 0;}
+      a{display: block; color: $primaryColor; text-decoration: none;
+        padding: 2px 2px 1px;border-bottom: 1px solid transparent; outline: none;
+          &:hover{border-bottom-color: $primaryColor;}
+          &:focus{box-shadow: $primaryColor 0 0 0 1px inset; border-bottom-color:transparent;}
+      }
+    }
+  }
+}
+
+// 跳至內容區
+.goCenter{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; opacity: .5 ; overflow: hidden;
+    position: absolute; top: .1em;left: 4vw;z-index: 99;
+    font-size: .94rem;
+    height: 1.6em; line-height: 1.6; padding: 0 2px;
+    text-decoration: none; color: $font-color; cursor: pointer;
+    transition:opacity .2s; outline: none;
+    &::after{position: absolute; content: ''; left: 0;right: 0; bottom: 0; height: 3px; background-color: $importantColor;transform: scaleX(0);transition: .2s;}
+    &:hover, &:focus{ border-color: $importantColor; opacity: 1;
+      &::after{transform: scaleX(100%);}
+    }
+  }
+  @media screen and (min-width: $wwWide + 112){
+    left: calc(50vw - #{$wwWide}/2);
+  }
+  
+}
+
+// 內頁大標題 h2.pageHeader
+.pageHeader{
+  padding: 0 0 30px; margin: 0 auto;
+  line-height: 1.2; font-size: 2.2em; letter-spacing: 4px; font-weight: normal;
+}
+.main>.pageHeader {
+  width: 92vw;
+  @media screen and (min-width: $wwNormal){
+    max-width: $wwWide;
+  }
+
+  .filter{
+    float: right;font-size: 1rem;margin-top: 0;
+  }
+}
+
+
+// 查詢結果筆數 和 過濾條件
+.pagination{
+  @extend %mainSection;
+  // display: flex; align-items: center;
+  // justify-content: space-between; flex-flow: row wrap;
+  .total{
+    margin:0 4px; white-space: nowrap; 
+    height: 1.5em; line-height: 1.5;
+    em{font-weight: bold; font-style: normal; display: inline-block; margin: 0 .2em;}
+  }
+  .filter{
+    display: flex;justify-content: space-between;
+    select{ flex:1 1 60%; }
+    button{ white-space: nowrap; }
+  }
+
+  @media screen and (min-width: $wwSlim){
+    display: flex; align-items: center; justify-content: space-between;
+    .total{ margin: 4px 1em 0 0; }
+    .filter{ flex: 1 1 auto; max-width: 28em;}
+  }
+
+  // @media screen and (min-width: $wwNormal){
+  //   justify-content: flex-start;
+  //   .total{margin-right: 2em;}
+  // }
+}
+
+
+
+// 連結 button
+.linkBtn {
+  display: inline-block;
+  &>a {
+    display: block; text-align: center;
+    height: 2.2em; line-height: 2.1; padding: 0 1em; margin: 3px;
+    color: $font-color; text-decoration: none;
+    border: 1px solid $border-color; border-radius: 4px;
+    transition: .2s; outline: none;
+    &:hover, &:focus {
+      border-color: #fff;
+      box-shadow: $primaryColor 0 0 0 2px;
+    }
+  }
+}
