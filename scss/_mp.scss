@@ -36,40 +36,6 @@
   }
 }
 
-// 文章查詢 ============================================
-.mpsearch{
-  @extend %mpBlock;
-
-  padding: 40px 4vw;
-  background: #fff; box-shadow: #0003 0 4px 25px -4px;
-
-  input[type="button"], input[type="submit"] {
-    background-color: $secondaryColor; color: $primaryColor;
-    border-color: $secondaryColor;
-  }
-
-  .flexRow{
-    display: flex; flex-flow: row wrap;
-    select{ flex:1 0 30%}
-    input[type="text"] {flex:1 1 65%}
-    input[type="button"], input[type="submit"], .button { flex:1 1 45%; width: auto; }
-  }
-
-  @media screen and (min-width: $wwMedium){
-    .flexRow{ flex-wrap: nowrap;
-      select{ flex:1 1 20%}
-      input[type="text"] {flex:1 1 40%}  
-      input[type="button"], input[type="submit"], .button { flex:0 1 auto; width: 7em;}
-    }
-  }
-
-  @media screen and (min-width: $wwNormal){
-    padding: 50px;
-    .flexRow{
-      input[type="button"], input[type="submit"], .button { width: 9em;}
-    }
-  }
-}
 
 // 新到卷期 ============================================
 .newArrival{
