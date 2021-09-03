@@ -1,56 +1,204 @@
-////////// 檔案播放 //////////
-.mp3Play{
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  
+////////// 音檔播放 //////////
+// 快速鍵說明
+.playGuide{
+  @extend %mainSection;
+  background: $grayDark; padding-top: 15px; padding-bottom: 15px;
+  margin: 0 auto;
+  width: 100vw;
+  .label{display: block; height: 1.6em; line-height: 1.6em; color: #fff;}
+  dl{
+    padding: 0; margin: 0; line-height: 1.1;
+   overflow: hidden;
+    &>div{
+      float: left; 
+      margin:3px 5px 3px 0; padding: 2px; overflow: hidden;
+      border-radius: 5px;
+      overflow: hidden; background: #fff;
+    }
+  }
+  dt{
+    float: left;
+    color: #fff;background: $border-color-dark; border-radius: 3px;
+    height: 2em; line-height: 2em; padding: 0 .7em; margin: 0;
+  }
+  dd{
+    float: left; height: 2em; line-height: 2em;
+    padding: 0 .5em 0 .7em; margin: 0;
+  }
 
-  .playContent{
-    flex: 0 1 60%;
-    margin: 0 2em 0 0;
+  @media screen and (min-width: $wwMedium){
+    .label{float: left;height: 2.8em; line-height: 2.8em;}
   }
-  .audioPlayList{
-    flex: 0 0 40%;
-    min-width: 18em; max-width: 32em;
+
+  @media screen and (min-width: $wwNormal){
+    width: 92vw; border-radius: 8px; padding-left: 25px; padding-right: 25px;
   }
+
 }
 
 
-.audioPlayList{
-  margin: 0; padding: 15px;border-radius: 12px;
-  background: #e3e3e3;
-  box-shadow: #0003 0 0 8px inset;
+
+.playArea{
+  min-height: 150px;
+  // outline: 1px dotted blue;
+  margin-bottom: 20px;
+
+}
+
+
+
+
+
+// *****
+.slideCtrl{
+  position: absolute;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: none; outline: none;
+  background-color: lighten($gray, 5%);
+
+  &::before{content: '';
+    position: absolute; left: 50%; top: 50%; margin: -3px 0 0 -6px;
+    width: 10px; height: 10px;
+    border: 3px solid $primaryColor; border-radius: 0 0 2px 0;
+    border-left: none; border-top: none;
+    transform: rotate(225deg); transition:transform .3s;
+  }
+  &:hover {
+    background-color:#fff
+    // box-shadow: none;
+  }
+  &:focus{
+    background-color: lighten($gray, 4%);
+    box-shadow: $primaryColor 0 0 0 2px;
+  }
+
+  &.openIt{
+    &::before{content: '';
+      transform: rotate(45deg);
+      margin-top: -8px;
+    }
+  }
+
+}
+
+// *****
+.playInfo{
+  position: relative;
+
+  .slideCtrl{
+    position: absolute; right: 2px;top: 0;
+  }
+
+  ul.info{
+    list-style: none; margin: 0; padding: 0 0 30px; line-height: 1.5;
+    overflow: hidden;
+    li{
+      margin:0; padding: 0;
+      em{display: inline-block; font-weight: bold; font-style: normal; color: $font-color;}
+      &.title{
+        font-size: 1.35em; padding: 5px 0;
+        min-height: 44px; margin:0 56px 5px 0;
+      }
+      &.clickCount{
+        height: 2.4em;  line-height:2.4em; 
+         color: $font-color-light;float: left; margin-right: 1em;
+        }
+      &.icon_download{
+        float: left;
+        &>a{
+          display: block; height: 2.4em;  line-height:2.5em; 
+          color: $font-color; text-decoration: none;outline: none;
+          padding: 0 12px 0 36px;
+          background:url(../images/icon_calendar.png) 10px .5em no-repeat;
+          background-size: 20px;
+          border-radius: 2em;
+          box-shadow: $border-color 0 0 0 1px;
+          &:hover{ box-shadow: $primaryColor 0 0 0 1px; }
+          &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
+
+        }
+      }
+    }
+  }
+
+  dl.info{
+    line-height: 1.5; margin: 0 auto; padding: 30px 0;
+    border-top: 1px solid $border-color;
+    &>div{
+      overflow: hidden;
+      &+div{margin-top: .5em;}
+    }
+    dt, dd{float: left; margin: 0;}
+    dt{
+      color: $font-color-light;
+      &::after{content: '：';}
+    }
+  }
+
+  .description{
+    .label{display: block; color: $font-color-light;}
+    line-height: 1.8;
+  }
+
+  // 隱藏區
+  .drawer{display: none;}
+
+  @media screen and (min-width: $wwMedium){
+    .drawer{display: block !important;}
+    .slideCtrl{display: none;}
+    ul.info li.title{ margin-right: 0;}
+  }
+
+}
+
+
+.playList{ position: relative;
+  padding: 20px 6px;border-radius: 8px;
+  background-color: lighten($gray, 5%);
+  // box-shadow: $border-color 0 0 0 1px;
+
+  a{color: $font-color; text-decoration: none; outline: none;}
+
+  &>h3{
+    font-size: 1.2rem; font-weight: normal;
+    margin: 0 50px 20px 8px; padding: 0;
+  }
 
   &>ol, &>ul{
     list-style: none; margin: 0; padding: 0; line-height: 1.5;
     &>li{
       position: relative;
-      margin:10px 3px; padding:8px 10px 8px 30px;
-      border-radius: 2px;  cursor: pointer;
-      transition: .2s;
-      &:hover{
-         background: #eee;
-         box-shadow: #eee 0 0 0 3px;
-         transition: background-color .15s,  box-shadow .4s;
-      }
-      &::before{
-        content: ''; position: absolute; left: 10px; top: 14px;
-        width: 8px; height: 8px; background: #999;
-        border-radius: 50%;
-      }
-      &::after{
-        position: absolute; left: 12px; top: 13px;
-        width: 0; height: 0; box-sizing: content-box;
-        border-style: solid;
-        border-width: 5px 0 5px 7px;
-        border-color: transparent transparent transparent #fff;
+      margin:11px 3px;padding: 0;
+      &>a{
+        display: block;position: relative;
+        padding:8px 10px 8px 28px;border-radius: 2px; 
+        transition: .2s;
+        &:hover, &:focus{
+          background: #fff;
+          box-shadow: #fff 0 0 0 3px;
+          transition: background-color .15s,  box-shadow .4s;
+        }
+        &:focus{outline: none;}
+        &::before{
+          content: ''; position: absolute; left: 9px; top: 14px;
+          width: 8px; height: 8px; background: $primaryColor;
+          border-radius: 50%;
+        }
+        &::after{
+          position: absolute; left: 11px; top: 13px;
+          width: 0; height: 0; box-sizing: content-box;
+          border-style: solid;
+          border-width: 5px 0 5px 7px;
+          border-color: transparent transparent transparent #fff;
+        }
       }
 
-      &.playingNow{
-        box-shadow: #fff 0 0 0 3px;
-        background: #fff;
-        &::before{transform: scale(3);}
-       &::after{content: '';}
+      &.playing{
+        &>a{
+          box-shadow: #fff 0 0 0 3px; background: #fff;
+          &::before{transform: scale(2.8);}
+          &::after{content: '';}
+        }
       }
 
       .title{
@@ -67,30 +215,29 @@
       }
       time{
         position: absolute; right: 12px; top: 10px; width: 5em;
-        text-align: right; font-family: 'Courier New', Courier, monospace;
+        text-align: right; font-size: .9em
       }
     }
   }
 }
 
-.playGuide{
-  ul{
-    list-style: none; padding: 0; margin: 0; line-height: 1.1;
-   overflow: hidden;
-  }
-  li{ float: left; margin:3px 5px 3px 0; padding: 2px;
-     border: 1px solid #888; border-radius: 5px;
-     overflow: hidden;
-    .dt{
-      float: left;
-      color: #fff;background: #555; border-radius: 3px;
-      height: 2em; line-height: 2em; padding: 0 .7em;
-      
-      // &::after{content: '：';}
+
+// 左右雙欄排版
+.audioPlay{
+  @extend %mainSection;
+  // outline: 1px dashed pink; 
+  margin-top: 20px;padding: 0;
+
+  @media screen and (min-width: $wwMedium){
+    display: flex;justify-content: space-between;
+  
+    .playContent{
+      flex: 1 1 55%;
+      margin: 0 5% 0 0;
     }
-    .action{
-      float: left; height: 2em; line-height: 2em;
-      padding: 0 .5em 0 .7em;
+    .playList{
+      flex: 0 0 40%;
+      min-width: 20em; max-width: 32em;
     }
   }
 }

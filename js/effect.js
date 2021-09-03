@@ -185,7 +185,7 @@ $(function(){
 
 
 
-  //go top and bottom------------------------------------------
+  //go top and bottom ------------------------------------------
 	var _goTop = $('.goTop');
   _goTop.click(function(e){
     e.preventDefault();
@@ -200,7 +200,7 @@ $(function(){
 		}
 	});
 
-  // 條列頁 active 樣式
+  // 條列頁 active 樣式 ------------------------------------------
   var _category = $('.category');
   _category.each(function(){
     let _item = $(this).find('li');
@@ -210,7 +210,7 @@ $(function(){
   })
 
 
-  // 開合區 slideToggle
+  // 開合區 slideToggle ------------------------------------------
   var _slideToggle = $('.slideToggle');
   _slideToggle.each(function(){
     let _this = $(this);
@@ -227,10 +227,10 @@ $(function(){
 
     _ctrl.click(function(){
       if (_drawer.is(':visible')) {
-        _drawer.slideUp();
+        _drawer.slideUp(600);
         $(this).addClass('openIt').text(text2);
       } else {
-        _drawer.slideDown();
+        _drawer.slideDown(600);
         $(this).removeClass('openIt').text(text1);
       }
     })
@@ -240,7 +240,7 @@ $(function(){
 
 
 
-  // 字體大小
+  // 字體大小 ------------------------------------------
   var _fontSize = $('.fontSize');
   var _sizeSelect = _fontSize.find('li');
   var _fsArea = $('.contBox').add('.row>section[class]');
@@ -256,6 +256,22 @@ $(function(){
       _fsArea.css('font-size', '1rem')
     }
   })
+
+  // on/off 開關
+  var _switchOnOff = $(".switchOnOff>a");
+  _switchOnOff.click(function () {
+    $(this).parent().toggleClass("on");
+  });
+
+  // 待播清單
+  var _playList = $('.playList');
+  _playList.each(function(){
+    let _playItem = $(this).find('li>a');
+    _playItem.click(function(){
+      $(this).parent().addClass('playing').siblings().removeClass('playing')
+    })
+  })
+
 
 
 

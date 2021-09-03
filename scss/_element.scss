@@ -225,3 +225,42 @@
     }
   }
 }
+
+
+// on off 開關
+.switchOnOff {
+  position: absolute; right: 12px;top: 20px;
+  font-size: 13px; line-height: 25px; 
+  a{
+    display: block; width: 52px; height: 24px; 
+    background: $grayDark; border-radius: 12px;
+    box-shadow: $grayDark 0 0 0 2px; outline: none;
+    &::before {
+      content: "";
+      position: absolute;left: 0;top: 0;
+      width: 24px;height: 24px;
+      background: #fff; border-radius: 50%; z-index: 2;
+      transition: left 0.12s linear; outline: none;
+    }
+    &::after {
+      content: "關";
+      position: absolute;right: 9px; color: #fff; 
+    }
+
+  }
+  &.on {
+    a{
+      background: $lightColor; box-shadow: $lightColor 0 0 0 2px;
+      &::before {left: calc(100% - 24px);}
+      &::after {content: "開";left: 8px;right: auto; color: #000;}
+      // &:focus{
+      //   background-color: $importantColor;
+      // }
+  
+    }
+  }
+
+  &>a:focus, &.on>a:focus{
+    box-shadow:#fff 0 0 0 1px, $importantColor 0 0 0 3px;
+  }
+}

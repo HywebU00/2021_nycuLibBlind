@@ -5,92 +5,183 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mp3 檔案播放【國立陽明交通大學圖書館 愛盲有聲無障礙網站】</title>
+
   <link rel="stylesheet" href="css/design.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/effect.js"></script>
+  <script src="js/tabs.js"></script>
 </head>
 <body>
+  <a class="goCenter" href="#aC" tabindex="0">跳至內容區</a>
+
+  <!-- 側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="上方功能區塊">:::</a>
+
+    <h1><a href="mp.html"><img src="images/h1.png" alt="國立陽明交通大學圖書館 愛盲有聲無障礙網站"></a></h1>
+    <nav class="topLinks">
+      <ul>
+        <li class="assistant"><a href="javascript:void(0);">輔助偏好設定</a>
+          <div class="preferences">
+            <div class="label">字體大小</div>
+            <ul class="fontSize">
+              <li class="small"><a href="javascript:void(0);">小</a></li>
+              <li class="normal active"><a href="javascript:void(0);">中</a></li>
+              <li class="large"><a href="javascript:void(0);">大</a></li>
+            </ul>
+            <div class="label">文字對比</div>
+            <ul class="colorSet">
+              <li class="color0 active"><a href="javascript:void(0);">預設</a></li>
+              <li class="color1"><a href="javascript:void(0);">中</a></li>
+              <li class="color2"><a href="javascript:void(0);">中</a></li>
+              <li class="color3"><a href="javascript:void(0);">中</a></li>
+              <li class="color4"><a href="javascript:void(0);">中</a></li>
+            </ul>
+            <span class="closeBtn"><a href="javascript:void(0);" title="">關閉</a></span>
+          </div>
+        </li>
+        <li class="loginBtn showLightbox" data-id="loginHere"><a href="javascript:void(0);">登入</a>
+        
+        </li>
+        <li><a href="xx.html">線上註冊</a></li>
+        <li><a href="sitemap.html">網站導覽</a></li>
+      </ul>
+    </nav>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li class="hasChild"><a href="#">期刊瀏覽</a>
+          <ul>
+            <li><a href="#">第二層選單</a></li>
+            <li><a href="#">第二層選單</a></li>
+            <li class="hasChild"><a href="#">第二層選單</a>
+              <ul>
+                <li><a href="#">第三層選單</a></li>
+                <li><a href="#">第三層選單第三層選單第三層選單第三層選單</a></li>
+                <li><a href="#">第三層選單</a>
+                  <ul>
+                    <li><a href="#">第四層選單</a></li>
+                    <li><a href="#">第四層選單</a></li>
+                    <li><a href="#">第四層選單</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">第三層選單</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">網站介紹</a></li>
+        <li><a href="#">意見回饋</a></li>
+        <li><a href="#">操作說明</a></li>
+      </ul>
+    </nav>
+
+    <button class="sidebarCtrl" type="button" aria-label="側欄開關"></button><!-- 行動版控制側欄選單開合 -->
+  </header>
 
 
-  <div class="wrapCenter">
-    <h2>mp3檔案播放</h2>
-
+  <div class="main">
+    <h2 class="pageHeader">mp3檔案播放</h2>
     
-    <div class="mp3Play">
+    <section class="playGuide">
+      <span class="label">快速鍵：</span>
+      <dl>
+        <div><dt>空白鍵或 k 鍵</dt><dd>播放 / 暫停</dd></div>
+        <div><dt>j 鍵</dt><dd>後退十秒</dd></div>
+        <div><dt>l 鍵</dt><dd>快轉十秒</dd></div>
+        <div><dt>Shift+N</dt><dd>下一章</dd></div>
+        <div><dt>Shift+P</dt><dd>上一章</dd></div>
+      </dl>
+    </section>
+
+    <section class="audioPlay">
+
       <section class="playContent">
 
-        <section class="playGuide">
-          <span class="label">快速鍵：</span>
-          <ul>
-            <li><span class="dt">空白鍵或 k 鍵</span><span class="action">播放 / 暫停</span></li>
-            <li><span class="dt">j 鍵</span><span class="action">後退十秒</span></li>
-            <li><span class="dt">l 鍵</span><span class="action">快轉十秒</span></li>
-            <li><span class="dt">Shift+N</span><span class="action">下一章</span></li>
-            <li><span class="dt">Shift+P</span><span class="action">上一章</span></li>
-          </dl>
-        </section>
+
         <div class="playArea">
-
+          <div style="text-align: center">播放器放這裡</div>
         </div>
-        <div class="textInfo">
 
-          <div class="title">親愛的費米：來自粉絲的一封信</div>
-          <p>點擊次數：100</p>
-          <span><a href="xxx" download>下載</a></span>
-  
-          <p>撰文者：莉斯．克魯西</p>
-          <p>錄音者：吳彩姿</p>
-          <p>摘要：</p>
-          <article class="description">
-            <p>Lorem (若無資料則隱藏) ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin</p>
-          </article>
+        <div class="playInfo slideToggle">
+          <button class="slideCtrl" aria-label="開、合隱藏資訊"></button>
+
+          <ul class="info">
+            <li class="title">親愛的費米：來自粉絲的一封信</li>
+            <li class="clickCount">點擊次數：<em>107</em></li>
+            <li class="icon_download"><a href="xxx" download>下載</a></li>
+          </ul>
+
+          <div class="drawer">
+            <dl class="info">
+              <div><dt>撰文者</dt> <dd>莉斯．克魯西</dd></div>
+              <div><dt>錄音者</dt> <dd>吳彩姿</dd></div>
+            </dl>
+
+            <article class="description">
+              <span class="label">摘要：</span>
+              Lorem (若無資料則隱藏) ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin</p>
+            </article>
+          </div>
+
+
         </div>
 
 
       </section>
-      <section class="audioPlayList">
-        待播清單
-        自動播放
+
+      <section class="playList">
+        <h3>待播清單</h3>
+        <span class="switchOnOff" aria-label="自動播放"><a title="關" href="javascript:;"></a></span>
         <ol>
-          <li>
+          <li><a href="javascript:;">
             <span class="title">目錄</span>
             <time>0:00:30</time>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">正視病毒</span>
             <time>0:10:30</time>
             <span class="author">莉斯．克魯西</span>
-          </li>
-          <li class="playingNow">
+          </a></li>
+          <li class="playing"><a href="javascript:;">
             <span class="title">中華文明的新曙光</span>
             <time>0:15:26</time>
             <span class="author">布魯克．拉瑪</span>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">古羅馬鬥陣俱樂部</span>
             <time>01:24:05</time>
             <span class="author">安德魯．柯瑞</span>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">說出你心底對種族的六字真心話話六字（最多2行，超過已刪節號表示）國時子生度電他的的此影住才可山試化這政了是現</span>
             <time>30:01:05</time>
             <span class="author">蜜雪兒．L．諾里斯</span>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">世界盡頭的樹</span>
             <time>0:30:30</time>
             <span class="author">克雷格．威爾許</span>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">魅力港都的里亞斯特</span>
             <time>0:28:57</time>
             <span class="author">羅伯特．德雷珀</span>
-          </li>
-          <li>
+          </a></li>
+          <li><a href="javascript:;">
             <span class="title">結尾</span>
             <time>0:01:45</time>
           </li>
         </ol>
 
       </section>
+
     </div>
 
     
