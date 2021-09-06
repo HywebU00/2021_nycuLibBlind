@@ -73,6 +73,7 @@
       text-align: center;
       font-size: .9em;
     }
+    td:last-child { text-align: center; width: 4em;}
 
     td:nth-last-child(3) {
       font-size: .9em;
@@ -142,7 +143,7 @@
       }
 
       td {
-        min-height: 1em;
+        min-height: 1em; padding-left: 2em;
       }
 
       tr:first-child {
@@ -158,35 +159,20 @@
         border-bottom-color: #d6d6d6
       }
 
-      td:first-child,
-      td:nth-child(2) {
+      td:first-child {
         float: left;
-        padding: 8px;
-        height: 16px;
-        background: #eee;
-        border: none;
+        padding: 8px 1em 0 8px;
+        height: 16px; width: auto;
+        border: none; font-size: 1em
       }
+      td:first-child::after{ content: ". "; display: inline-block; background: none; position: static}
 
-      td:nth-child(2) {
-        float: right;
-      }
-
-      td:nth-child(3) {
+      td:nth-child(n+3) {
         clear: both;
       }
 
       td:last-child {
         border: none;
-      }
-
-      .seperator td:nth-child(2) {
-        float: none;
-        background: transparent;
-        padding: 0;
-      }
-
-      .seperator td:first-child {
-        display: none
       }
     }
   </style>
@@ -200,46 +186,54 @@
       <th>功能名稱</th>
       <th>檔名／連結</th>
       <th>備註</th>
+      <th>Freego AA 檢測</th>
     </tr>
     <tr>
       <td></td>
       <td>首頁</td>
       <td><a href="mp.html" target="_Blank">mp.html</a></td>
-      <td>2021/9/3 完成。9/6過AA檢測</td>
+      <td>2021/9/3 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>進階查詢</td>
       <td><a href="search.html" target="_Blank">search.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>查詢結果</td>
       <td><a href="search_list.html" target="_Blank">search_list.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>使用紀錄</td>
       <td><a href="records_list.html" target="_Blank">records_list.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>期刊瀏覽</td>
       <td><a href="periodical_list.html" target="_Blank">periodical_list.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>卷期瀏覽</td>
       <td><a href="periodical_list2.html" target="_Blank">periodical_list2.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>書籍詳目頁</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -248,11 +242,13 @@
       <td>mp3檔案播放</td>
       <td><a href="audioPlay.html" target="_Blank">audioPlay.html</a></td>
       <td>編輯中</td>
+      <td></td>
     </tr>
 
     <tr>
       <td></td>
       <td>最新消息列表</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -261,58 +257,63 @@
       <td>最新消息詳目頁</td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td></td>
       <td>變更密碼</td>
       <td><a href="pw_change.html" target="_Blank">pw_change.html</a></td>
-      <td>未完成。
-        <!-- 9/6過AA檢測 -->
-      </td>
+      <td>2021/9/6 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>忘記密碼</td>
       <td><a href="pw_recovery.html" target="_Blank">pw_recovery.html</a></td>
-      <td>未完成。
-        <!-- 9/6過AA檢測 -->
-      </td>
+      <td>2021/9/6 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>已寄送重設密碼連結</td>
       <td><a href="pw_recovery_done.html" target="_Blank">pw_recovery_done.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>網路辦證 申辦說明</td>
       <td><a href="account_apply.html" target="_Blank">account_apply.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>網路辦證</td>
       <td><a href="account_new.html" target="_Blank">account_new.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>帳號維護</td>
       <td><a href="account_edit.html" target="_Blank">account_edit.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>意見回饋</td>
       <td><a href="feedback.html" target="_Blank">feedback.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
     <tr>
       <td></td>
       <td>會員登入（以 iframe 嵌入）</td>
       <td><a href="loginFrame.html" target="_Blank">loginFrame.html</a></td>
-      <td>2021/9/2 完成。9/6過AA檢測</td>
+      <td>2021/9/2 完成</td>
+      <td>通過</td>
     </tr>
 
 
