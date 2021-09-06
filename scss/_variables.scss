@@ -24,5 +24,9 @@ $sidebarWidth: 260px;
   @media screen and (min-width: $wwNormal){
     max-width: $wwWide;
     padding:50px;
+
+    &.compact{
+      max-width: 50rem;
+    }
   }
 }

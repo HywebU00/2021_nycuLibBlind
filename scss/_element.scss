@@ -134,10 +134,10 @@
         }
       }
       &:first-child{ padding-left: 0;}
-      a{display: block; color: $primaryColor; text-decoration: none;
+      a{display: block; color: $font-color-dark; text-decoration: none;
         padding: 2px 2px 1px;border-bottom: 1px solid transparent; outline: none;
-          &:hover{border-bottom-color: $primaryColor;}
-          &:focus{box-shadow: $primaryColor 0 0 0 1px inset; border-bottom-color:transparent;}
+          &:hover{border-bottom-color: $font-color-dark;}
+          &:focus{box-shadow: $primaryColor 0 0 0 1px inset; border-bottom-color:transparent; color:$primaryColor;}
       }
     }
   }
