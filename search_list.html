@@ -100,12 +100,12 @@
     <section class="lpSearch">
       <form action="">
         <div class="flexRow">
-          <select>
+          <select aria-label="查詢欄位">
             <option value="">書名</option>
             <option value="">作者</option>
             <option value="">出版社</option>
           </select>
-          <input type="text" placeholder="請輸入查詢詞">
+          <input type="text" placeholder="請輸入查詢詞" aria-label="查詢詞">
           <input type="button" value="查詢">
           <span class="button"><a href="search.html">進階查詢</a></span>
         </div>
@@ -117,7 +117,7 @@
     <div class="pagination">
       <div class="total"> 共<em>308</em>筆資料</div>
       <div class="filter">
-        <select>
+        <select aria-label="排序方式">
           <option value="">依相關度 排序</option>
           <option value="">由新到舊 排序</option>
           <option value="">由舊到新 排序</option>
@@ -140,7 +140,7 @@
             <li><span class="dt">出版年</span> <em>2021/01 (Hold)</em></li>
           </ul>
           <div class="operation">
-            <select>
+            <select aria-label="使用方式">
               <option value="">有聲書線上聆聽</option>
               <option value="">有聲書下載</option>
               <option value="">電子點字書線上閱讀</option>
@@ -158,7 +158,7 @@
             <li><span class="dt">出版年</span> <em>2021/01</em></li>
           </ul>
           <div class="operation">
-            <select>
+            <select aria-label="使用方式">
               <option value="">有聲書線上聆聽</option>
               <option value="">有聲書下載</option>
               <option value="">電子點字書線上閱讀</option>
@@ -166,13 +166,6 @@
             </select>
             <button type="button">使用</button>
           </div>
-
-          <!-- <ul class="operation">
-            <li value=""><a href="x">有聲書線上聆聽</a></li>
-            <li value=""><a download="download" href="x">有聲書下載</a></li>
-            <li value=""><a href="x">電子點字書線上閱讀</a></li>
-            <li value=""><a href="x">電子點字書下載</a></li>
-          </ul> -->
         </li>
         <li>
           <span class="number">8888</span>
@@ -183,7 +176,7 @@
             <li><span class="dt">出版年</span> <em>2021/01</em></li>
           </ul>
           <div class="operation">
-            <select>
+            <select aria-label="使用方式">
               <option value="">有聲書線上聆聽</option>
               <option value="">有聲書下載</option>
               <option value="">電子點字書線上閱讀</option>
@@ -201,7 +194,7 @@
             <li><span class="dt">出版年</span> <em>2021/01</em></li>
           </ul>
           <div class="operation">
-            <select>
+            <select aria-label="使用方式">
               <option value="">有聲書線上聆聽</option>
               <option value="">有聲書下載</option>
               <option value="">電子點字書線上閱讀</option>
@@ -217,8 +210,8 @@
       <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
 
       <ul class="links">
-        <li><a href="x">隱私權政策</a></li>
-        <li><a href="x">資訊安全政策</a></li>
+        <li><a href="#">隱私權政策</a></li>
+        <li><a href="#">資訊安全政策</a></li>
       </ul>
       <p class="info">
         國立陽明交通大學交大校區圖書館 <br>
@@ -241,8 +234,10 @@
   </div>
 
   <section class="loginFrame lightbox" data-id="loginHere">
-    <span class="closeThis"><a href="javascript:void(0);" title="關閉燈箱"></a></span>
-    <iframe src="loginFrame.html" frameborder="0"></iframe>
+    <span class="closeThis"><a href="javascript:void(0);">關閉燈箱</a></span>
+    <iframe src="loginFrame.html" frameborder="0" title="會員登入"></iframe>
+
+
   </section>
 
 </body>

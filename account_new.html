@@ -105,13 +105,13 @@
           <tr>
             <td><abbr class="required" title="必填欄位">*</abbr> 身分證字號</td>
             <td>
-              <input type="text" class="full" placeholder="請輸入身份證字號">
+              <input type="text" class="full" aria-label="請輸入身份證字號" placeholder="請輸入身份證字號" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
             <td><abbr class="required" title="必填欄位">*</abbr> 姓名</td>
             <td>
-              <input type="text" class="full" placeholder="請輸入姓名">
+              <input type="text" class="full" aria-label="請輸入姓名" placeholder="請輸入姓名" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
@@ -127,19 +127,19 @@
           <tr>
             <td><abbr class="required" title="必填欄位">*</abbr> 密碼</td>
             <td>
-              <input type="password" class="full">
+              <input type="password" class="full" aria-label="密碼" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
             <td><abbr class="required" title="必填欄位">*</abbr> 確認密碼</td>
             <td>
-              <input type="password" class="full">
+              <input type="password" class="full" aria-label="確認密碼" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
             <td>職業</td>
             <td>
-              <select class="half">
+              <select class="half" aria-label="選擇職業">
                 <option value="預設">預設</option>
                 <option value="學齡前">學齡前</option>
                 <option value="醫護">醫護</option>
@@ -160,7 +160,7 @@
           <tr>
             <td>學歷</td>
             <td>
-              <select class="half">
+              <select class="half" aria-label="選擇學歷">
                 <option value="學齡前">學齡前</option>
                 <option value="小學">小學</option>
                 <option value="中學">中學</option>
@@ -174,22 +174,20 @@
           <tr>
             <td>出生日期</td>
             <td>
-              <input type="date" class="half">
+              <input type="date" class="half" aria-label="出生日期">
               <p class="hint">範例：2001-01-01 , 西元年為民國年+1911</p>
             </td>
           </tr>
         </table>
-        
       </fieldset>
   
       <fieldset><legend>聯絡方式</legend>
-  
         <table class="formLayout">
           <tr>
             <td><abbr class="required" title="必填欄位">*</abbr> 聯絡地址</td>
             <td>
               <div class="addressSet">
-                <select>
+                <select aria-label="選擇縣、市" required="required" aria-required="true">
                   <option value="" selected="selected">臺北市</option>
                   <option value="">基隆市</option>
                   <option value="">新北市</option>
@@ -213,7 +211,7 @@
                   <option value="">金門縣</option>
                   <option value="">連江縣</option>
                 </select>
-                <select>
+                <select aria-label="選擇區、鄉、鎮、市">
                   <option value="">大安區</option>
                   <option value="">信義區</option>
                   <option value="">東區</option>
@@ -221,7 +219,7 @@
                   <option value="">新興區</option>
                   <option value="">中壢區</option>
                 </select>
-                <input type="text">
+                <input type="text" aria-label="街道與門牌號碼">
               </div>
             </td>
           </tr>
@@ -230,7 +228,7 @@
             <td>
               <label class="singleCheck"><input type="checkbox">同聯絡地址</label>
               <div class="addressSet">
-                <select>
+                <select aria-label="選擇縣、市">
                   <option value="" selected="selected">臺北市</option>
                   <option value="">基隆市</option>
                   <option value="">新北市</option>
@@ -254,7 +252,7 @@
                   <option value="">金門縣</option>
                   <option value="">連江縣</option>
                 </select>
-                <select>
+                <select aria-label="選擇區、鄉、鎮、市">
                   <option value="">大安區</option>
                   <option value="">信義區</option>
                   <option value="">東區</option>
@@ -262,40 +260,38 @@
                   <option value="">新興區</option>
                   <option value="">中壢區</option>
                 </select>
-                <input type="text">
+                <input type="text" aria-label="街道與門牌號碼">
               </div>
             </td>
           </tr>
           <tr>
             <td>電話號碼</td>
-            <td><input type="tel" class="full" placeholder="請輸入電話號碼"></td>
+            <td><input type="tel" class="full" aria-label="電話號碼" placeholder="請輸入電話號碼"></td>
           </tr>
           <tr>
             <td>行動電話</td>
-            <td><input type="tel" class="full" placeholder="請輸入行動電話"></td>
+            <td><input type="tel" class="full" aria-label="行動電話" placeholder="請輸入行動電話"></td>
           </tr>
           <tr>
             <td>戶籍地電話</td>
-            <td><input type="tel" class="full" placeholder="請輸入戶籍地電話"></td>
+            <td><input type="tel" class="full" aria-label="戶籍地電話" placeholder="請輸入戶籍地電話"></td>
           </tr>
           <tr>
             <td>辦公室電話</td>
-            <td><input type="tel" class="full" placeholder="請輸入辦公室電話"></td>
+            <td><input type="tel" class="full" aria-label="辦公室電話" placeholder="請輸入辦公室電話"></td>
           </tr>
           <tr>
             <td>電子郵件信箱</td>
-            <td><input type="email" class="full" placeholder="請輸入Email"></td>
+            <td><input type="email" class="full" aria-label="電子郵件信箱" placeholder="請輸入Email"></td>
           </tr>
           <tr>
             <td>常用電子郵件信箱</td>
-            <td><input type="email" class="full" placeholder="請輸入常用電子郵件信箱"></td>
+            <td><input type="email" class="full" aria-label="請輸入常用電子郵件信箱" placeholder="請輸入常用電子郵件信箱"></td>
           </tr>
-
           <tr>
             <td>證明影本</td>
-            <td><input type="file" class="full"> <p class="hint">請上傳身心障礙手冊</p></td>
+            <td><input type="file" class="full" aria-label="證明文件影本"> <p class="hint">請上傳身心障礙手冊</p></td>
           </tr>
-            
           <tr>
               <td><abbr class="required" title="必填欄位">*</abbr> 驗證碼</td>
               <td>
@@ -323,8 +319,8 @@
       <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
 
       <ul class="links">
-        <li><a href="x">隱私權政策</a></li>
-        <li><a href="x">資訊安全政策</a></li>
+        <li><a href="#">隱私權政策</a></li>
+        <li><a href="#">資訊安全政策</a></li>
       </ul>
       <p class="info">
         國立陽明交通大學交大校區圖書館 <br>
@@ -347,8 +343,10 @@
   </div>
 
   <section class="loginFrame lightbox" data-id="loginHere">
-    <span class="closeThis"><a href="javascript:void(0);" title="關閉燈箱"></a></span>
-    <iframe src="loginFrame.html" frameborder="0"></iframe>
+    <span class="closeThis"><a href="javascript:void(0);">關閉燈箱</a></span>
+    <iframe src="loginFrame.html" frameborder="0" title="會員登入"></iframe>
+
+
   </section>
 
 </body>

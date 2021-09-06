@@ -258,9 +258,9 @@ $(function(){
   })
 
   // on/off 開關
-  var _switchOnOff = $(".switchOnOff>a");
+  var _switchOnOff = $(".switchOnOff");
   _switchOnOff.click(function () {
-    $(this).parent().toggleClass("on");
+    $(this).toggleClass("on");
   });
 
   // 待播清單
