@@ -215,23 +215,25 @@ $(function(){
   _slideToggle.each(function(){
     let _this = $(this);
     let _ctrl = _this.find('.slideCtrl');
-    let _drawer = _this.find('.drawer');
+    let _toggleArea = _this.find('.toggleArea');
     let text1 = _ctrl.text();
     let text2 = _ctrl.attr('data-altTitle');
 
-    if(_drawer.is(':hidden')) {
-      _ctrl.addClass('openIt').text(text2);
-    } else {
-      _ctrl.removeClass('openIt').text(text1);
-    }
+    // if(_toggleArea.is(':hidden')) {
+    //   _ctrl.addClass('closeIt').text(text2);
+    // } else {
+    //   _ctrl.removeClass('closeIt').text(text1);
+    // }
 
     _ctrl.click(function(){
-      if (_drawer.is(':visible')) {
-        _drawer.slideUp(600);
-        $(this).addClass('openIt').text(text2);
+      if (_toggleArea.is(':visible')) {
+        _toggleArea.slideUp(600, function(){
+          _ctrl.removeClass('closeIt').text(text2);
+        });
       } else {
-        _drawer.slideDown(600);
-        $(this).removeClass('openIt').text(text1);
+        _toggleArea.slideDown(600, function(){
+          _ctrl.addClass('closeIt').text(text1);
+        });
       }
     })
   })

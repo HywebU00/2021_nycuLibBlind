@@ -2,23 +2,22 @@
 // 快速鍵說明
 .playGuide{
   @extend %mainSection;
-  background: $grayDark; padding-top: 15px; padding-bottom: 15px;
+  background: $grayDark; 
+  padding: 15px;
+  border-radius: 7px;
   margin: 0 auto;
-  width: 100vw;
   .label{display: block; height: 1.6em; line-height: 1.6em; color: #fff;}
   dl{
-    padding: 0; margin: 0; line-height: 1.1;
-   overflow: hidden;
+    padding: 0; margin: 0; line-height: 1.1; overflow: hidden;
     &>div{
-      float: left; 
+      float: left; overflow: hidden;
       margin:3px 5px 3px 0; padding: 2px; overflow: hidden;
-      border-radius: 5px;
-      overflow: hidden; background: #fff;
+      background: #fff;border-radius: 5px;
     }
   }
   dt{
     float: left;
-    color: #fff;background: $border-color-dark; border-radius: 3px;
+    color: #fff;background:lighten($grayDark, 15%); border-radius: 3px;
     height: 2em; line-height: 2em; padding: 0 .7em; margin: 0;
   }
   dd{
@@ -31,66 +30,71 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    width: 92vw; border-radius: 8px; padding-left: 25px; padding-right: 25px;
+    width: 92vw; padding-left: 25px; padding-right: 25px;
   }
 
 }
 
 
-
+// 放播放器
 .playArea{
-  min-height: 150px;
   // outline: 1px dotted blue;
   margin-bottom: 20px;
+  box-shadow: $border-color 0 0 0 1px;
+  overflow: hidden;
+  border-radius: 6px;
 
+  img{display: block; width: 100%;}
 }
 
 
 
 
 
-// *****
+// 控制開合的button
 .slideCtrl{
   position: absolute;
-  width: 44px; height: 44px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 50%;
   border: none; outline: none;
   background-color: lighten($gray, 5%);
 
   &::before{content: '';
-    position: absolute; left: 50%; top: 50%; margin: -3px 0 0 -6px;
+    position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -6px;
     width: 10px; height: 10px;
     border: 3px solid $primaryColor; border-radius: 0 0 2px 0;
     border-left: none; border-top: none;
-    transform: rotate(225deg); transition:transform .3s;
+    transform: rotate(45deg); transition:transform .3s;
   }
   &:hover {
     background-color:#fff
-    // box-shadow: none;
   }
   &:focus{
     background-color: lighten($gray, 4%);
     box-shadow: $primaryColor 0 0 0 2px;
   }
 
-  &.openIt{
+  &.closeIt{
     &::before{content: '';
-      transform: rotate(45deg);
-      margin-top: -8px;
+      transform: rotate(225deg);
+      margin-top: -4px;
     }
   }
 
 }
 
-// *****
+// 正在播放的檔案內容
 .playInfo{
   position: relative;
+  box-shadow: $border-color 0 0 0 1px;
+  border-radius: 6px;
+  padding: 20px; 
 
   .slideCtrl{
-    position: absolute; right: 2px;top: 0;
+    position: absolute; right: 8px;top: 8px;
   }
 
   ul.info{
-    list-style: none; margin: 0; padding: 0 0 30px; line-height: 1.5;
+    list-style: none; margin:0; padding: 0 0 2px; line-height: 1.5;
     overflow: hidden;
     li{
       margin:0; padding: 0;
@@ -122,7 +126,7 @@
   }
 
   dl.info{
-    line-height: 1.5; margin: 0 auto; padding: 30px 0;
+    line-height: 1.5; margin: 20px auto 0; padding: 30px 0;
     border-top: 1px solid $border-color;
     &>div{
       overflow: hidden;
@@ -141,21 +145,23 @@
   }
 
   // 隱藏區
-  .drawer{display: none;}
+  .toggleArea{display: none;}
 
   @media screen and (min-width: $wwMedium){
-    .drawer{display: block !important;}
+    .toggleArea{display: block !important;}
     .slideCtrl{display: none;}
     ul.info li.title{ margin-right: 0;}
   }
 
 }
 
-
-.playList{ position: relative;
+// 待播清單
+.playList{ 
+  position: relative;
   padding: 20px 6px;border-radius: 8px;
-  background-color: lighten($gray, 5%);
-  // box-shadow: $border-color 0 0 0 1px;
+  background-color:$grayLight;
+  box-shadow: $grayLight 0 0 0 1px;
+  margin-top: 20px;
 
   a{color: $font-color; text-decoration: none; outline: none;}
 
@@ -171,12 +177,12 @@
       margin:11px 3px;padding: 0;
       &>a{
         display: block;position: relative;
-        padding:8px 10px 8px 28px;border-radius: 2px; 
+        padding:8px 10px 8px 28px;border-radius: 3px; 
         transition: .2s;
         &:hover, &:focus{
-          background: #fff;
-          box-shadow: #fff 0 0 0 3px;
-          transition: background-color .15s,  box-shadow .4s;
+          background: #fff8;
+          box-shadow: #ffff 0 0 0 2px;
+          transition: background-color .15s,  box-shadow .3s;
         }
         &:focus{outline: none;}
         &::before{
@@ -195,9 +201,10 @@
 
       &.playing{
         &>a{
-          box-shadow: #fff 0 0 0 3px; background: #fff;
+          box-shadow: #fff 0 0 0 2px; background: #fff;
           &::before{transform: scale(2.8);}
           &::after{content: '';}
+          &:hover, &:focus{box-shadow: #fff 0 0 0 2px,  $primaryColor 0 0 0 3px; }
         }
       }
 
@@ -219,21 +226,25 @@
       }
     }
   }
+
+  @media screen and (min-width: $wwMedium){
+    margin-top: 0;
+  }
 }
 
 
 // 左右雙欄排版
 .audioPlay{
   @extend %mainSection;
-  // outline: 1px dashed pink; 
   margin-top: 20px;padding: 0;
+
 
   @media screen and (min-width: $wwMedium){
     display: flex;justify-content: space-between;
   
     .playContent{
-      flex: 1 1 55%;
-      margin: 0 5% 0 0;
+      flex: 1 1 calc(60% - 20px);
+      margin: 0 20px 0 0;
     }
     .playList{
       flex: 0 0 40%;

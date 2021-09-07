@@ -1,0 +1,83 @@
+.thisMag{
+  @extend %mainSection;
+  outline: 1px solid red;
+  padding: 0;
+
+  &::after{content: ''; display: block; clear: both;}
+
+  .headerGroup{ 
+    float: left; line-height: 1.4;
+   letter-spacing: normal; text-align: left;
+    outline: 1px dashed red;
+    width: calc(100% - 260px);
+
+
+    .subTitle{
+      display: block;
+      font-size: 1.2rem;
+      margin: .8em 0 0;
+    }
+
+  }
+
+  .imgContainer{
+    float: right;
+    width: 240px;
+    outline: 1px dashed red;
+    box-shadow: #0003 0 0 20px;
+    img{
+      display: block; width: 100%; height: auto;
+    }
+
+  }
+
+  .filter{
+    outline: 1px dashed red;
+    clear: left;
+    margin-right: 260px;
+
+
+  }
+
+  @media screen and (min-width: $wwMedium){
+    
+  }
+
+}
+
+
+.detail{
+  @extend %mainSection;
+  outline: 1px solid red;
+
+}
+
+.anArticle{
+  border-bottom: 2px dotted $gray;
+  padding: 1.5em 0;
+
+  .type{
+    display: inline-block;
+    color: $primaryColor;font-size: .95em;
+    border: 1px solid $primaryColor;
+    height: 1.5em; line-height: 1.5; padding: 0 5px;
+  }
+
+  .articleHeader{
+    font-size: 1.2em; line-height: 1.3;
+    margin: 1em 0 .5em;
+  }
+
+  dl{
+    margin: 0; padding: 0;
+    &>div{ display: block; margin: 0 0 .5em;}
+    color: $font-color;
+  }
+  dt, dd{
+    margin: 0; padding: 0; display: inline-block;
+  }
+  dt{
+    color: $font-color-light;
+    &::after{content: '：';}
+  }
+}
