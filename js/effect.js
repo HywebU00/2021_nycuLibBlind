@@ -119,24 +119,24 @@ $(function(){
       _astPreferences.stop(true, false).slideUp(hideSpeed);
     }
   });
-  _assistantCtrl.keyup( function(e){
-    if( e.which == 9 ){
-      if ( _astPreferences.is(':hidden') ) {
-        _astPreferences.stop(true, false).slideDown();
-      } else {
-        _astPreferences.stop(true, false).slideUp(hideSpeed);
-      }
-    }
-  });
+  // _assistantCtrl.keyup( function(e){
+  //   if( e.which == 9 ){
+  //     if ( _astPreferences.is(':hidden') ) {
+  //       _astPreferences.stop(true, false).slideDown();
+  //     } else {
+  //       _astPreferences.stop(true, false).slideUp(hideSpeed);
+  //     }
+  //   }
+  // });
 
   _closePref.click( function(){ 
     _astPreferences.stop(true, false).slideUp(hideSpeed);
   });
-  _closePref.keyup(function(e){
-    if( e.which == 13 ){
-      _astPreferences.stop(true, false).slideUp(hideSpeed);
-    }
-  });
+  // _closePref.keyup(function(e){
+  //   if( e.which == 13 ){
+  //     _astPreferences.stop(true, false).slideUp(hideSpeed);
+  //   }
+  // });
   _closePref.focusout( function(e){
     _astPreferences.stop(true, false).slideUp(hideSpeed);
   });
