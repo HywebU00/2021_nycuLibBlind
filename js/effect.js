@@ -262,9 +262,16 @@ $(function(){
   })
 
   // on/off 開關
-  var _switchOnOff = $(".switchOnOff");
+  var _switchOnOff = $('.switchOnOff');
+  const textOn = '已啟用自動播放功能';
+  const texOff = '已關閉自動播放功能';
   _switchOnOff.click(function () {
-    $(this).toggleClass("on");
+    let _this = $(this);
+    if(_this.hasClass('on')){
+      _this.removeClass('on').attr('aria-checked', 'false').attr('aria-label' , texOff);
+    } else {
+      _this.addClass('on').attr('aria-checked', 'true').attr('aria-label' , textOn);
+    }
   });
 
   // 待播清單

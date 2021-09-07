@@ -1,36 +1,37 @@
 ////////// 音檔播放 //////////
 // 快速鍵說明
 .playGuide{
-  @extend %mainSection;
-  background: $grayDark; 
-  padding: 15px;
-  border-radius: 7px;
-  margin: 0 auto;
-  .label{display: block; height: 1.6em; line-height: 1.6em; color: #fff;}
-  dl{
-    padding: 0; margin: 0; line-height: 1.1; overflow: hidden;
-    &>div{
-      float: left; overflow: hidden;
-      margin:3px 5px 3px 0; padding: 2px; overflow: hidden;
-      background: #fff;border-radius: 5px;
-    }
-  }
-  dt{
-    float: left;
-    color: #fff;background:lighten($grayDark, 15%); border-radius: 3px;
-    height: 2em; line-height: 2em; padding: 0 .7em; margin: 0;
-  }
-  dd{
-    float: left; height: 2em; line-height: 2em;
-    padding: 0 .5em 0 .7em; margin: 0;
-  }
+    // @extend %mainSection;
+    display: none;
 
-  @media screen and (min-width: $wwMedium){
-    .label{float: left;height: 2.8em; line-height: 2.8em;}
-  }
+
+  // @media screen and (min-width: $wwMedium){
+  //   .label{float: left;height: 2.8em; line-height: 2.8em;}
+  // }
 
   @media screen and (min-width: $wwNormal){
-    width: 92vw; padding-left: 25px; padding-right: 25px;
+    display: block;
+    width: 92vw; margin: 0 auto; padding: 15px 25px;
+    background: $grayDark; border-radius: 7px;
+    // .label{display: block; height: 1.6em; line-height: 1.6em; }
+    .label{float: left;height: 2.8em; line-height: 2.8em;color: #fff;}
+    dl{
+      padding: 0; margin: 0; line-height: 1.1; overflow: hidden;
+      &>div{
+        float: left; overflow: hidden;
+        margin:3px 5px 3px 0; padding: 2px; overflow: hidden;
+        background: #fff;border-radius: 5px;
+      }
+    }
+    dt{
+      float: left;
+      color: #fff;background:lighten($grayDark, 15%); border-radius: 3px;
+      height: 2em; line-height: 2em; padding: 0 .7em; margin: 0;
+    }
+    dd{
+      float: left; height: 2em; line-height: 2em;
+      padding: 0 .5em 0 .7em; margin: 0;
+    }
   }
 
 }
@@ -243,8 +244,7 @@
 // 左右雙欄排版
 .audioPlay{
   @extend %mainSection;
-  margin-top: 20px;padding: 0;
-
+  padding: 0;
 
   @media screen and (min-width: $wwMedium){
     display: flex;justify-content: space-between;
@@ -257,5 +257,8 @@
       flex: 0 0 40%;
       min-width: 20em; max-width: 32em;
     }
+  }
+  @media screen and (min-width: $wwNormal){
+    margin-top: 20px;
   }
 }
