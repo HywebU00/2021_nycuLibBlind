@@ -49,8 +49,6 @@
 
 
 
-
-
 // 控制開合的button
 .slideCtrl{
   position: absolute;
@@ -125,8 +123,6 @@
           }
           &:hover{ box-shadow: $primaryColor 0 0 0 1px; }
           &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
-
-
         }
       }
     }
