@@ -145,6 +145,8 @@ $(function(){
 
 
 
+  // 產生「下載中」動畫的圓點元件
+  $('.loadingAni').append('<span></span><span></span><span></span><span></span>');
 
 
 
