@@ -56,6 +56,11 @@ $(function(){
   var _sidebarCtrl = $('.sidebarCtrl');
   var _sidebarMenu = _sidebar.find('.menu');
 
+  _sidebarMenu.after('<nav class="topLinks"><ul></ul></nav>');
+  _sidebar.find('.topLinks>ul').html(
+    $('.webHeader .topLinks').children('ul').children('li').not('.assistant, .loginBtn').clone()
+  )
+
   _sidebarCtrl.click(function(){
     if (_sidebar.hasClass('reveal')) {
       _sidebar.removeClass('reveal');
