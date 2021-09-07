@@ -13,10 +13,10 @@
 
   &>span { position: absolute; top:16px; width: 12px; height: 12px; border-radius: 50%; background: #fff; animation-timing-function: cubic-bezier(0, 1, 1, 0);
   
-    &:nth-child(1) { left: 12px; animation: dotsMoving1 .6s infinite linear; }
-    &:nth-child(2) { left: 12px; animation: dotsMoving2 .6s infinite linear; }
-    &:nth-child(3) { left: 34px; animation: dotsMoving2 .6s infinite linear; }
-    &:nth-child(4) { left: 56px; animation: dotsMoving3 .6s infinite linear; }
+    &:nth-child(1) { left: 12px; animation: dotsMoving1 .6s infinite; }
+    &:nth-child(2) { left: 12px; animation: dotsMoving2 .6s infinite; }
+    &:nth-child(3) { left: 34px; animation: dotsMoving2 .6s infinite; }
+    &:nth-child(4) { left: 56px; animation: dotsMoving3 .6s infinite; }
   
   }
 }
