@@ -284,12 +284,8 @@ $(function(){
   _playList.each(function(){
     let _playItem = $(this).find('li>a');
     _playItem.click(function(){
-      $(this).parent().addClass('playing').siblings().removeClass('playing')
+      $(this).parent().addClass('playing').attr('aria-label','播放中').siblings().removeClass('playing').removeAttr('aria-label')
     })
   })
-
-
-
-
 
 })
