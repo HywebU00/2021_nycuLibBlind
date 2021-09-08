@@ -6,14 +6,15 @@
   background: none; border: none; outline: none;
   text-indent: -10em; overflow: hidden;
   width: 42px; height: 42px; border-radius: 50%;  
-  background: lighten($grayDark, 25%) url(../images/icon_eye.png) no-repeat center center;
+  background: $grayDark url(../images/icon_eye.png) no-repeat center center;
   background-size: 32px; transition: .2s;
   &:hover{ 
     background-color: $grayDark;
+    box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
   }
   &:focus{
     background-color: $primaryColor;
-    box-shadow: $primaryColor 0 0 0 2px;
+    box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
   }
 }
 

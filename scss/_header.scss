@@ -22,7 +22,7 @@
         &.assistant, &.loginBtn{ display: block;
           &>a{
             width: 44px; height: 44px; border-radius: 50%; 
-            text-indent: -20em;
+            text-indent: -20em; overflow: hidden;
             background: lighten($grayDark, 25%) url(../images/icons.png) no-repeat center 0; 
             background-size: 44px auto;
             outline: none;
