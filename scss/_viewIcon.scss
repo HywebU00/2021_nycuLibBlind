@@ -1,0 +1,32 @@
+// 顯示密碼（圖示）
+.viewIcon{
+  display: inline-block; vertical-align: top; cursor: pointer;
+  margin:4px 2px 0;
+  background: none; border: none; outline: none;
+  text-indent: -10em; overflow: hidden;
+  width: 42px; height: 42px; border-radius: 50%;  
+  background: lighten($grayDark, 25%) url(../images/icon_eye.png) no-repeat center center;
+  background-size: 32px; transition: .2s;
+  &:hover{ 
+    background-color: $grayDark;
+  }
+  &:focus{
+    background-color: $primaryColor;
+    box-shadow: $primaryColor 0 0 0 2px;
+  }
+}
+
+.linkBtn {
+  display: inline-block;
+  &>a {
+    display: block; text-align: center;
+    height: 2.2em; line-height: 2.1; padding: 0 1em; margin: 3px;
+    color: $font-color; text-decoration: none;
+    border: 1px solid $border-color; border-radius: 4px;
+    transition: .2s; outline: none;
+    &:hover, &:focus {
+      border-color: #fff;
+      box-shadow: $primaryColor 0 0 0 2px;
+    }
+  }
+}

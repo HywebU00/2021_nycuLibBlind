@@ -1,7 +1,8 @@
 // 會員登入 ============================================
 // 在燈箱中，由 iframe 連結
 @import "_colorScheme";
-
+@import "_viewIcon";
+@import "_btnDv";
 html{ font-size: 1em;}
 body{
   margin: 0;padding: 0; font-family:'微軟正黑體', Arial, Helvetica, sans-serif;
@@ -48,39 +49,8 @@ button, input[type="submit"], input[type="reset"], input[type="button"] {
     box-shadow: $btn-bg1 0 0 0 2px;
   }
 }
-// .viewIcon{
-//   display: inline-block; vertical-align: top; cursor: pointer;
-//   margin:4px 2px 0;
-//   &>a{
-//     display: block;
-//     width: 42px; height: 42px; border-radius: 50%;  
-//     background: lighten($grayDark, 25%) url(../images/icon_eye.png) no-repeat center center;
-//     background-size: 32px; transition: .2s; outline: none;
-//     &:hover{ 
-//       background-color: $grayDark;
-//     }
-//     &:focus{
-//       background-color: $primaryColor;
-//       box-shadow: $primaryColor 0 0 0 2px;
-//     }
-//   }
-// }
-.viewIcon{
-  display: inline-block; vertical-align: top; cursor: pointer;
-  margin:4px 2px 0;
-  background: none; border: none; outline: none;
-  text-indent: -10em; overflow: hidden;
-  width: 42px; height: 42px; border-radius: 50%;  
-  background: lighten($grayDark, 25%) url(../images/icon_eye.png) no-repeat center center;
-  background-size: 32px; transition: .2s;
-  &:hover{ 
-    background-color: $grayDark;
-  }
-  &:focus{
-    background-color: $primaryColor;
-    box-shadow: $primaryColor 0 0 0 2px;
-  }
-}
+
+
 
 // 文字、數字型態的 input
 input[type="text"],
@@ -103,7 +73,6 @@ input[type="password"] { @extend %textInput; }
 
   .formLayout{
     margin:0 auto; line-height: 1.5; width: 100%;
-    // outline: 1px dashed pink;
     td{
       vertical-align: top;
       &:nth-child(odd){text-align: right;white-space: nowrap; padding: 1.2em 8px 6px 0; width: 4em;}
@@ -114,31 +83,17 @@ input[type="password"] { @extend %textInput; }
   }
 
   ////////// 表單送出按鈕群 //////////
-.btnDv{
-  clear:both; text-align:center;
-  margin:0 auto;padding: 1.2em 0 1.5em;
-  input[type="button"], input[type="submit"], input[type="reset"], button {
-    margin: 4px; min-width: 6em;
-    &:only-child{min-width: 10em;}
-  }
-  input[type="button"].showLightbox{ min-width: 7.5em;}
-}
+  // .btnDv{
+  //   clear:both; text-align:center;
+  //   margin:0 auto;padding: 1.2em 0 1.5em;
+  //   input[type="button"], input[type="submit"], input[type="reset"], button {
+  //     margin: 4px; min-width: 6em;
+  //     &:only-child{min-width: 10em;}
+  //   }
+  //   input[type="button"].showLightbox{ min-width: 7.5em;}
+  // }
 
-// 連結 button
-.linkBtn {
-  display: inline-block;
-  &>a {
-    display: block; text-align: center;
-    height: 2.2em; line-height: 2.1; padding: 0 1em; margin: 3px;
-    color: $font-color; text-decoration: none;
-    border: 1px solid $border-color; border-radius: 4px;
-    transition: .2s; outline: none;
-    &:hover, &:focus {
-      border-color: #fff;
-      box-shadow: $primaryColor 0 0 0 2px;
-    }
-  }
-}
+
   
   @media screen and (min-width: 644px){
     margin: 0 40px;

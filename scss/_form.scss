@@ -235,22 +235,21 @@ label.readAndAgree{
 }
 
 ////////// 表單送出按鈕群 //////////
-.btnDv{
-  clear:both; text-align:center;
-  margin:0 auto;padding: 1.3em 0 5px;
-  border-top: 1px solid $border-color;
-  input[type="button"], input[type="submit"], input[type="reset"], button {
-    margin: 4px; min-width: 6em;
-    &:only-child{min-width: 10em;}
-  }
-  .button{
-    &>a{margin: 4px; min-width: 6em;}
-    &:only-child>a{min-width: 10em;}
-  }
-  input[type="button"], input[type="submit"], input[type="reset"], 
-  button{&:only-child{min-width: 10em;}}
-
-}
+// .btnDv{
+//   clear:both; text-align:center;
+//   margin:0 auto;padding: 1.3em 0 5px;
+//   border-top: 1px solid $border-color;
+//   input[type="button"], input[type="submit"], input[type="reset"], button {
+//     margin: 4px; min-width: 6em;
+//     &:only-child{min-width: 10em;}
+//   }
+//   .button{
+//     &>a{margin: 4px; min-width: 6em;}
+//     &:only-child>a{min-width: 10em;}
+//   }
+//   input[type="button"], input[type="submit"], input[type="reset"], 
+//   button{&:only-child{min-width: 10em;}}
+// }
 
 ////////// 日期區間 //////////
 .duration{
