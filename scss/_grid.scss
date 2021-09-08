@@ -42,10 +42,8 @@
       color: $font-color-light; font-size: .9rem;
       time{ display: block; font-size: 1rem; color: $font-color; }
     }
-    .linkBtn{display: block;  margin: 15px 0 0; 
-      a{ max-width: 10em;
-        margin:0 auto; height: 2.5em; line-height: 2.5;
-      }
+    .linkBtn{display: block; margin: 15px 0 0; 
+      a{ max-width: 9em; margin:0 auto; }
     }
   }
 

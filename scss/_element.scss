@@ -216,8 +216,8 @@
 .switchOnOff {
   position: absolute; right: 12px;top: 20px;
   margin: 0; padding: 0; background: none; border: none; outline: none;
-  font-size: 13px; line-height: 25px; width: 52px; height: 24px;
-  text-indent: -20em; overflow: hidden;
+  font-size: .88em; line-height: 25px; width: 52px; height: 24px;
+  text-indent: calc(-100% - 12px); text-align: left; color: $font-color;
   background: $grayDark; border-radius: 12px;
   box-shadow: $grayDark 0 0 0 2px;
   &::before {
@@ -233,10 +233,10 @@
   }
   &:hover, &:focus{
     background: $grayDark; box-shadow:$grayDark 0 0 0 3px;
-    border: none;
+    border: none; color: $font-color;
   }
   &:focus{
-    box-shadow:$grayDark 0 0 0 1px, $importantColor 0 0 0 3px;
+    box-shadow:$grayDark 0 0 0 2px, #fff 0 0 0 3px, $grayDark 0 0 0 4px;
   }
 
   &.on {
@@ -247,26 +247,7 @@
       background: $primaryColor; box-shadow: $primaryColor 0 0 0 3px;
     }
     &:focus{
-      box-shadow:$primaryColor 0 0 0 1px, $lightColor 0 0 0 3px;
+      box-shadow:$primaryColor 0 0 0 2px, #fff 0 0 0 3px, $primaryColor 0 0 0 4px;
     }
   }
 }
-
-
-// // 顯示密碼
-// .viewIcon{
-//   display: inline-block; vertical-align: top; cursor: pointer;
-//   margin:4px 2px 0;
-//   background: none; border: none; outline: none;
-//   text-indent: -10em; overflow: hidden;
-//   width: 42px; height: 42px; border-radius: 50%;  
-//   background: lighten($grayDark, 25%) url(../images/icon_eye.png) no-repeat center center;
-//   background-size: 32px; transition: .2s;
-//   &:hover{ 
-//     background-color: $grayDark;
-//   }
-//   &:focus{
-//     background-color: $primaryColor;
-//     box-shadow: $primaryColor 0 0 0 2px;
-//   }
-// }
