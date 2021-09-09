@@ -6,7 +6,7 @@ table.formLayout{
     vertical-align: top;
     &:nth-child(odd){text-align: right; padding: 1.15em 8px 6px 0; width: 20%;font-weight: bold;}
     &:nth-child(even){padding:6px 0;}
-    outline: 1px dashed plum;
+    // outline: 1px dashed lightblue;
   }
 
   p.hint{ 
@@ -19,38 +19,32 @@ table.formLayout{
 
   // ＊＊＊  table 的設定 viewport 寬度是由大而小
   @media screen and (max-width: $wwNormal - 1px ){
-    display: block; width: auto;
-    tr, td{ display: block; box-sizing: border-box;}
+    display: block; 
+    tbody, tr, td{display: block; box-sizing: border-box;}
     td{
-      &:nth-child(odd){width: auto; text-align: left; padding: 1.6em 6px 0; }
+      &:nth-child(odd){width: auto; text-align: left; padding: 1.6em 6px 0;}
       &:nth-child(even){padding:3px 0;}
     }
   }
-  @media screen and (max-width: $wwMedium - 1){
-    td{
-      // width: 92vw;
 
-    }
-  }
 }
 
 // ＊＊＊ formLayout 內的表單元件和模組，行動版優先
 .formLayout td{
+  textarea,
+  input.full,
+  select.full,
+  &>select.half,
+  &>input.half{width: calc(100% - 8px);}
 
   @media screen and (min-width: $wwMedium){
-    textarea,
-    input.full,
-    select.full,
-    &>select:only-of-type,
-    &>input.half:only-of-type{width: 98%;}
   }
   @media screen and (min-width: $wwNormal){
 
     textarea {width: 90%;}
-    .duration{ width: calc(90% + 6px);}
 
     input.full{ width: 90%;}
-    select.full{ width: calc(90% - 32px); width: 90%;}
+    select.full{ /* width: calc(90% - 32px);  */width: 90%;}
 
     input.half{ width: 45%;}
     select.half{ width: 45%;}
@@ -64,16 +58,23 @@ table.formLayout{
 
 }
 
-// 通用表格樣式Ａ
+// 通用表單樣式Ａ
 .formA{
-  @extend %mainSection;
-  box-shadow: #0003 0 0 8px 1px;
-
-  fieldset {
-    &+.btnDv{border-top: none;}
+  @extend %mainSection; padding: 0;
+  
+  fieldset { 
+    margin: 0 auto 2em; padding: 0 3vw 20px;
+    &+.btnDv{border-top: none; padding-top: 0;}
   }
-
+  
   p{line-height: 1.7;}
+  
+  @media screen and (min-width: $wwMedium){
+  }
+  @media screen and (min-width: $wwNormal){
+    box-shadow: #0003 0 0 8px 1px;
+    padding: 40px 4vw 50px;
+  }
 
 }
 
@@ -92,7 +93,7 @@ table.formLayout{
     margin: 0 0 .5em; padding: 0; text-align: center; 
     line-height: 1.2; font-size: 1.8em; letter-spacing: 5px; font-weight: normal;
   }
-  
+
   .formLayout{
     td{
       input{width: calc(96% - 50px);}

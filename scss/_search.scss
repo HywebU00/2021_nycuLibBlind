@@ -48,7 +48,7 @@
 
 
 
-////////// 進階查詢 //////////
+// 進階查詢 ============================================
 .searchAdv{ 
   @extend %mainSection;
   padding:0 0 30px;margin: 0 auto;
@@ -58,11 +58,11 @@
   }
 
   @media screen and (min-width: $wwMedium){
+  }
+  
+  @media screen and (min-width: $wwNormal){
     box-shadow: #0003 0 0 8px 1px;
     padding: 30px 3vw; 
-  }
-
-  @media screen and (min-width: $wwNormal){
     .customizeSearch{ width: 90%; margin: 0 auto 30px;}
   }
 

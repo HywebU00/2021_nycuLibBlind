@@ -195,24 +195,18 @@ fieldset {
   }
   legend {
     font-weight: normal; font-size: 1.4em; 
-    padding: 9px .8em 8px; margin: 0 0 1em; line-height: 1.1;
+    padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
     border: 2px solid $border-color-light;
     border-radius: 2em;
-
   }
-}
-// 註冊新帳號:系統使用權限申請
-fieldset.authority{
-  table.formLayout{
-    td:first-child{width: 35%; padding-right: 1em;}
-    tr{border-bottom: 1px solid $border-color-light;
-      &:last-child{border-bottom: none;}
-    }
+
+  @media screen and (min-width: $wwNormal){
+    legend{margin-bottom: 1em;}
   }
 }
 
-// 各種表單元件組合 //////////////////////////////
 
+// 各種表單元件組合 =====================================
 // 必填欄位星號 //
 .required{
   text-decoration: none;color: $importantColor ;
@@ -233,31 +227,6 @@ label.readAndAgree{
   input{margin-top: -3px;}
 
 }
-
-
-// 日期區間 //
-.duration{
-  background: #eef;
-  display: flex; flex-wrap: wrap;
-  &::before{
-    flex: 0 0 1.5em;width: 1.5em;
-    content: '至'; height: 2em; line-height: 3.4em;
-    order: 1;  text-align: center;
-  }
-  input{
-    flex:0 1 calc(100% - 3em);
-  }
-  input:last-child{ order: 2;}
-
-  @media screen and (min-width: 360px ){
-    max-width: 32em; flex-wrap: nowrap;
-    input{flex:1 1 calc(50% - 3em); cursor: pointer; min-width:0;}
-  }
-}
-.searchAdv{
-  .duration{ max-width: 92vw;}
-}
-
 
 
 // 驗證碼，captcha //
@@ -310,7 +279,6 @@ label.readAndAgree{
 }
 
 
-
 // checkbox, radio 選項群組 //
 .optionGroup{
   margin:0 3px;
@@ -329,6 +297,31 @@ label.readAndAgree{
 .formLayout td .optionGroup{ width: 90%;}
 
 
+// 日期區間 //
+.duration{
+  display: flex; flex-wrap: wrap;
+  &::before{
+    flex: 0 0 1.5em;width: 1.5em;
+    content: '至'; height: 2em; line-height: 3.4em;
+    order: 1;  text-align: center;
+  }
+  input{ flex:0 1 calc(100% - 2em);}
+  input:last-child{ order: 2; }
+
+  @media screen and (min-width: 360px ){
+    flex-wrap: nowrap;
+    input{flex:1 1 calc(50% - 3em); cursor: pointer; min-width:0;}
+  }
+  @media screen and (min-width: $wwMedium){
+    max-width: 32em; 
+  }
+}
+
+.formA fieldset .duration{
+  width:calc(86vw - 4px);
+}
+
+
 // 地址組 //
 .addressSet{
   // background: #eec;
@@ -336,17 +329,19 @@ label.readAndAgree{
   select{flex: 1 1 45%;}
   input[type="text"] {flex: 1 1 90%}
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwMedium){
     select{flex: 1 1 10%;}
     input[type="text"] {flex: 1 1 60%}
+  }
+}
+.formLayout td .addressSet{
+  margin: 0 2px;
+  @media screen and (min-width: $wwNormal){
+    width: calc(90% + 6px); margin: 0;
+  }
+}
 
-  }
-}
-@media screen and (min-width: $wwNormal){
-  .formLayout td .addressSet{
-    width: calc(90% + 6px);
-  }
-}
+
 
 
 
