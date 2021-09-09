@@ -1,10 +1,51 @@
 table.formLayout{
   margin: 0 auto; width: 100%; line-height: 1.5;
   border: none; border-collapse: collapse;
-  td{  vertical-align: top;
+
+  td{
+    vertical-align: top;
     &:nth-child(odd){text-align: right; padding: 1.15em 8px 6px 0; width: 20%;font-weight: bold;}
     &:nth-child(even){padding:6px 0;}
-   
+    outline: 1px dashed plum;
+  }
+
+  p.hint{ 
+    font-size: .9rem; line-height: 1.4; color: #bd0975;
+    margin: .2em 3px .5em;
+    em{ font-style: normal; color: $importantColor;}
+  }
+
+  & ~ .btnDv{ margin-top: 2em; }
+
+  // ＊＊＊  table 的設定 viewport 寬度是由大而小
+  @media screen and (max-width: $wwNormal - 1px ){
+    display: block; width: auto;
+    tr, td{ display: block; box-sizing: border-box;}
+    td{
+      &:nth-child(odd){width: auto; text-align: left; padding: 1.6em 6px 0; }
+      &:nth-child(even){padding:3px 0;}
+    }
+  }
+  @media screen and (max-width: $wwMedium - 1){
+    td{
+      // width: 92vw;
+
+    }
+  }
+}
+
+// ＊＊＊ formLayout 內的表單元件和模組，行動版優先
+.formLayout td{
+
+  @media screen and (min-width: $wwMedium){
+    textarea,
+    input.full,
+    select.full,
+    &>select:only-of-type,
+    &>input.half:only-of-type{width: 98%;}
+  }
+  @media screen and (min-width: $wwNormal){
+
     textarea {width: 90%;}
     .duration{ width: calc(90% + 6px);}
 
@@ -16,32 +57,11 @@ table.formLayout{
 
     input.quarter{ width: 22%;}
     select.quarter{ width: calc(22% - 32px);}
-  }
-  p.hint{ 
-    font-size: .9rem; line-height: 1.4; color: #bd0975;
-    margin: .2em 3px .5em;
-    em{ font-style: normal; color: $importantColor;}
+
+
   }
 
-  & ~ .btnDv{ margin-top: 2em; }
 
-  @media screen and (max-width: $wwNormal - 1px ){
-    tr, td{ display: block;}
-    td{
-      // outline: 1px solid #ccf;
-      &:nth-child(odd){width: auto; text-align: left; padding: 1.6em 6px 0; }
-      &:nth-child(even){padding:3px 0;}
-
-      textarea,
-      input.full,
-      select.full,
-      &>select:only-of-type,
-      &>input.half:only-of-type{width: 98%;}
-      
-      // .duration{ width: calc(98% + 6px);}
-      .duration, .optionGroup, .addressSet { width:  calc(98% + 6px);}
-    }
-  }
 }
 
 // 通用表格樣式Ａ
@@ -58,7 +78,7 @@ table.formLayout{
 }
 
 
-////////// formRow //////////
+// formRow：非表格排版的表單用 
 .formRow{
   margin: 4px auto;
 }
@@ -72,8 +92,7 @@ table.formLayout{
     margin: 0 0 .5em; padding: 0; text-align: center; 
     line-height: 1.2; font-size: 1.8em; letter-spacing: 5px; font-weight: normal;
   }
-
-
+  
   .formLayout{
     td{
       input{width: calc(96% - 50px);}

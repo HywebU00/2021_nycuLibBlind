@@ -211,20 +211,20 @@ fieldset.authority{
   }
 }
 
-// 各種標單元件組合 //////////////////////////////
+// 各種表單元件組合 //////////////////////////////
 
-////////// 必填欄位星號 //////////
+// 必填欄位星號 //
 .required{
   text-decoration: none;color: $importantColor ;
   font-size: 1.3em;line-height: .6; margin-right: 3px;
 }
 
-////////// 單獨存在的 checkbox //////////
+// 單獨存在的 checkbox //
 label.singleCheck{
  padding: 0; margin: 3px; line-height: 2.4em; line-height: 2.4; line-height: 1.5;
 }
 
-////////// 單獨存在的區塊型 checkbox //////////
+// 單獨存在的區塊型 checkbox //
 label.readAndAgree{
   display: block; margin: 3em auto; padding:.65em 1em .6em;
   border-radius: 4px;
@@ -234,40 +234,33 @@ label.readAndAgree{
 
 }
 
-////////// 表單送出按鈕群 //////////
-// .btnDv{
-//   clear:both; text-align:center;
-//   margin:0 auto;padding: 1.3em 0 5px;
-//   border-top: 1px solid $border-color;
-//   input[type="button"], input[type="submit"], input[type="reset"], button {
-//     margin: 4px; min-width: 6em;
-//     &:only-child{min-width: 10em;}
-//   }
-//   .button{
-//     &>a{margin: 4px; min-width: 6em;}
-//     &:only-child>a{min-width: 10em;}
-//   }
-//   input[type="button"], input[type="submit"], input[type="reset"], 
-//   button{&:only-child{min-width: 10em;}}
-// }
 
-////////// 日期區間 //////////
+// 日期區間 //
 .duration{
-  display: flex; max-width: 32em;
+  background: #eef;
+  display: flex; flex-wrap: wrap;
   &::before{
     flex: 0 0 1.5em;width: 1.5em;
     content: '至'; height: 2em; line-height: 3.4em;
     order: 1;  text-align: center;
   }
   input{
-    flex:0 1 calc(50% - .6em); cursor: pointer;
+    flex:0 1 calc(100% - 3em);
   }
   input:last-child{ order: 2;}
+
+  @media screen and (min-width: 360px ){
+    max-width: 32em; flex-wrap: nowrap;
+    input{flex:1 1 calc(50% - 3em); cursor: pointer; min-width:0;}
+  }
+}
+.searchAdv{
+  .duration{ max-width: 92vw;}
 }
 
 
 
-////////// 驗證碼，captcha //////////
+// 驗證碼，captcha //
 .captchaSet{
   display: flex; flex-flow: row wrap; align-items: center;
   margin: 10px 0;
@@ -318,7 +311,7 @@ label.readAndAgree{
 
 
 
-////////// checkbox, radio 選項群組 //////////
+// checkbox, radio 選項群組 //
 .optionGroup{
   margin:0 3px;
   label{
@@ -336,7 +329,7 @@ label.readAndAgree{
 .formLayout td .optionGroup{ width: 90%;}
 
 
-////////// 地址組 //////////
+// 地址組 //
 .addressSet{
   // background: #eec;
   display: flex; flex-flow: row wrap;
@@ -361,72 +354,8 @@ label.readAndAgree{
 
 
 
-////////// 進階查詢 //////////
-.searchAdv{ 
-  @extend %mainSection;
-  box-shadow: #0003 0 0 8px 1px;
 
-  .customizeSearch{
-    border-bottom: 1px dashed $border-color;
-    margin: 0 auto; padding: 0 0 15px;
-  }
-
-  @media screen and (min-width: $wwMedium){
-  }
-
-  @media screen and (min-width: $wwNormal){
-    .customizeSearch{ width: 90%; margin: 0 auto 30px;}
-  }
-
-}
-
-////////// 進階查詢：自訂查詢欄位 //////////
-.customizeSearch{
-  .flexRow{
-    display: flex; flex-flow: row wrap;
-    justify-content: flex-start; align-items: center;
-    margin: 3px 0 20px;
-    &:first-child{
-      flex-wrap: nowrap;
-      select {flex: 0 1 30%;}
-      input[type="text"]{flex: 1 0 60%;}
-    }
-    select{flex: 0 0 calc(50% - 58px);}
-    input[type="text"]{flex: 0 0 calc(100% - 110px);}
-
-    button{flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;
-      &.delete, &.add{
-        background-image: url(../images/icons.png);
-        background-repeat: no-repeat;
-        background-size: 44px auto;
-      }
-      &.add { background-position: center -100px;}
-      &.delete { background-position: center -150px;}
-    }
-  }
-  @media screen and (min-width: $wwMedium){
-    .flexRow{ flex-wrap: nowrap;
-      &:first-child{
-        &::before{
-          content: ''; margin: 3px; height: 5px;
-          flex: 0 0 12%; width: 12%;
-        }
-        select {flex: 0 0 12%;}
-        input[type="text"]{flex: 0 0 calc(76% - 140px);}
-      }
-      input[type="text"]{flex: 0 0 calc(76% - 140px);}
-      select{flex: 0 0 12%;}
-      button{flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;}
-    }
-  }
-  @media screen and (min-width: $wwNormal){
-    .flexRow:nth-child(n){
-      input[type="text"]{flex: 0 0 calc(76% - 120px);}
-    }
-  }
-}
-
-////////// 證號輸入（忘記密碼） //////////
+// 證號輸入（忘記密碼） //
 .idInput{
   margin: 1.5em auto;
 
