@@ -13,7 +13,7 @@
 .more{
   font-size: .94em; margin: 20px 5px 0;
   a{
-    float: right; position: relative; 
+    float: right; position: relative;  
     text-decoration: none; color: $font-color;
     height: 3em; line-height: 3em; padding: 0 3.4em 0 1em; border-radius: 1.5em;
     transition: .2s; outline: none;
@@ -30,7 +30,7 @@
     }
     &:hover, &:focus{
       box-shadow: $primaryColor 0 0 0 2px;
-      background-color: $primaryColor; color: #fff;
+      background-color: $primaryColor; color: #fff !important;
       &::before{ box-shadow:none;}
     }
   }

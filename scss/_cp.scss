@@ -1,15 +1,15 @@
 .cp{
-  
+  @extend %mainSection; padding: 0;
+  .pageHeader{text-align: left; letter-spacing: normal;}
 }
 
 
 
 // 最新消息內容頁
-.article{
-  @extend %mainSection;
-  padding: 0; line-height: 1.8;
+.cpArticle{
+  // @extend %mainSection;
+  line-height: 1.8;
 
-  .pageHeader{text-align: left; letter-spacing: normal;}
   
   .imgContainer{ display: block; margin: 0 0 1.5em;
     img{display: block; width: 100%;}
@@ -36,11 +36,11 @@
   p{margin: 0 0 1em; }
 
 
-  h3, h4, h5, h6{ margin: 2.5rem 0 .5em; padding: 0; line-height: 1.2;}
+  h3, h4, h5, h6{ margin: 2.5rem 0 .5em; padding: 0; line-height: 1.2; }
 
   h3{ font-size: 1.5em;}
   h4{ font-size: 1.3em;}
-  h5{ font-size: 1.1em;}
+  h5{ font-size: 1.15em;}
   h6{ font-size: 1em;}
   
   @media screen and (min-width: $wwMedium){
@@ -60,11 +60,9 @@
 
 // 檔案下載、相關連結
 .attachment, .seeAlso{
-  @extend %mainSection;
-  padding:30px 0; 
-  margin: 0 auto;
-  // outline: 1px solid pink;
-  h3{ 
+   padding:30px 0; margin: 0 auto;
+  h3{
+    font-size: 1.5em; font-weight: normal; letter-spacing: 3px;
     margin: 0 0 1em; padding: 0; line-height: 1.5;
     border-bottom: 3px solid $border-color-light;
   }
@@ -74,8 +72,10 @@
   }
   ul, ol{list-style: none; line-height: 1.4; margin: 0; padding: 0;}
   li{ margin: 0; padding: 0;}
-
 }
+.article + .attachment,
+.article + .seeAlso{ margin-top: 3em; }
+
 // 檔案下載
 .attachment{
   li{ position: relative;padding:0 0 3px 24px;margin: .5em 0 1em;
@@ -97,15 +97,15 @@
 }
 // 相關連結
 .seeAlso{
-  li{ margin: 0 0 .8em; word-break: break-word; 
+  li{ margin: 0 0 1em; word-break: break-word; 
     a{
-      display: block; padding:.5em 0 2px 24px ;
+      display: block; padding:.2em 0 2px 24px ;
       position: relative; 
       border-bottom: $border-color dotted 1px;
       &:hover{ border-bottom: 1px solid $border-color-dark; }
       &:focus{ border-bottom: 1px solid $primaryColor; }
       &::before{
-        content: ''; position: absolute; left: 5px; top: .86em;
+        content: ''; position: absolute; left: 5px; top: .6em;
         width: 6px; height: 6px;  border: 3px solid $primaryColor;
         transform: rotate(45deg); border-left: none; border-bottom: none;
       }
@@ -123,12 +123,12 @@
 .fileType{color:#fff;font-weight: normal;
   &.zip{background:#444;}
   &.pdf{background:#c00;}
-  &.doc, &.docx, &.odt{background:#1f609e;}
+  &.doc, &.docx, &.odt{background:#1b4e9a;}
   &.xls, &.xlsx, &.csv, &.ods{background:#297c17;}
-  &.ppt, &.pptx,&.odp{background:#ec7500;}
-  &.jpg, &.png{background:#78b410;}
+  &.ppt, &.pptx,&.odp{background:#a03f03;}
+  &.jpg, &.png{background:#558306;}
   &.mp3, &.mp4{background:#6747b1;}
-  &.mov, &.wmv{background:#55bbfd;}
-  &.txt{background:#999;}
+  &.mov, &.wmv{background:#07667b;}
+  &.txt{background:#666;}
   &.other{background:#ddd;color:#444;}
 }
