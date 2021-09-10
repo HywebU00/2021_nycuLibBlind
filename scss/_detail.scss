@@ -98,7 +98,6 @@
   dt{
     color: $font-color-light;
     &::after{content: ''; display: inline-block; width: 7px; height:7px; 
-      // border-style: solid; border-width: 6px 0 6px 8px; border-color: transparent transparent transparent $primaryColor;
       border-radius: 50%; background-color: $primaryColor;
       vertical-align: top; margin: .55em .5em 0;
     }

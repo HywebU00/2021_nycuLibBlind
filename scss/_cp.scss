@@ -1,0 +1,134 @@
+.cp{
+  
+}
+
+
+
+// 最新消息內容頁
+.article{
+  @extend %mainSection;
+  padding: 0; line-height: 1.8;
+
+  .pageHeader{text-align: left; letter-spacing: normal;}
+  
+  .imgContainer{ display: block; margin: 0 0 1.5em;
+    img{display: block; width: 100%;}
+  }
+
+  a{ color: $linkColor; border-bottom: 1px solid $linkColor; text-decoration: none; outline: none;
+    &:hover, &:focus{ text-decoration: none; border-bottom-color: $primaryColor; color: $primaryColor;}
+    &:focus{outline: 1px solid $primaryColor;}
+  }
+
+  table{width:100%;margin:.2em auto;border-collapse:collapse;line-height:1.8;border:2px solid $border-color;
+    caption{font-weight:bold;text-align:left;font-size:1em;padding:.4em .5em;text-align:left;}
+    th, td{vertical-align:top;padding:.4em .5em;border:1px solid $border-color;}
+    th[scope="row"]{text-align:right;vertical-align:top;width:15%;}
+    th[scope="col"]{text-align:center;vertical-align:middle;}
+    &.noBorder{width:auto;margin:2em;border:none;
+      th, td{border:none;padding:0}
+    }
+  }
+
+  ul, ol{margin:0 0 1em 2em;padding:0;}
+  li{margin:0 0 .5em 0;}
+
+  p{margin: 0 0 1em; }
+
+
+  h3, h4, h5, h6{ margin: 2.5rem 0 .5em; padding: 0; line-height: 1.2;}
+
+  h3{ font-size: 1.5em;}
+  h4{ font-size: 1.3em;}
+  h5{ font-size: 1.1em;}
+  h6{ font-size: 1em;}
+  
+  @media screen and (min-width: $wwMedium){
+    .imgContainer{
+      float: left; margin: .3em 15px 10px 0;
+      img{max-width: 46vw;max-height: 56vw;}
+    } 
+  }
+  
+  @media screen and (min-width: $wwNormal){
+    .imgContainer{
+      img{max-width: 460px;max-height: 560px;}
+    }
+  }
+}
+
+
+// 檔案下載、相關連結
+.attachment, .seeAlso{
+  @extend %mainSection;
+  padding:30px 0; 
+  margin: 0 auto;
+  // outline: 1px solid pink;
+  h3{ 
+    margin: 0 0 1em; padding: 0; line-height: 1.5;
+    border-bottom: 3px solid $border-color-light;
+  }
+  a{ color: $font-color; text-decoration: none; outline: none;
+    &:hover{ color: $font-color-dark;}
+    &:focus{ color: $primaryColor;}
+  }
+  ul, ol{list-style: none; line-height: 1.4; margin: 0; padding: 0;}
+  li{ margin: 0; padding: 0;}
+
+}
+// 檔案下載
+.attachment{
+  li{ position: relative;padding:0 0 3px 24px;margin: .5em 0 1em;
+
+    &::before{
+      content: ''; position: absolute; left: 6px; top: 8px;
+      width: 8px; height: 8px; background-color: $primaryColor;
+      box-shadow: $gray 2px 3px 0;
+    }
+    a{
+      display: inline; word-break: break-word;
+      margin: 0 5px 0 0; padding: 0 2px;
+      border-bottom: 1px solid $border-color-light;
+      &:hover{border-bottom-color: $border-color-dark; }
+      &:focus{border-bottom-color: $primaryColor; border-bottom-width: 2px;}
+    }
+  }
+
+}
+// 相關連結
+.seeAlso{
+  li{ margin: 0 0 .8em; word-break: break-word; 
+    a{
+      display: block; padding:.5em 0 2px 24px ;
+      position: relative; 
+      border-bottom: $border-color dotted 1px;
+      &:hover{ border-bottom: 1px solid $border-color-dark; }
+      &:focus{ border-bottom: 1px solid $primaryColor; }
+      &::before{
+        content: ''; position: absolute; left: 5px; top: .86em;
+        width: 6px; height: 6px;  border: 3px solid $primaryColor;
+        transform: rotate(45deg); border-left: none; border-bottom: none;
+      }
+    }
+  }
+}
+
+// 檔案格式與檔案大小
+.fileType, .fileSize{
+  display:inline-block;margin:0 .2em;padding:0 .4em;
+  min-width:2.4em;height:1.6em;line-height:1.6em;font-size:1em;
+  border-radius:4px;vertical-align:middle;text-align: center; cursor: default;
+}
+.fileSize{color:#333;border: 1px solid #ccc;box-sizing: border-box;}
+.fileType{color:#fff;font-weight: normal;
+  &.zip{background:#444;}
+  &.pdf{background:#c00;}
+  &.doc, &.docx, &.odt{background:#1f609e;}
+  &.xls, &.xlsx, &.csv, &.ods{background:#297c17;}
+  &.ppt, &.pptx,&.odp{background:#ec7500;}
+  &.jpg, &.png{background:#78b410;}
+  &.mp3, &.mp4{background:#6747b1;}
+  &.mov, &.wmv{background:#55bbfd;}
+  &.txt{background:#999;}
+  &.other{background:#ddd;color:#444;}
+}

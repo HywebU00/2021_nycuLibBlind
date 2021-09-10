@@ -6,23 +6,37 @@
   border: 1px solid $border-color;
   ul.list, ol.list{list-style: none; margin: 0; padding: 0;}
   .list{
+    line-height: 1.7;
     &>li{
-      position: relative; padding: 1.6em 0 1.6em 2.6em;
+      position: relative; padding: 1.6em 0 1.6em 2.8em;
       border-top: 1px solid $border-color-light;
       &:first-child{ border-top: none;}
+
+      &::after{content: ''; display: block; clear: both;}
 
       a{ 
         color: $font-color; outline: none;
         &:hover, &:focus{ color: $primaryColor; text-decoration: none;}
         &:focus{ outline: 1px solid $importantColor;}
       }
-      .title{ font-size: 1.2rem;
+      .title{ font-size: 1.2rem; display: block; margin-bottom: 10px;
         a{display: block;}
+      }
+      .date{ display: block; margin: .5em 0 0;
+        time{display: inline-block;
+          &::before{content: '：';}
+        }
       }
       .number{
         font-size: 1.05rem; line-height: 1.8;
         position: absolute; top: auto; left: -.5em; width: 2.6em; text-align: right;
         &::after{content: '.';}
+      }
+
+      .brief{ margin: 25px 0 0;}
+      .imgContainer{
+        display: block; margin: 15px 0 10px;
+        img{ display: block; width: 100%; }
       }
     }
 
@@ -49,11 +63,28 @@
     }
   }
 
+  // 沒有序號
+  &.unordered{
+    .list{
+      &>li{
+        padding-left: 2vw; padding-right: 2vw;
+        .title{font-size: 1.5em; line-height: 1.5;}
+      }
+    }
+
+  }
+  
 
   @media screen and (min-width: $wwMedium){
     .list{
       &>li{ padding-left: 4em;
         .number{ left: 0; width: 3em;}
+
+        .brief{ overflow: hidden;}
+        .imgContainer{
+          float: left; margin: .3em 15px 15px 0;
+          img{max-width: 300px;max-height: 300px;}
+        }
       }
     }
     .pubInfo{
