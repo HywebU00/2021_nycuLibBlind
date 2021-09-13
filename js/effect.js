@@ -1,6 +1,7 @@
 $(function(){
 
-  var _body = $('body, html');
+  var _html = $('html');
+  var _body = $('body');
   var _window = $(window);
 
   var ww = _window.width();
@@ -15,6 +16,8 @@ $(function(){
 
   const speed = 400;
   const speedFaster = 200;
+
+  _html.removeClass('no-js');
 
 
   // 主選單（桌機版）
@@ -101,7 +104,7 @@ $(function(){
 
 
 
-  // 輔助偏好設定
+  // 輔助偏好設定開合
   var _assistantCtrl = $('.assistant>a');
   var _astPreferences = $('.assistant').find('.preferences');
   var _options = _astPreferences.find('.fontSize, .colorSet');
@@ -112,7 +115,8 @@ $(function(){
   _options.each(function(){
     let _this = $(this);
     let _optionItems = _this.find('li>a');
-    _optionItems.click(function(){
+    _optionItems.click(function(e){
+      e.preventDefault();
       $(this).parent().addClass('active').siblings().removeClass('active');
     })
   })
@@ -145,8 +149,27 @@ $(function(){
   _closePref.focusout( function(e){
     _astPreferences.stop(true, false).slideUp(hideSpeed);
   });
-  
 
+
+
+
+
+  // 輔助偏好設定：文字大小
+  var _prefFontSize = _options.filter('.fontSize').children('li').children('a');
+  _prefFontSize.click(function(e){
+    let fontSize = $(this).parent().attr('class').replace(' active','');
+    // console.log(fontSize);
+    if ( fontSize ==  "small") {
+      _html.removeClass().addClass('smallFont');
+    } else if (fontSize ==  "large") {
+      _html.removeClass().addClass('largeFont');
+    } else {
+      _html.removeClass();
+    }
+
+  })
+
+  
 
 
 
@@ -196,7 +219,7 @@ $(function(){
 	var _goTop = $('.goTop');
   _goTop.click(function(e){
     e.preventDefault();
-    _body.stop(true,false).animate({scrollTop: 0}, 600);
+    _html.stop(true,false).animate({scrollTop: 0}, 600);
   });
 
 	$(window).scroll(function() {
