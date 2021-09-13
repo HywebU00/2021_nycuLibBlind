@@ -217,7 +217,8 @@
   position: absolute; right: 12px;top: 20px;
   margin: 0; padding: 0; background: none; border: none; outline: none;
   font-size: .88em; line-height: 25px; width: 52px; height: 24px;
-  text-indent: calc(-100% - 12px); text-align: left; color: $font-color;
+  text-indent: calc(-100% - 1em); text-align: left; color: $font-color;
+  text-indent: -4.5em;
   background: $grayDark; border-radius: 12px;
   box-shadow: $grayDark 0 0 0 2px;
   &::before {

@@ -128,24 +128,11 @@ $(function(){
       _astPreferences.stop(true, false).slideUp(hideSpeed);
     }
   });
-  // _assistantCtrl.keyup( function(e){
-  //   if( e.which == 9 ){
-  //     if ( _astPreferences.is(':hidden') ) {
-  //       _astPreferences.stop(true, false).slideDown();
-  //     } else {
-  //       _astPreferences.stop(true, false).slideUp(hideSpeed);
-  //     }
-  //   }
-  // });
 
   _closePref.click( function(){ 
     _astPreferences.stop(true, false).slideUp(hideSpeed);
   });
-  // _closePref.keyup(function(e){
-  //   if( e.which == 13 ){
-  //     _astPreferences.stop(true, false).slideUp(hideSpeed);
-  //   }
-  // });
+
   _closePref.focusout( function(e){
     _astPreferences.stop(true, false).slideUp(hideSpeed);
   });
@@ -158,19 +145,57 @@ $(function(){
   var _prefFontSize = _options.filter('.fontSize').children('li').children('a');
   _prefFontSize.click(function(e){
     let fontSize = $(this).parent().attr('class').replace(' active','');
+    e.preventDefault();
     // console.log(fontSize);
     if ( fontSize ==  "small") {
       _html.removeClass().addClass('smallFont');
+      createCookie('FontSize', 'small', 356);
     } else if (fontSize ==  "large") {
       _html.removeClass().addClass('largeFont');
+      createCookie('FontSize', 'large', 356);
     } else {
       _html.removeClass();
+      createCookie('FontSize', 'normal', 356);
     }
+  });
 
-  })
+  function createCookie(name, value, days) {
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      var expires = '; expires=' + date.toGMTString();
+    } else expires = '';
+    document.cookie = name + '=' + value + expires + '; path=/';
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  window.onload = function () {
+    var cookie = readCookie('FontSize');
+    if (cookie == 'small') {
+      _prefFontSize.parent().removeClass('active').filter('.small').addClass('active');
+      _html.removeClass().addClass('smallFont');
+    } else if (cookie == 'large') {
+      _prefFontSize.parent().removeClass('active').filter('.large').addClass('active');
+      _html.removeClass().addClass('largeFont');
+    } else {
+      //這裡是預設宣告
+      _prefFontSize.parent().removeClass('active').filter('.normal').addClass('active');
+      _html.removeClass();
+    }
+  }
+
 
   
-
 
 
   // 產生「下載中」動畫的圓點元件

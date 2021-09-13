@@ -1,0 +1,28 @@
+$primaryColor: #eee; //主色
+$secondaryColor: #333; //輔色
+$lightColor: #fe6; //點綴
+$linkColor: #6eccff; //連結文字顏色
+$importantColor: #d22eff; //重要
+$bodyBgc: #000; //body 背景色
+
+
+$font-color: #ccc;
+$font-color-light:#a6a6a6;
+$font-color-dark:#fff;
+$invert-font:#000;
+
+$border-color: #555;
+$border-color-light: #222;
+$border-color-dark:#888;
+
+$btn-bg1: $primaryColor ;
+$btn-bg2:lighten($primaryColor, 12%);
+
+$gray: #222;
+$grayLight: #131313;
+$grayDark: #aaa;
+
+
+.mpSearch, .lpSearch{
+ border:1px  solid $border-color-dark;
+}

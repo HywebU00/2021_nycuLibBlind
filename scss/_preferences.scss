@@ -68,21 +68,21 @@
           // &:hover{box-shadow: none !important; border-radius: 4px;}
         }
       }
-      &.color1>a{background-color: #000; color: #fe0;
-        // &:hover{ box-shadow: #000 0 0 0 2px; }
+      &.color1>a{
+        background-color: #000; color: #fff;
       }
-      &.color2>a{background-color: #fe0; color: #000;
-        // &:hover{ box-shadow: #fe0 0 0 0 2px; }      
+      &.color2>a{
+        background-color: #eddfb0; color: #000;
       }
-      &.color3>a{background-color: #000; color: #fff;
-        // &:hover{ box-shadow: #000 0 0 0 2px; }      
+      &.color3>a{
+        background-color: #000; color: #fe0;
       }
-      &.color4>a{background-color: #214b65; color: #fff;
-        // &:hover{ box-shadow: #214b65 0 0 0 2px; }      
+      &.color4>a{
+        background-color: #214b65; color: #fff;
       }
-      &.color0>a{background-color: #fff; color: #000;
+      &.color0>a{
+        background-color: #fff; color: #000;
         border: $gray 1px solid;
-        // &:hover{ box-shadow: #fff 0 0 0 1px inset, $gray 0 0 0 2px; }      
       }
 
     }

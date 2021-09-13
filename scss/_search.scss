@@ -1,6 +1,6 @@
 // 文章查詢 ============================================
 .mpSearch, .lpSearch{
-  background: #fff;
+  background: $bodyBgc;
   input[type="button"], input[type="submit"] {
     background-color: $secondaryColor; color: $primaryColor;
     border-color: $secondaryColor;
@@ -32,7 +32,7 @@
 .mpSearch{@extend %mpBlock;
   padding: 40px 4vw;
   margin-top: 0;
-  box-shadow: #0006 0 8px 25px -8px;
+  // box-shadow: #0006 0 8px 25px -8px;
   @media screen and (min-width: $wwNormal){
     margin-top: 50px; padding: 40px 5vw;
   }
@@ -40,7 +40,7 @@
 // 在查詢結果上方
 .lpSearch{@extend %mainSection;
   margin: 0 auto 30px; padding: 20px 4vw;
-  box-shadow: #0003 0 0 8px;
+  // box-shadow: #0003 0 0 8px;
   @media screen and (min-width: $wwMedium){
     padding: 30px 4vw;
   }

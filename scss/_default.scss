@@ -1,10 +1,15 @@
-html{ font-size: 1em;}
+html{ font-size: 1em;
+
+  &.smallFont{ font-size: .8125em;}
+  &.largeFont{ font-size: 1.375em;}
+}
 body{
   position: relative;
   margin: 0;padding: 0; font-family:'微軟正黑體', Arial, Helvetica, sans-serif;
   color: $font-color; 
   overflow-y: scroll;
   background-color: $bodyBgc;
+  
 
   &.noScroll{
     overflow: hidden; overflow-y:hidden;
@@ -14,14 +19,5 @@ body{
 a{cursor: pointer;}
 .main{
   position: relative; padding: 30px 0 0;
-  &.mp{
-    background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
-  }
-  @media screen and (min-width: $wwNormal){
-    &.mp{
-      background: url(../images/mpBg.jpg) no-repeat center 0;
-      background-size: 100% auto;
-    }
-  }
 }
 h1, h2, h3, h4, h5, h6{color: $font-color-dark;}

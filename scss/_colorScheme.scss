@@ -9,6 +9,7 @@ $bodyBgc: #fff; //body 背景色
 $font-color: #333;
 $font-color-light:#595959;
 $font-color-dark:#000;
+$invert-font:#fff;
 
 
 $border-color: #aaa;
@@ -22,3 +23,22 @@ $gray: #ddd;
 $grayLight: #ececec;
 $grayDark: #555;
 
+
+.main{
+  &.mp{
+    background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
+  }
+  @media screen and (min-width: $wwNormal){
+    &.mp{
+      background: url(../images/mpBg.jpg) no-repeat center 0;
+      background-size: 100% auto;
+    }
+  }
+}
+
+.mpSearch{
+  box-shadow: #0006 0 8px 25px -8px;
+}
+.lpSearch{
+  box-shadow: #0003 0 0 8px;
+}
