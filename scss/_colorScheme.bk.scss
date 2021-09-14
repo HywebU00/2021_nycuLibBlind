@@ -1,0 +1,46 @@
+$primaryColor: #9B3938; //主色
+$secondaryColor: #F5D5B5; //輔色
+$lightColor: #ffcc33; //點綴
+$linkColor: #015e98; //連結文字顏色
+$importantColor: #da0b00; //重要
+$bodyBgc: #fff; //body 背景色
+
+
+$font-color: #333;
+$font-color-light:#595959;
+$font-color-dark:#000;
+$invert-font:#fff;
+
+
+$border-color: #aaa;
+$border-color-light: #ddd;
+$border-color-dark:#777;
+
+$btn-bg1: $primaryColor ;
+$btn-bg2:darken($primaryColor, 12%);
+
+$gray: #ddd;
+$grayLight: #ececec;
+$grayDark: #555;
+
+
+
+
+.main{
+  &.mp{
+    background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
+  }
+  @media screen and (min-width: $wwNormal){
+    &.mp{
+      background: url(../images/mpBg.jpg) no-repeat center 0;
+      background-size: 100% auto;
+    }
+  }
+}
+
+.mpSearch{
+  box-shadow: #0006 0 8px 25px -8px;
+}
+.lpSearch{
+  box-shadow: #0003 0 0 8px;
+}

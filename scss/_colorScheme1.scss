@@ -6,7 +6,7 @@ $importantColor: #d22eff; //重要
 $bodyBgc: #000; //body 背景色
 
 
-$font-color: #ccc;
+nth($font-color, $style): #ccc;
 $font-color-light:#a6a6a6;
 $font-color-dark:#fff;
 $invert-font:#000;
