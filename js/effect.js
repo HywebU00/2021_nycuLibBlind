@@ -146,7 +146,6 @@ $(function(){
   _prefFontSize.click(function(e){
     let fontSize = $(this).parent().attr('class').replace(' active','');
     e.preventDefault();
-    // console.log(fontSize);
     if ( fontSize ==  "small") {
       _html.removeClass().addClass('smallFont');
       createCookie('FontSize', 'small', 356);
@@ -158,6 +157,19 @@ $(function(){
       createCookie('FontSize', 'normal', 356);
     }
   });
+
+
+  // 輔助偏好設定：更換配色
+  var _prefColorset = _options.filter('.colorSet').children('li').children('a');
+  _prefColorset.click(function(e){
+    let colorSet = $(this).parent().attr('class').replace(' active','');
+    e.preventDefault();
+    _body.removeClass('color0 color1 color2 color3 color4').addClass(colorSet);
+  });
+
+
+  
+
 
   function createCookie(name, value, days) {
     if (days) {
@@ -195,7 +207,12 @@ $(function(){
   }
 
 
-  
+
+
+
+
+
+
 
 
   // 產生「下載中」動畫的圓點元件
