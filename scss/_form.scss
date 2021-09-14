@@ -10,7 +10,7 @@
   border: 1px solid $border-color;
   vertical-align: middle;
   font-size: inherit;
-  background-color: #fff;
+  background-color: $bodyBgc;
 
   &:hover{border-color: $border-color-dark;}
   &:focus{border-color: $btn-bg1;box-shadow: $btn-bg1 0 0 0 1px;outline: none;}

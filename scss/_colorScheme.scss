@@ -15,6 +15,8 @@ $invert-font:#fff;
 $border-color: #aaa;
 $border-color-light: #ddd;
 $border-color-dark:#777;
+$shadow:#0003;
+$shadow2:#0006;
 
 $btn-bg1: $primaryColor ;
 $btn-bg2:darken($primaryColor, 12%);
@@ -25,475 +27,481 @@ $grayDark: #555;
 
 // =============================================== 顏色變換
 
-$site: color0, color1, color2;
+// $site: color0, color1, color2;
 // $primaryColor: #9B3938, #fff, #9B3938; //主色
 // $secondaryColor: #F5D5B5, #000, #F5D5B5; //輔色
 // $font-color:#000,#fff,#ff0; //文字顏色
 // $invert-font:#fff, #000, #000; //反白字
 // $bodyBgc: #fff, #000, #13437e;  //背景顏色
 
-body{
-  // ---------------------------------------------------------color0
-  &.color0{ 
-    $style: index($site, color0);
-    background-color: nth($bodyBgc, $style);
-    color: nth($font-color, $style);
+ // ---------------------------------------------------------color0
+.color0{ 
+  // $style: index($site, color0);
+  // background-color: nth($bodyBgc, $style);
+  // color: nth($font-color, $style);
 
-    a{ color: nth($font-color, $style);}
-    h1, h2, h3, h4, h5, h6{color: nth($font-color, $style);}
+  // a{ color: nth($font-color, $style);}
+  // h1, h2, h3, h4, h5, h6{color: nth($font-color, $style);}
 
-    .main{
+  .main{
+    &.mp{
+      background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
+    }
+    @media screen and (min-width: $wwNormal){
       &.mp{
-        background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
-      }
-      @media screen and (min-width: $wwNormal){
-        &.mp{
-          background: url(../images/mpBg.jpg) no-repeat center 0;
-          background-size: 100% auto;
-        }
+        background: url(../images/mpBg.jpg) no-repeat center 0;
+        background-size: 100% auto;
       }
     }
-    
-    .mpSearch{
-      box-shadow: #0006 0 8px 25px -8px;
-    }
-    .lpSearch{
-      box-shadow: #0003 0 0 8px;
-    }
-
-
-
-    .accesskey{color: darken(nth($bodyBgc, $style), 60%);}
-    .webFooter .accesskey{  color: darken(nth($bodyBgc, $style), 40%);}
-    .breadcrumb {
-      color:lighten(nth($font-color, $style), 40) ;
-    }
-
-    .goCenter{
-      color: nth($font-color, $style); 
-    }
-
-    .switchOnOff{
-      color: nth($font-color, $style);
-      &:hover, &:focus{color: nth($font-color, $style);}
-    }
-
-    .preferences{
-      a{color: nth($font-color, $style);}
-    }
-
-    .notice{
-      &>a, p a{ color: nth($font-color, $style); text-decoration: underline;}
-    }
-
-
-    .tabs { 
-      .tabItem{
-        color: nth($font-color, $style); 
-        &>button{&:hover{color: nth($font-color, $style);}}
-      }
-    }
-
-    .newArrival{
-      .list>li{
-        background: nth($bodyBgc, $style);
-        &>a{
-
-          color: nth($font-color, $style);
-        }
-      }
-    }
-    
-    .popularity{
-      .rank{
-        &>li a{ color: nth($font-color, $style); }
-      }
-    }
-
-    .more a{color: nth($font-color, $style);}
-
-    .attachment, .seeAlso{
-      a{ color: nth($font-color, $style); }
-    }
-
-    .mpSearch, .lpSearch{
-      background: nth($bodyBgc, $style);
-    }
-
-    .grid{
-      a{color: nth($font-color, $style);}
-      .list>li{
-        .date time{
-          color: nth($font-color, $style);
-        }
-      }
-    }
-    
-    .stack{
-      .list>li a{
-        color: nth($font-color, $style);
-      }
-    }
-
-
-    .playInfo{
-      ul.info{
-        li{
-          &.icon_download>a{color: nth($font-color, $style);}
-        }
-      }
-    }
-
-    .playGuide{
-      .label{color: nth($invert-font, $style);}
-    }
-
-    .playInfo {
-      color: nth($font-color, $style);
-    }
-
-    .thisMag {
-      .headerGroup {
-        .date {
-          time {
-            color: nth($font-color, $style);
-          }
-        }
-      }
-    }
-
-    .linkBtn>a{
-      color: nth($font-color, $style);
-    }
-
+  }
   
+
+
+}
+// ---------------------------------------------------------color1
+
+
+
+.color1{
+  $primaryColor: #000; //主色
+  $secondaryColor: #fff; //輔色
+  $bodyBgc: #000; //body 背景色
+
+  $font-color: #ccc;
+  $font-color-light:#aaa;
+  $font-color-dark:#fff;
+  $invert-font:#000;
+
+  $border-color: #888;
+  $border-color-light: #444;
+  $border-color-dark:#bbb;
+  $shadow:#fff3;
+  $shadow2:#fff6;
+  
+  $btn-bg1: $secondaryColor ;
+  $btn-bg2:darken($primaryColor, 12%);
+
+  $gray: #ddd;
+  $grayLight: #ececec;
+  $grayDark: #555;
+
+
+  // ----------- ^_^ ----------- //
+  background-color:$bodyBgc;
+  color:$font-color;
+  a{color:$font-color;}
+  h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
+
+
+  .webHeader{
+    .topLinks>ul>li>a{ color: $font-color;
+      &::after{background-color: $secondaryColor;}
+    }
+
+    @media screen and (min-width: $wwNormal){
+      .menu{
+        background:lighten($primaryColor, 20%) ; 
+        li{ 
+          a{ color: $secondaryColor;
+            &:hover, &:focus{ background-color: $primaryColor;}
+          }
+          &.hasChild{
+            &>a{ 
+              &::after{
+                border-color: $secondaryColor;
+              }
+            }
+          }
+        }
+        &>ul{ 
+          ul{ 
+            background: $secondaryColor; box-shadow: $shadow2 0 2px 24px 2px;
+            &>li{ 
+              border-bottom-color: $border-color-dark;
+              &::before{ 
+                background-color: lighten($primaryColor, 40%); 
+              }
+              &>a{ 
+                color: $primaryColor;
+                &:hover, &:focus {color: $secondaryColor; }
+              }
+              &.hasChild{
+                a{
+                  &::after{border-color: $primaryColor;}
+                  &:hover::after, &:focus::after{ border-color: $secondaryColor;}
+                }
+              }
+            }
+          }
+        }
+      }
+      }
   }
 
-  // ---------------------------------------------------------color1
-  &.color1{
-    $primaryColor: #000; //主色
-    $secondaryColor: #fff; //輔色
-    $bodyBgc: #000; //body 背景色
+  .mpSearch{
+    box-shadow: $border-color  0 0 0 1px;
+  }
+  
+  .lpSearch{
+    box-shadow: $shadow 0 8px 25px;
+  }
+  .accesskey{color: darken($bodyBgc, 60%);}
+  .webFooter .accesskey{  color: darken($bodyBgc, 40%);}
+  .breadcrumb {
+    color:lighten($font-color, 40) ;
+  }
 
-    $font-color: #ccc;
-    $font-color-light:#aaa;
-    $font-color-dark:#fff;
-    $invert-font:#000;
+  .more a{color: $font-color-dark;
+    &::before{
+      background: $bodyBgc;
+      box-shadow: $border-color 0 0 0 2px inset;
+      }
+    &::after{ border-color: $font-color-dark}
+    &:hover, &:focus{
+      box-shadow:invert($bodyBgc) 0 0 0 2px;
+      background-color: $font-color-dark; color: $invert-font;
+      &::before{ box-shadow:none;}
+    }
+  }
 
-    $border-color: #555;
-    $border-color-light: #222;
-    $border-color-dark:#888;
-    
 
 
-/* 
-    // $style: index($site, color1);
-    // background-color: nth($bodyBgc, $style);
-    // color: nth($font-color, $style);
-    // a{ color: nth($font-color, $style);}
-    // h1, h2, h3, h4, h5, h6{color: nth($font-color, $style);}
- */
+  .goCenter{
+    color:$font-color; 
+  }
 
-    background-color:$bodyBgc;
+  .switchOnOff{
     color:$font-color;
+    &:hover, &:focus{color: $font-color;}
+  }
+
+  .preferences{
     a{color:$font-color;}
-    h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
+  }
+
+  .notice{
+    &>a, p a{ color: $font-color; }
+  }
 
 
-    .webHeader{
-      .topLinks>ul>li>a{ color: $font-color;
-        &::after{background-color: $secondaryColor;}
+  .tabs{
+    .tabItem{ 
+      a{
+        background-color: $grayDark; color: $font-color-dark;
+        &:hover { background-color: lighten($grayDark, 8%)}
       }
-
-      @media screen and (min-width: $wwNormal){
-        .menu{
-          background: $primaryColor; box-shadow: $border-color-dark 0 0 0 1px;
-          li a{ color: $secondaryColor;}
-        } 
-      }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .mpSearch , .lpSearch{
-      box-shadow: #ccc 0 0 0 1px;
-    }
-    .accesskey{color: darken($bodyBgc, 60%);}
-    .webFooter .accesskey{  color: darken($bodyBgc, 40%);}
-    .breadcrumb {
-      color:lighten($font-color, 40) ;
-    }
-
-
-
-    .goCenter{
-      color:$font-color; 
-    }
-
-    .switchOnOff{
-      color:$font-color;
-      &:hover, &:focus{color: $font-color;}
-    }
-
-    .preferences{
-      a{color:$font-color;}
-    }
-
-    .notice{
-      &>a, p a{ color: $font-color; }
-    }
-
-
-    .tabs { 
-      .tabItem{
-        color:$font-color; 
-        &>button{&:hover{color:$font-color;}}
-      }
-    }
-
-    .newArrival {
-      .list>li {background: $bodyBgc;
-        &>a {color: $font-color;}
-      }
-    }
-    
-    .popularity{
-      .rank{
-        &>li a{ color: $font-color; }
-      }
-    }
-
-    .more a{color: $font-color;}
-
-    .attachment, .seeAlso{
-      a{ color: $font-color; }
-    }
-
-    .mpSearch, .lpSearch{
-      background: $bodyBgc;
-    }
-
-    .grid{
-      a{color: $font-color;}
-      .list>li{
-        .date time{
-          color: $font-color;
-        }
-      }
-    }
-    
-    .stack{
-      .list>li a{
-        color: $font-color;
-      }
-    }
-
-
-    .playInfo{
-      ul.info{
-        li{
-          &.icon_download>a{color: $font-color;}
+      &.active{
+        a{background-color: $font-color-dark; color: $invert-font;
+          &:focus{background-color: darken($font-color-dark, 20%);  color: $invert-font;}
         }
       }
     }
 
-    .playGuide{
-      .label{color: $invert-font;}
+    .tabContent{
+      border-top-color: $font-color-dark;
     }
 
-    .playInfo {
-      color: $font-color;
+  }
+
+
+
+  .newArrival {
+    .list>li {background: $bodyBgc;
+      &>a {
+        background: $bodyBgc; color: $font-color;
+        box-shadow: $border-color 0 0 0 1px;
+        &:hover, &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 20px 2px; }
+        &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 0 5px; }
+
+      }
+    }
+  }
+  
+  .popularity{
+
+    .rank{ 
+      &>li{border-bottom-color: $border-color-light;
+        a{ color: $font-color; }
+      }
+      .ranking{ 
+        background-color:invert($bodyBgc); color: $invert-font; 
+      }
+      .title{ 
+        a{ 
+          &::after{
+            background-color: $font-color-dark;
+          }
+          &:focus{box-shadow:$border-color 0 0 0 1px;}
+        }
+      }
+      .article{
+        a{ 
+          &::before{
+            border-color: transparent transparent transparent $font-color-dark;
+          }
+          &:hover{
+            box-shadow:$border-color 0 0 0 1px;
+          }
+          &:focus{
+            box-shadow:$font-color-dark 0 0 0 1px;
+          }
+
+        }
+      }
+      .count{
+        color: $font-color-light; 
+        em{ 
+         color: $font-color-dark;
+        }
+      }
     }
 
-    .thisMag {
-      .headerGroup {
-        .date {
-          time {
-            color: $font-color;
+    // 頁籤
+    .tabs{
+      .tabItem{ 
+        a{
+          // background-color: lighten($bodyBgc, 70%); color:$primaryColor;
+          background: none;
+          border: 1px solid $border-color; border-bottom: none; color: $font-color;
+          &:hover {border-color: $font-color-dark; }
+        }
+        &.active{
+          a{background-color: $font-color-dark; color: $invert-font; border: none;
+            // &:focus{outline: 1px solid #f00;}
           }
         }
       }
+
+      .tabContent{
+        border-top-color: $font-color-dark;
+      }
+
     }
 
-    .linkBtn>a{
+
+
+
+  }
+
+
+
+  .attachment, .seeAlso{
+    a{ color: $font-color; }
+  }
+
+  .mpSearch, .lpSearch{
+    background: $bodyBgc;
+  }
+
+
+
+  .grid{
+    a{color: $font-color;}
+    .list>li{
+      .date time{
+        color: $font-color;
+      }
+    }
+  }
+  
+  .stack{
+    .list>li a{
       color: $font-color;
     }
   }
 
-  // ---------------------------------------------------------color2
-  &.color2{
-    $font-color:#ff0; //文字顏色
-    $invert-font: #000; //反白字
-    $bodyBgc:  #13437e;  //背景顏色
 
+  .playInfo{
+    ul.info{
+      li{
+        &.icon_download>a{color: $font-color;}
+      }
+    }
+  }
 
-    // $style: index($site, color2);
-    background-color: $bodyBgc;
+  .playGuide{
+    .label{color: $invert-font;}
+  }
+
+  .playInfo {
     color: $font-color;
+  }
 
-    h1, h2, h3, h4, h5, h6{color: $font-color;}
-
-    .accesskey {
-      color: darken($bodyBgc, 60%);
-    }
-
-    .webFooter .accesskey {
-      color: darken($bodyBgc, 40%);
-    }
-
-    .breadcrumb {
-      color: lighten($font-color, 40);
-    }
-
-    .goCenter {
-      color:
-        $font-color;
-    }
-
-    .switchOnOff {
-      color:
-        $font-color;
-
-      &:hover,
-      &:focus {
-        color:
-          $font-color;
-      }
-    }
-
-    .preferences {
-      a {
-        color:
-          $font-color;
-      }
-    }
-
-    .notice {
-
-      &>a,
-      p a {
-        color:
-          $font-color;
-        text-decoration: underline;
-      }
-    }
-
-    .tabs {
-      .tabItem {
-        color: $font-color;
-
-        &>button {
-          &:hover {
-            color: $font-color;
-          }
-        }
-      }
-    }
-
-    .newArrival {
-      .list>li {
-        background: $bodyBgc;
-
-        &>a {
+  .thisMag {
+    .headerGroup {
+      .date {
+        time {
           color: $font-color;
         }
       }
     }
+  }
 
-    .popularity {
-      .rank {
-        &>li a {
-          color: $font-color;
-        }
-      }
-    }
-
-    .more a {
-      color: $font-color;
-    }
-
-    .attachment,
-    .seeAlso {
-      a {
-        color: $font-color;
-      }
-    }
-
-    .mpSearch,
-    .lpSearch {
-      background: $bodyBgc;
-    }
-
-    .grid {
-      a {
-        color: $font-color;
-      }
-
-      .list>li {
-        .date time {
-          color: $font-color;
-        }
-      }
-    }
-
-    .stack {
-      .list>li a {
-        color: $font-color;
-      }
-    }
-
-    .playInfo {
-      ul.info {
-        li {
-          &.icon_download>a {
-            color: $font-color;
-          }
-        }
-      }
-    }
-
-    .playGuide {
-      .label {
-        color: $invert-font;
-      }
-    }
-
-    .playInfo {
-      color: $font-color;
-    }
-
-    .thisMag {
-      .headerGroup {
-        .date {
-          time {
-            color: $font-color;
-          }
-        }
-      }
-    }
-
-    .linkBtn>a {
-      color: $font-color;
-    }
-    }
-
+  .linkBtn>a{
+    color: $font-color;
+  }
 }
 
 
 
+ // ---------------------------------------------------------color2
+.color2 {
+  $font-color: #ff0; //文字顏色
+  $invert-font: #000; //反白字
+  $bodyBgc: #13437e; //背景顏色
+  // $style: index($site, color2);
+  background-color: $bodyBgc;
+  color: $font-color;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $font-color;
+  }
 
+  .accesskey {
+    color: darken($bodyBgc, 60%);
+  }
 
-// ===============================================
+  .webFooter .accesskey {
+    color: darken($bodyBgc, 40%);
+  }
 
+  .breadcrumb {
+    color: lighten($font-color, 40);
+  }
 
+  .goCenter {
+    color:
+      $font-color;
+  }
+
+  .switchOnOff {
+    color:
+      $font-color;
+
+    &:hover,
+    &:focus {
+      color:
+        $font-color;
+    }
+  }
+
+  .preferences {
+    a {
+      color:
+        $font-color;
+    }
+  }
+
+  .notice {
+
+    &>a,
+    p a {
+      color:
+        $font-color;
+      text-decoration: underline;
+    }
+  }
+
+  .tabs {
+    .tabItem {
+      color: $font-color;
+
+      &>button {
+        &:hover {
+          color: $font-color;
+        }
+      }
+    }
+  }
+
+  .newArrival {
+    .list>li {
+      background: $bodyBgc;
+
+      &>a {
+        color: $font-color;
+      }
+    }
+  }
+
+  .popularity {
+    .rank {
+      &>li a {
+        color: $font-color;
+      }
+    }
+  }
+
+  .more a {
+    color: $font-color;
+  }
+
+  .attachment,
+  .seeAlso {
+    a {
+      color: $font-color;
+    }
+  }
+
+  .mpSearch,
+  .lpSearch {
+    background: $bodyBgc;
+  }
+
+  .grid {
+    a {
+      color: $font-color;
+    }
+
+    .list>li {
+      .date time {
+        color: $font-color;
+      }
+    }
+  }
+
+  .stack {
+    .list>li a {
+      color: $font-color;
+    }
+  }
+
+  .playInfo {
+    ul.info {
+      li {
+        &.icon_download>a {
+          color: $font-color;
+        }
+      }
+    }
+  }
+
+  .playGuide {
+    .label {
+      color: $invert-font;
+    }
+  }
+
+  .playInfo {
+    color: $font-color;
+  }
+
+  .thisMag {
+    .headerGroup {
+      .date {
+        time {
+          color: $font-color;
+        }
+      }
+    }
+  }
+
+  .linkBtn>a {
+    color: $font-color;
+  }
+}
