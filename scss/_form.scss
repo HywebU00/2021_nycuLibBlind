@@ -7,9 +7,9 @@
   padding: 0 .8em;
   margin: 3px;
   border-radius: 4px;
-  border: 1px solid $border-color;
   vertical-align: middle;
   font-size: inherit;
+  border: 1px solid $border-color;
   background-color: $bodyBgc;
 
   &:hover{border-color: $border-color-dark;}
@@ -93,11 +93,11 @@ input[type="button"] {
     background-color: $btn-bg2;
     border-color: $btn-bg2;
     box-shadow: $btn-bg2 0 0 0 1px;
-    color: #fff;
+    color: $invert-font;
   }
   &:focus{
     background-color: $btn-bg1;
-    border-color: #fff;
+    border-color: $invert-font;
     box-shadow: $btn-bg1 0 0 0 2px;
   }
 }
@@ -125,7 +125,8 @@ input[type="checkbox"] {
 input[type="radio"] {
   border-radius: 50%;
   &:focus, &:checked{
-    border-color: #fff; border-width: 2px;
+    border-width: 2px;
+    border-color: $bodyBgc;
     box-shadow:$primaryColor 0 0 0 3px;
     background-color: $primaryColor;
   }
@@ -244,7 +245,7 @@ label.readAndAgree{
     flex: 0 1 auto; padding: 0 .8em 0 50px; margin: 12px 3px 3px;
     height: 44px; line-height: 45px; 
     border: none; border-radius: 24px;
-    background-color: #fff; color: #333;
+    background-color: $bodyBgc; color: $font-color;
     box-shadow: $border-color 0 0 0 1px;
     transition: .2s;
     i{ 

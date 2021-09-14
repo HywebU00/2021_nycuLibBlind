@@ -72,15 +72,15 @@ $grayDark: #555;
   $font-color-dark:#fff;
   $invert-font:#000;
 
-  $border-color: #888;
+  $border-color: #777;
   $border-color-light: #444;
   $border-color-dark:#bbb;
   $shadow:#fff3;
   $shadow2:#fff6;
   
-  $btn-bg1: $secondaryColor ;
-  $btn-bg2:darken($primaryColor, 12%);
-
+  $btn-bg1: $primaryColor ;
+  $btn-bg2:lighten($primaryColor, 15%);
+  
   $gray: #ddd;
   $grayLight: #ececec;
   $grayDark: #555;
@@ -135,8 +135,102 @@ $grayDark: #555;
           }
         }
       }
-      }
+    }
+
+
+    
   }
+  
+  // 表單元件
+  %textInput {
+    background-color: $bodyBgc;
+    border-color: $border-color;
+    color: $font-color;
+    &:hover{border-color: $border-color-dark;}
+    &:focus{border-color: $border-color-dark;box-shadow: $border-color 0 0 0 3px;}
+  
+  }
+  %selectStyle {
+    background-color: $bodyBgc;
+    border-color: $border-color;
+    color: $font-color;
+
+    &:hover{border-color: $border-color-dark;}
+    &:focus{border-color: $border-color-dark; box-shadow: $border-color 0 0 0 3px;outline: none;}
+  
+  }
+
+  $disabled-color: #999;
+
+  // 按鈕樣式
+  .button>a,
+  button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    border-color: $border-color;
+    color: $font-color-dark;
+    background-color: $primaryColor;
+    &:hover {
+      border-color: $border-color-dark;
+      box-shadow: $border-color 0 0 12px 1px;
+    }
+    &:focus{
+      background-color: $btn-bg1;
+      border-color: $border-color-dark;
+      box-shadow: $border-color 0 0 0 3px;
+    }
+  }
+
+  // radio 和 checkbox
+  input[type="radio"],
+  input[type="checkbox"] { border-color: $grayDark;  }
+  input[type="radio"] {
+    &:focus, &:checked{
+      border-color: $bodyBgc;
+      box-shadow: $secondaryColor 0 0 0 3px;
+      background-color: $secondaryColor;
+    }
+  }
+  input[type="checkbox"]{ 
+    border-radius: 3px;
+    border: 1px solid $grayDark;
+    &:checked{
+      background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
+      background-size: 96%;
+      box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+    }
+    &:focus{box-shadow: $primaryColor 0 0 0 2px, darken($lightColor, 15%) 0 0 0 4px ; border-color: #fff;}
+  }
+
+
+  .captchaSet{
+    button{
+      box-shadow: $border-color 0 0 0 1px; 
+      i{background-color: $primaryColor;}
+
+      &:hover{
+        box-shadow: $border-color-dark 0 0 0 1px, $border-color-dark 0 0 12px 1px;
+      }
+      &:focus{
+        box-shadow: $border-color-dark 0 0 0 1px, $border-color 0 0 0 4px;
+      }
+    }
+  }
+
+  // checkbox, radio 選項群組 //
+  .optionGroup{
+    label{
+      &:hover{ color: $font-color-dark; box-shadow: $border-color-light 0 0 0 1px;}
+    }
+  }
+
+
+
+  // 表單元件：結束
+
+
+
 
   .mpSearch{
     box-shadow: $border-color  0 0 0 1px;
@@ -147,8 +241,13 @@ $grayDark: #555;
   }
   .accesskey{color: darken($bodyBgc, 60%);}
   .webFooter .accesskey{  color: darken($bodyBgc, 40%);}
+
   .breadcrumb {
-    color:lighten($font-color, 40) ;
+    color: $font-color;
+    a{color: $font-color-dark;
+      &:hover{border-bottom-color: $font-color-dark;}
+      &:focus{box-shadow: $border-color 0 0 0 1px inset; border-bottom-color:transparent; color:$font-color-dark;}
+}
   }
 
   .more a{color: $font-color-dark;
