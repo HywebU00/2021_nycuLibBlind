@@ -237,25 +237,25 @@ $grayDark: #555;
   }
 
   // radio 和 checkbox
-  input[type="radio"],
-  input[type="checkbox"] { border-color: $grayDark;  }
-  input[type="radio"] {
-    &:focus, &:checked{
-      border-color: $bodyBgc;
-      box-shadow: $secondaryColor 0 0 0 3px;
-      background-color: $secondaryColor;
-    }
-  }
-  input[type="checkbox"]{ 
-    border-radius: 3px;
-    border: 1px solid $grayDark;
-    &:checked{
-      background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
-      background-size: 96%;
-      box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
-    }
-    &:focus{box-shadow: $primaryColor 0 0 0 2px, darken($lightColor, 15%) 0 0 0 4px ; border-color: #fff;}
-  }
+  // input[type="radio"],
+  // input[type="checkbox"] { border-color: $grayDark;  }
+  // input[type="radio"] {
+  //   &:focus, &:checked{
+  //     border-color: $bodyBgc;
+  //     box-shadow: $secondaryColor 0 0 0 3px;
+  //     background-color: $secondaryColor;
+  //   }
+  // }
+  // input[type="checkbox"]{ 
+  //   border-radius: 3px;
+  //   border: 1px solid $grayDark;
+  //   &:checked{
+  //     background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
+  //     background-size: 96%;
+  //     box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+  //   }
+  //   &:focus{box-shadow: $primaryColor 0 0 0 2px, darken($lightColor, 15%) 0 0 0 4px ; border-color: #fff;}
+  // }
 
 
   .captchaSet{
@@ -278,7 +278,7 @@ $grayDark: #555;
   // radio 和 checkbox
   input[type="radio"],
   input[type="checkbox"] {
-  border: 1px solid $gray;
+  border-color: $border-color;
   }
   input[type="radio"] {
     &:focus, &:checked{
@@ -288,14 +288,12 @@ $grayDark: #555;
     }
   }
   input[type="checkbox"]{ 
-    // border: 1px solid $gray;
-    background: #000;
+    background: transparent;
     &:checked{
       background: $bodyBgc url(../images/icon_check.svg) no-repeat center center;
-      // background-size: 96%;
-      box-shadow: #fff 0 0 0 2px; border-color: transparent;
+      box-shadow: $border-color-dark 0 0 0 2px; border-color: transparent;
     }
-    &:focus{box-shadow: $primaryColor 0 0 0 2px, #fff 0 0 0 4px ; border-color: transparent;}
+    &:focus{box-shadow: $bodyBgc 0 0 0 2px, $lightColor 0 0 0 4px ; border-color: transparent;}
   }
 
   // checkbox, radio 選項群組 //
@@ -380,7 +378,7 @@ $grayDark: #555;
   // 熱門文章排行榜（首頁）
   .popularity{
     .rank{ 
-      &>li{border-bottom-color: $border-color-light;
+      &>li{border-color: $border-color-light;
         a{ color: $font-color; }
       }
       .ranking{ 
@@ -617,6 +615,7 @@ $grayDark: #555;
 
   // on off 開關  
   .switchOnOff {
+    color: $font-color;
     background: #222; box-shadow: #222 0 0 0 2px;
     &:hover{
       background: #222; box-shadow:#222 0 0 0 2px;
@@ -757,171 +756,685 @@ $grayDark: #555;
 
 
 
-
-
  // --------------------------------- 顏色變換：color2
- .color2 {
+ .color2{
   $primaryColor: #9B3938; //主色
   $secondaryColor: #F5D5B5; //輔色
   $lightColor: #ff910b; //點綴
   $linkColor: #015e98; //連結文字顏色
   $importantColor: #d30097; //重要
-  $bodyBgc: #edead6; //body 背景色
+  $bodyBgc: #f4f2e4; //body 背景色
   
   
-  $font-color: #333;
+  $font-color: #4f4b48;
   $font-color-light:#595959;
   $font-color-dark:#000;
   $invert-font:#fff;
   
   
-  $border-color: #b3b1a5;
-  $border-color-light: #ddd;
-  $border-color-dark:#777;
+  $border-color: #acaa9d;
+  $border-color-light: #d7d6c7;
+  $border-color-dark:#7b7a72;
   $shadow:#0003;
   $shadow2:#0006;
   
   $btn-bg1: $primaryColor ;
   $btn-bg2:darken($primaryColor, 12%);
   
-  $gray: #ddd;
-  $grayLight: #ececec;
-  $grayDark: #555;
+  $gray: #b8b8af;
+  $grayLight: #d8d7cd;
+  $grayDark: #72726a;
 
-  
+
   // .......... ^_^ .......... //
-  background-color: $bodyBgc;
-  color: $font-color;
+  background-color:$bodyBgc; color:$font-color;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: $font-color;
+  a{color:$font-color;}
+  h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
+  ::selection{ background: invert($bodyBgc); color: $invert-font;}
+
+  // 輔助偏好設定
+  .preferences{
+    background: $bodyBgc; box-shadow: $shadow 0 0 25px;
+    .label{color: $font-color;}
+    // .colorSet>li.active{box-shadow:$lightColor 0 0 0 2px;}
   }
 
-  .accesskey {
-    color: darken($bodyBgc, 60%);
-  }
 
-  .webFooter .accesskey {
-    color: darken($bodyBgc, 40%);
-  }
+  // 版頭
+  .webHeader{
+    .topLinks>ul>li{
 
-  .breadcrumb {
-    color: lighten($font-color, 40);
-  }
+      &>a{ color: $font-color;
+        &::after{background-color: $primaryColor;}
+      }
 
-  .goCenter {
-    color:
-      $font-color;
-  }
+      @media screen and (max-width: $wwNormal - 1px){
+        &.assistant, &.loginBtn{
+          &>a{
+            background-color: lighten($grayLight, 18%);
+            &:hover, &:focus{
+              background-color: $grayLight;
+              box-shadow: $grayLight 0 0 0 2px;
+            }
+          }
+        }
+      }
 
-  .switchOnOff {
-    color:
-      $font-color;
-
-    &:hover,
-    &:focus {
-      color:
-        $font-color;
     }
-  }
 
-  .preferences {
-    a {
-      color:
-        $font-color;
-    }
-  }
-
-
-
-  .tabs {
-    .tabItem {
-      color: $font-color;
-
-      &>button {
-        &:hover {
-          color: $font-color;
+    @media screen and (min-width: $wwNormal){
+      .menu{
+        background: $primaryColor; 
+        li{
+          a{ color: $secondaryColor;
+            &:hover, &:focus{ background-color: darken($primaryColor, 12%);}
+          }
+          &.hasChild{
+            &>a{
+              &::after{border-color: $secondaryColor; }
+            }
+          }
+        }
+        &>ul{ 
+          ul{ background: $bodyBgc; box-shadow: $shadow2 0 0 20px;
+            &>li{ border-bottom: 1px solid $border-color-light;
+              &::before{ background-color: $primaryColor; }
+              &>a{ color: $font-color;
+                &:hover, &:focus {color:$invert-font; background: $primaryColor; }
+              }
+              &.hasChild{
+                a{
+                  &::after{ border-color: $primaryColor; }
+                  &:hover::after{ border-color: $invert-font;}
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 
-  .newArrival {
-    .list>li {
-      background: $bodyBgc;
+  // 漢堡選單
+  .sidebarCtrl{
+    background:#fff; 
+    &:hover, &:focus { background:$gray; box-shadow: none;}
+    &::before{
+      border-color:$primaryColor;
+    }
+    &::after{
+      background: $primaryColor;
+    }
 
-      &>a {
-        color: $font-color;
+    &.closeIt{
+      background: $gray;
+      &::before{
+        border-color: $primaryColor;
+      }
+      &:hover { background: lighten($gray, 20%);
       }
     }
+
+
   }
 
-  .popularity {
-    .rank {
-      &>li a {
-        color: $font-color;
+  // 行動版側欄選單
+  .sidebar{
+    background: $primaryColor; 
+  
+    // menu
+    .menu, .topLinks{
+      li{ border-color: transparentize($secondaryColor, .7);
+        a{ 
+          color: $secondaryColor;
+          &:hover{ background-color: darken($primaryColor, 8%);}
+        }
       }
-    }
-  }
-
-  .more a {
-    color: $font-color;
-  }
-
-  .attachment,
-  .seeAlso {
-    a {
-      color: $font-color;
-    }
-  }
-
-  .mpSearch,
-  .lpSearch {
-    background: $bodyBgc;
-  }
-
-  .grid {
-    a {
-      color: $font-color;
-    }
-
-    .list>li {
-      .date time {
-        color: $font-color;
-      }
-    }
-  }
-
-
-
-  .playInfo {
-    ul.info {
-      li {
-        &.icon_download>a {
-          color: $font-color;
+      &>ul{ 
+        &>li{
+          ul{
+            border-color: transparentize($secondaryColor, .7);
+            border-color: transparentize($secondaryColor, .7);
+          }
+        }
+        li.hasChild{
+          &>a{ 
+            &::after{border-color: $secondaryColor;}
+          }
         }
       }
     }
+  
+    // topLinks 
+    .topLinks{
+      border-color: $secondaryColor;
+    }
+
+  }
+  
+  // 表單元件
+  %textInput {
+    background-color: lighten($bodyBgc, 5%);
+    border-color: $border-color;
+    color: $font-color;
+    &:hover{border-color: $border-color-dark;}
+    &:focus{border-color:transparent; box-shadow: $primaryColor 0 0 0 2px;outline: none;}
+  
+  }
+  %selectStyle {
+    background-color: lighten($bodyBgc, 5%);
+    border-color: $border-color;
+    color: $font-color;
+
+    &:hover{border-color: $border-color-dark;}
+    &:focus{border-color:transparent; box-shadow: $primaryColor 0 0 0 2px; outline: none;}
+  
   }
 
-  .playGuide {
-    .label {
+  $disabled-color: #999;
+
+  // 按鈕樣式
+  .button>a, button,
+  input[type="submit"], input[type="reset"], input[type="button"]{
+    border-color: $primaryColor;
+    color: $invert-font;
+    background-color: $primaryColor;
+    &:hover, &:focus {
+      background-color: $btn-bg2;
+      border-color: $btn-bg2;
+    }
+    &:focus{
+      border-color: $secondaryColor;
+      box-shadow: $btn-bg1 0 0 0 2px;
+    }
+  }
+
+  // radio 和 checkbox
+  input[type="radio"],
+  input[type="checkbox"] { border-color:  $border-color; background-color: transparent;  }
+  input[type="radio"] {
+    &:focus, &:checked{
+      border-color: $border-color;
+      box-shadow: $secondaryColor 0 0 0 3px;
+      background-color: $primaryColor;
+    }
+  }
+  input[type="checkbox"]{
+    &:checked{
+      background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
+      background-size: 96%;
+      box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+    }
+    &:focus{box-shadow: $primaryColor 0 0 0 2px, $lightColor 0 0 0 4px ; border-color: #fff;}
+  }
+
+
+  .captchaSet{
+    button{
+      box-shadow: $border-color 0 0 0 1px;
+      background-color: $bodyBgc; color: $font-color;
+      i{background-color: $primaryColor;}
+
+      &:hover{
+        box-shadow: $border-color-dark 0 0 0 1px;
+      }
+      &:focus{
+        box-shadow: $border-color-dark 0 0 0 1px, $border-color 0 0 0 4px;
+        color: $font-color-dark;
+      }
+    }
+  }
+
+
+  // checkbox, radio 選項群組 //
+  .optionGroup{
+    label{
+      &:hover{ color: $font-color-dark; box-shadow: $border-color-light 0 0 0 1px;}
+    }
+  }
+
+  table.formLayout{
+    p.hint{ color: #8a0d43; }
+  }
+
+  button.viewIcon{
+    background-color: $grayDark;
+    &:hover{ 
+      background-color: $grayDark;
+      box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+    }
+    &:focus{
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+    }
+  }
+  // 表單元件：結束 //
+
+
+
+  // 快捷鍵
+  @media screen and (min-width: $wwNormal){
+    .accesskey{ color: $font-color;
+      &:focus{ outline: 2px solid $importantColor;}
+    }
+    .webFooter .accesskey{
       color: $invert-font;
     }
   }
 
-  .playInfo {
+
+  // 現在位置
+  .breadcrumb {
     color: $font-color;
+    a{color: $font-color-dark;
+      &:hover{border-bottom-color: $font-color-dark;}
+      &:focus{box-shadow: $border-color 0 0 0 1px inset; border-bottom-color:transparent; color:$font-color-dark;}
+    }
+  }
+
+  // more
+  .more a{color: $font-color-dark;
+    &::before{
+      background: $bodyBgc;
+      box-shadow: $border-color-light 0 0 0 2px inset;
+      }
+    &::after{ border-color: $primaryColor}
+    &:hover, &:focus{
+      box-shadow:$primaryColor 0 0 0 2px;
+      background-color: $primaryColor; color: $invert-font;
+      &::before{ box-shadow:none;}
+    }
+  }
+
+
+  // goTop 捲動到頁面最上方
+  .goTop{ 
+    a{ background-color: #6668;
+      &:hover, &:focus{
+        background-color: #555;
+      }
+      &:focus{box-shadow: $border-color 0 0 0 2px;}
+    }
+  }
+
+  // 跳到主內容區
+  .goCenter{
+    color:$font-color; 
   }
 
 
 
-}
+  // 新到卷期（首頁）
+  .newArrival {
+    .list>li {background: $bodyBgc;
+      &>a {
+        background: $bodyBgc; color: $font-color;
+        box-shadow: $border-color 0 0 0 1px;
+        &:hover, &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 20px 2px; }
+        &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 0 5px; }
+
+      }
+    }
+  }
+  
+  // 熱門文章排行榜（首頁）
+  .popularity{
+    .rank{ 
+      &>li{border-bottom-color: $border-color-light;
+        a{ color: $font-color; }
+      }
+      .ranking{ 
+        background-color:$primaryColor; color: $invert-font; 
+      }
+      .title{ 
+        a{ 
+          &::after{
+            background-color: $primaryColor;
+          }
+          &:focus{box-shadow:$primaryColor 0 0 0 1px;}
+        }
+      }
+      .article{
+        a{ 
+          &::before{
+            border-color: transparent transparent transparent $primaryColor;
+          }
+          &:hover{
+            box-shadow:$border-color 0 0 0 1px;
+          }
+          &:focus{
+            box-shadow:$primaryColor 0 0 0 1px;
+          }
+
+        }
+      }
+      .count{
+        color: $font-color-light; 
+        em{ 
+         color: $font-color-dark;
+        }
+      }
+    }
+
+    // 頁籤
+    .tabs{
+      .tabItem{ 
+        a{
+          background: $secondaryColor; color: $font-color;
+          &:hover {background: darken($secondaryColor, 8%); }
+        }
+        &.active{
+          a{background-color:  $primaryColor; color: $invert-font;
+            &:hover, &:focus{background-color: darken($primaryColor, 12%);}
+          }
+        }
+      }
+      .tabContent{
+        border-top-color:  $primaryColor;
+      }
+
+    }
+  }
+
+
+  // （首頁）文章查詢 與 條列頁上方查詢
+  .mpSearch, .lpSearch{
+    background: $bodyBgc; box-shadow: $shadow 0 0 32px;
+    input[type="button"], input[type="submit"] {
+      background-color: $secondaryColor; color: $primaryColor;
+      border-color: $secondaryColor;
+      &:hover{ box-shadow:$secondaryColor 0 0 0 2px }
+      &:focus{ box-shadow:$primaryColor 0 0 0 2px;}
+    }
+  }
+  .lpSearch{box-shadow: $shadow 0 0 12px;}
+
+
+  // 期刊瀏覽 
+  .grid{
+    a{color: $font-color;}
+    .list>li{
+      box-shadow: $border-color-light 0 0 0 1px;
+      &>a{
+        &:hover{ box-shadow: $border-color 0 0 0 1px, transparentize($font-color, .4) 0 0 24px;}
+        &:focus{box-shadow: $border-color-dark 0 0 0 1px, transparentize($font-color, .4) 0 0 0 5px;}
+      }
+      .title{
+        color: $font-color-dark;
+        a{ 
+          &:hover, &:focus{color: $font-color-dark;}
+          &:focus{ outline: 1px solid $border-color-dark;}
+        }
+      }
+      .date{ 
+        color: $font-color-light;
+        time{color: $font-color; }
+      }
+    }
+
+    @media screen and (min-width: $wwSlim){
+      .list>li{
+        .date{
+          time{
+            &::before{ color: $font-color-light;}
+          }
+        }
+      }
+    }
+  }
+
+
+  // 館藏查詢列表
+  .stack{
+    border-color: $border-color;
+    .list{
+      &>li{
+        border-color: $border-color-light;
+        .title a{
+          color: $font-color;
+          &:hover, &:focus{ color: $font-color-dark;}
+        }
+      }
+      .pubInfo{
+        li{
+          .dt{ color: $font-color-light;}
+        }
+      }
+    }
+  }
+
+  // 期刊詳細內容
+  .thisMag{
+    .headerGroup{ 
+      .date{
+        color: $font-color-light; 
+        time{
+          color: $font-color;
+        }
+      }
+    }
+  
+    .imgContainer{
+      box-shadow: invert($bodyBgc) 0 0 0 1px;
+    }
+
+  
+    @media screen and (min-width: $wwMedium){
+      .filter{border-color: $border-color-light;}
+    }
+  
+  }
+
+  .anArticle{
+    border-color: $border-color-light;
+    &:first-child{border-color: $border-color-light;}
+  
+    .type{
+      background-color: transparentize($font-color, .8);
+      border-color: $border-color-light;
+      &::before{ background-color:  $lightColor;}
+    }
+  
+    .articleHeader{
+      color: $font-color-dark;
+      a{
+        border-color: $border-color;
+       &:hover, &:focus{border-color:$lightColor;}
+       &:focus{outline: 1px solid $lightColor;}
+      }
+    }
+
+    dt{
+      color: $font-color-light;
+      &::after{background-color: $lightColor;}
+    }
+    dd{ color: $font-color-dark;  }
+   
+  }
+  
+
+  // 最新消息內容頁
+  .cpArticle{
+    a{color: $linkColor; border-color: $linkColor;
+      &:hover, &:focus{ border-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
+      &:focus{ outline-color: $border-color;}
+    }
+    table{border-color: $border-color;
+      th, td{border-color: $border-color;}
+    }
+  }
+
+  // cp頁，檔案下載、相關連結
+  .attachment, .seeAlso{
+    color: $font-color;
+    h3{border-color: $border-color-light;}
+    a{ color: $font-color;
+      &:hover{ color: $font-color-dark;}
+      &:focus{ color: $font-color-dark;}
+    }
+  }
+  // 檔案下載
+  .attachment{
+    li{ 
+      &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
+      a{border-color: $border-color-light;
+        &:hover{border-color: $border-color-dark; }
+        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+      }
+    }
+  }
+  // 相關連結
+  .seeAlso{
+    li{ 
+      a{
+        border-color: $border-color;
+        &::before{border-color: $border-color-dark;}
+        &:hover, &:focus{ border-color: $border-color-dark;}
+      }
+    }
+  }
+
+  // 檔案大小
+  .fileSize{color:$font-color-light; border: 1px solid $border-color-light;}
+
+
+  // 連結，像 button 樣式
+  .linkBtn {
+    &>a {
+      color: $font-color;  border-color: $border-color;
+      &:hover, &:focus {
+        border-color: transparent;
+      }
+      &:hover {
+        box-shadow: $border-color-dark 0 0 0 1px;
+      }
+      &:focus {
+        box-shadow: $border-color-dark 0 0 0 2px;
+      }
+    }
+  }
+
+  // on off 開關  
+  .switchOnOff {
+    color: $font-color;
+    background: $grayDark; box-shadow: $grayDark 0 0 0 2px;
+    &:hover{
+      background: $grayDark; box-shadow:$grayDark 0 0 0 2px;
+    }
+    &:focus{
+      background: $grayDark; 
+      box-shadow: $grayDark 0 0 0 4px;
+    }
+  }
+  
+  // ------ mp3檔案播放
+  // 快速鍵說明
+  .playGuide{
+    @media screen and (min-width: $wwNormal){
+      background: $grayDark; 
+      .label{color: $invert-font;}
+      dl{
+        &>div{background: $bodyBgc;}
+      }
+      dt{color: $invert-font; background:lighten($grayDark, 10%);}
+    }
+  }
+
+  // 控制開合的button
+  .slideCtrl{ background-color: $gray;
+    &::before{border-color: $grayLight; }
+    &:hover {background-color:$font-color-dark;}
+    &:focus{
+      background-color: $font-color-dark;
+      box-shadow: $font-color-dark 0 0 0 2px;
+    }
+  }
+
+  // 正在播放的檔案內容
+  .playInfo{
+    box-shadow: $border-color 0 0 0 1px;
+    ul.info{
+      li{
+        em{
+          color: $font-color;
+        }
+
+        &.clickCount{
+          color: $font-color-light;
+        }
+        &.icon_download{
+          &>a{
+            color: $font-color;box-shadow: $border-color 0 0 0 1px;
+            &::before{
+              background-color:$primaryColor;
+            }
+            &:hover{ box-shadow: $primaryColor 0 0 0 1px; }
+            &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
+          }
+        }
+      }
+    }
+
+    dl.info{
+      border-top-color: $border-color;
+      dt{
+        color: $font-color-light;
+      }
+    }
+
+    .description{
+      .label{color: $font-color-light;}
+    }
+
+
+  }
+
+  // 待播清單
+  .playList{ 
+    background-color: $grayLight;
+    box-shadow: $grayLight 0 0 0 1px;
+    color: $font-color;
+    a{color: $font-color-dark;}
+
+    &>ol, &>ul{
+      &>li{
+        &>a{
+          &:hover, &:focus{
+            box-shadow: lighten($grayLight, 20%) 0 0 0 1px;
+          }
+          &::before{
+            background: $primaryColor;
+          }
+          &::after{
+            border-left-color: $invert-font;
+          }
+        }
+        &.playing{
+          &>a{
+            background: lighten($grayLight, 10%); box-shadow: lighten($grayLight, 10%) 0 0 0 2px;
+            &:hover{box-shadow: lighten($grayLight, 20%) 0 0 0 2px; }
+            &:focus{box-shadow: lighten($grayLight, 10%) 0 0 0 2px, $primaryColor 0 0 0 3px; }
+          }
+        }
+        .author{
+          color: $font-color-dark;
+        }
+      }
+    }
+  }
+
+
+  // notice：注意事項、附加說明
+  .notice{
+    background-color: $grayLight;
+    &>a, p a{ color: $font-color;}
+  }
+
+} // end of color2
+
+
+
 
 
  // --------------------------------- 顏色變換：color3

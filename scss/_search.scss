@@ -51,7 +51,7 @@
 // 進階查詢 ============================================
 .searchAdv{ 
   @extend %mainSection;
-  padding:0 0 30px;margin: 0 auto;
+  padding:0 0 30px;margin: 0 auto 60px;
   .customizeSearch{
     border-bottom: 1px dashed $border-color;
     margin: 0 auto; padding: 0 0 15px;
