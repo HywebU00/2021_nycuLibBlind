@@ -14,13 +14,13 @@
 
       &::after{content: ''; display: block; clear: both;}
 
-      a{
-        color: $font-color; outline: none;
-        &:hover, &:focus{ color: $primaryColor; text-decoration: none;}
-        &:focus{ outline: 1px solid $importantColor;}
-      }
+      a{outline: none;}
+
       .title{ font-size: 1.2rem; display: block; margin-bottom: 10px;
-        a{display: block;}
+        a{display: block;color: $font-color; 
+          &:hover, &:focus{ color: $font-color-dark; text-decoration: none;}
+          &:focus{ outline: 1px solid $border-color;}
+        }
       }
       .date{ display: block; margin: .5em 0 0;
         time{display: inline-block;

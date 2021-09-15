@@ -10,32 +10,6 @@
   }
 }
 
-.more{
-  font-size: .94em; margin: 20px 5px 0;
-  a{
-    float: right; position: relative;  
-    text-decoration: none; color: $font-color;
-    height: 3em; line-height: 3em; padding: 0 3.4em 0 1em; border-radius: 1.5em;
-    transition: .2s; outline: none; 
-    &::before, &::after{content: ''; position: absolute; transition: .2s;letter-spacing: normal;}
-    &::before{
-      right: 0; top: 0; 
-      width: 3em; height: 3em; border-radius: 50%;
-      background: $bodyBgc;
-      box-shadow: $border-color-light 0 0 0 2px inset;
-    }
-    &::after{
-      width: 8px; height: 8px; top: 50%; right: 1.3em; margin: -5px 0 0 0;
-      border: 2px solid $primaryColor; border-left: 0; border-bottom: 0;
-      transform: rotate(45deg);
-    }
-    &:hover, &:focus{
-      box-shadow: $primaryColor 0 0 0 2px;
-      background-color: $primaryColor; color: $invert-font;
-      &::before{ box-shadow:none;}
-    }
-  }
-}
 
 
 // 新到卷期 ============================================

@@ -46,7 +46,7 @@ $grayDark: #555;
 .color1{
   $primaryColor: #333; //主色
   $secondaryColor: #fff; //輔色
-  $lightColor: #d8af09; //點綴
+  $lightColor: #fecf11; //點綴
   $linkColor: #38a4e8; //連結文字顏色
   $importantColor: #d70c01; //重要
   $bodyBgc: #000; //body 背景色
@@ -63,11 +63,11 @@ $grayDark: #555;
   $shadow:#fff4;
   $shadow2:#fff8;
   
-  $btn-bg1: $primaryColor ;
-  $btn-bg2: lighten($primaryColor, 15%);
+  $btn-bg1: #333 ;
+  $btn-bg2: #555;
   
   $gray: #ddd;
-  $grayLight: #555;
+  $grayLight: #444;
   $grayDark: #ececec;
 
 
@@ -76,11 +76,36 @@ $grayDark: #555;
 
   a{color:$font-color;}
   h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
+  ::selection{ background: invert($bodyBgc); color: $invert-font;}
+
+  // 輔助偏好設定
+  .preferences{
+    background: $bodyBgc; box-shadow: $shadow 0 0 25px;
+    .label{color: $font-color;}
+    .colorSet>li.active{box-shadow:$lightColor 0 0 0 2px;}
+  }
 
 
+  // 版頭
   .webHeader{
-    .topLinks>ul>li>a{ color: $font-color;
-      &::after{background-color: $secondaryColor;}
+    .topLinks>ul>li{
+
+      &>a{ color: $font-color;
+        &::after{background-color: $secondaryColor;}
+      }
+
+      @media screen and (max-width: $wwNormal - 1px){
+        &.assistant, &.loginBtn{
+          &>a{
+            background-color: lighten($grayLight, 18%);
+            &:hover, &:focus{
+              background-color: $grayLight;
+              box-shadow: $grayLight 0 0 0 2px;
+            }
+          }
+        }
+      }
+
     }
 
     @media screen and (min-width: $wwNormal){
@@ -106,22 +131,70 @@ $grayDark: #555;
               &.hasChild{
                 a{
                   &::after{ border-color: $lightColor; }
-                  // &:hover::after, &:focus::after{ border-color: $secondaryColor;}
                 }
               }
             }
-
           }
         }
       }
-  
     }
   }
 
-  .preferences{
-    background: $bodyBgc; box-shadow: $shadow 0 0 25px;
-    .label{color: $font-color;}
-    .colorSet>li.active{box-shadow:$lightColor 0 0 0 2px;}
+  // 漢堡選單
+  .sidebarCtrl{
+    background:#fff; 
+    &:hover, &:focus { background:$gray; box-shadow: none;}
+    &::before{
+      border-color:$primaryColor;
+    }
+    &::after{
+      background: $primaryColor;
+    }
+
+    &.closeIt{
+      background: $gray;
+      &::before{
+        border-color: $primaryColor;
+      }
+      &:hover { background: lighten($gray, 20%);
+      }
+    }
+
+
+  }
+
+  // 行動版側欄選單
+  .sidebar{
+    background: $primaryColor; 
+  
+    // menu
+    .menu, .topLinks{
+      li{ border-color: transparentize($secondaryColor, .7);
+        a{ 
+          color: $secondaryColor;
+          &:hover{ background-color: darken($primaryColor, 8%);}
+        }
+      }
+      &>ul{ 
+        &>li{
+          ul{
+            border-color: transparentize($secondaryColor, .7);
+            border-color: transparentize($secondaryColor, .7);
+          }
+        }
+        li.hasChild{
+          &>a{ 
+            &::after{border-color: $secondaryColor;}
+          }
+        }
+      }
+    }
+  
+    // topLinks 
+    .topLinks{
+      border-color: $secondaryColor;
+    }
+
   }
   
   // 表單元件
@@ -146,22 +219,20 @@ $grayDark: #555;
   $disabled-color: #999;
 
   // 按鈕樣式
-  .button>a,
-  button,
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
-    border-color: $border-color;
+  .button>a, button,
+  input[type="submit"], input[type="reset"], input[type="button"]{
+    border-color: $primaryColor;
     color: $font-color-dark;
     background-color: $primaryColor;
     &:hover {
-      border-color: $border-color-dark;
-      box-shadow: $border-color 0 0 12px 1px;
+      background-color: $btn-bg2;
+      border-color: $btn-bg2;
+      box-shadow: $btn-bg2 0 0 0 1px;
     }
     &:focus{
-      background-color: $btn-bg1;
-      border-color: $border-color-dark;
-      box-shadow: $border-color 0 0 0 3px;
+      background-color: $btn-bg2;
+      border-color: $btn-bg2;
+      box-shadow: $border-color-dark 0 0 0 2px;
     }
   }
 
@@ -189,16 +260,42 @@ $grayDark: #555;
 
   .captchaSet{
     button{
-      box-shadow: $border-color 0 0 0 1px; 
+      box-shadow: $border-color 0 0 0 1px;
+      background-color: $bodyBgc; color: $font-color;
       i{background-color: $primaryColor;}
 
       &:hover{
-        box-shadow: $border-color-dark 0 0 0 1px, $border-color-dark 0 0 12px 1px;
+        box-shadow: $border-color-dark 0 0 0 1px;
       }
       &:focus{
         box-shadow: $border-color-dark 0 0 0 1px, $border-color 0 0 0 4px;
+        color: $font-color-dark;
       }
     }
+  }
+
+
+  // radio 和 checkbox
+  input[type="radio"],
+  input[type="checkbox"] {
+  border: 1px solid $gray;
+  }
+  input[type="radio"] {
+    &:focus, &:checked{
+      border-color: $bodyBgc;
+      box-shadow:$grayDark 0 0 0 3px;
+      background-color: $grayDark;
+    }
+  }
+  input[type="checkbox"]{ 
+    // border: 1px solid $gray;
+    background: #000;
+    &:checked{
+      background: $bodyBgc url(../images/icon_check.svg) no-repeat center center;
+      // background-size: 96%;
+      box-shadow: #fff 0 0 0 2px; border-color: transparent;
+    }
+    &:focus{box-shadow: $primaryColor 0 0 0 2px, #fff 0 0 0 4px ; border-color: transparent;}
   }
 
   // checkbox, radio 選項群組 //
@@ -208,20 +305,11 @@ $grayDark: #555;
     }
   }
 
-
-
-  // 表單元件：結束
-
-
-
-
-  .mpSearch{
-    box-shadow: $shadow 0 0 0 1px, $shadow2 0 0 50px;
+  table.formLayout{
+    p.hint{ color: #c478e4; }
   }
-  
-  .lpSearch{
-    box-shadow: $shadow 0 0 0 1px, $shadow 0 8px 25px;
-  }
+  // 表單元件：結束 //
+
 
 
   // 快捷鍵
@@ -235,6 +323,7 @@ $grayDark: #555;
   }
 
 
+  // 現在位置
   .breadcrumb {
     color: $font-color;
     a{color: $font-color-dark;
@@ -243,6 +332,7 @@ $grayDark: #555;
     }
   }
 
+  // more
   .more a{color: $font-color-dark;
     &::before{
       background: $bodyBgc;
@@ -257,6 +347,7 @@ $grayDark: #555;
   }
 
 
+  // goTop 捲動到頁面最上方
   .goTop{ 
     a{ background-color: lighten($bodyBgc, 40%);
       &:hover, &:focus{
@@ -266,24 +357,14 @@ $grayDark: #555;
     }
   }
 
+  // 跳到主內容區
   .goCenter{
     color:$font-color; 
   }
 
 
 
-  .preferences{
-    a{color:$font-color;}
-  }
-
-  .notice{
-    &>a, p a{ color: $font-color; }
-  }
-
-
-
-
-
+  // 新到卷期（首頁）
   .newArrival {
     .list>li {background: $bodyBgc;
       &>a {
@@ -296,8 +377,8 @@ $grayDark: #555;
     }
   }
   
+  // 熱門文章排行榜（首頁）
   .popularity{
-
     .rank{ 
       &>li{border-bottom-color: $border-color-light;
         a{ color: $font-color; }
@@ -340,12 +421,13 @@ $grayDark: #555;
       .tabItem{ 
         a{
           // background-color: lighten($bodyBgc, 70%); color:$primaryColor;
-          background: lighten($bodyBgc, 25%); color: $font-color;
-          &:hover {border-color: $font-color-dark; }
+          background: $primaryColor; color: $font-color;
+          &:hover {background: lighten($primaryColor, 12%); }
         }
         &.active{
           a{background-color: $font-color-dark; color: $invert-font; border: none;
             // &:focus{outline: 1px solid #f00;}
+            &:focus{background-color: darken($font-color-dark, 15%);  color: $invert-font;  }
           }
         }
       }
@@ -355,19 +437,12 @@ $grayDark: #555;
       }
 
     }
-
-
-
-
   }
 
 
-  .attachment, .seeAlso{
-    a{ color: $font-color; }
-  }
-
+  // （首頁）文章查詢 與 條列頁上方查詢
   .mpSearch, .lpSearch{
-    background: $bodyBgc;
+    background: $bodyBgc;box-shadow: $shadow 0 0 0 1px;
     input[type="button"], input[type="submit"] {
       background-color: $secondaryColor; color: $primaryColor;
       border-color: $secondaryColor;
@@ -376,34 +451,168 @@ $grayDark: #555;
   }
 
 
-
+  // 期刊瀏覽 
   .grid{
     a{color: $font-color;}
     .list>li{
-      .date time{
-        color: $font-color;
+      box-shadow: $border-color-light 0 0 0 1px;
+      &>a{
+        &:hover{ box-shadow: $border-color 0 0 0 1px, transparentize($font-color, .4) 0 0 24px;}
+        &:focus{box-shadow: $border-color-dark 0 0 0 1px, transparentize($font-color, .4) 0 0 0 5px;}
+      }
+      .title{
+        color: $font-color-dark;
+        a{ 
+          &:hover, &:focus{color: $font-color-dark;}
+          &:focus{ outline: 1px solid $border-color-dark;}
+        }
+      }
+      .date{ 
+        color: $font-color-light;
+        time{color: $font-color; }
       }
     }
-  }
-  
-  .stack{
-    .list>li a{
-      color: $font-color;
-    }
-  }
 
-  .thisMag {
-    .headerGroup {
-      .date {
-        time {
-          color: $font-color;
+    @media screen and (min-width: $wwSlim){
+      .list>li{
+        .date{
+          time{
+            &::before{ color: $font-color-light;}
+          }
         }
       }
     }
   }
 
-  .linkBtn>a{
+
+  // 館藏查詢列表
+  .stack{
+    border-color: $border-color;
+    .list{
+      &>li{
+        border-color: $border-color-light;
+        .title a{
+          color: $font-color;
+          &:hover, &:focus{ color: $font-color-dark;}
+        }
+      }
+      .pubInfo{
+        li{
+          .dt{ color: $font-color-light;}
+        }
+      }
+    }
+  }
+
+  // 期刊詳細內容
+  .thisMag{
+    .headerGroup{ 
+      .date{
+        color: $font-color-light; 
+        time{
+          color: $font-color;
+        }
+      }
+    }
+  
+    .imgContainer{
+      box-shadow: invert($bodyBgc) 0 0 0 1px;
+    }
+
+  
+    @media screen and (min-width: $wwMedium){
+      .filter{border-color: $border-color-light;}
+    }
+  
+  }
+
+  .anArticle{
+    border-color: $border-color-light;
+    &:first-child{border-color: $border-color-light;}
+  
+    .type{
+      background-color: transparentize($font-color, .8);
+      border-color: $border-color-light;
+      &::before{ background-color:  $lightColor;}
+    }
+  
+    .articleHeader{
+      color: $font-color-dark;
+      a{
+        border-color: $border-color;
+       &:hover, &:focus{border-color:$lightColor;}
+       &:focus{outline: 1px solid $lightColor;}
+      }
+    }
+
+    dt{
+      color: $font-color-light;
+      &::after{background-color: $lightColor;}
+    }
+    dd{ color: $font-color-dark;  }
+   
+  }
+  
+
+  // 最新消息內容頁
+  .cpArticle{
+    a{color: $linkColor; border-color: $linkColor;
+      &:hover, &:focus{ border-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
+      &:focus{ outline-color: $border-color;}
+    }
+    table{border-color: $border-color;
+      th, td{border-color: $border-color;}
+    }
+  }
+
+  // cp頁，檔案下載、相關連結
+  .attachment, .seeAlso{
     color: $font-color;
+    h3{border-color: $border-color-light;}
+    a{ color: $font-color;
+      &:hover{ color: $font-color-dark;}
+      &:focus{ color: $font-color-dark;}
+    }
+  }
+  // 檔案下載
+  .attachment{
+    li{ 
+      &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
+      a{border-color: $border-color-light;
+        &:hover{border-color: $border-color-dark; }
+        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+      }
+    }
+  }
+  // 相關連結
+  .seeAlso{
+    li{ 
+      a{
+        border-color: $border-color;
+        &::before{border-color: $border-color-dark;}
+        &:hover, &:focus{ border-color: $border-color-dark;}
+      }
+    }
+  }
+
+  // 檔案大小
+  .fileSize{color:$font-color-light; border: 1px solid $border-color-light;}
+
+
+  // 連結，像 button 樣式
+  .linkBtn {
+    &>a {
+      color: $font-color;  border-color: $border-color;
+      &:hover, &:focus {
+        border-color: transparent;
+      }
+      &:hover {
+        box-shadow: $border-color-dark 0 0 0 1px;
+      }
+      &:focus {
+        box-shadow: $border-color-dark 0 0 0 2px;
+      }
+    }
   }
 
   // on off 開關  
@@ -517,11 +726,13 @@ $grayDark: #555;
   }
 
 
+  // notice：注意事項、附加說明
+  .notice{
+    background-color: $grayLight;
+    &>a, p a{ color: $font-color;}
+  }
 
-
-
-}
-
+} // end of color1
 
 
 
@@ -626,15 +837,7 @@ $grayDark: #555;
     }
   }
 
-  .notice {
 
-    &>a,
-    p a {
-      color:
-        $font-color;
-      text-decoration: underline;
-    }
-  }
 
   .tabs {
     .tabItem {
@@ -694,11 +897,7 @@ $grayDark: #555;
     }
   }
 
-  .stack {
-    .list>li a {
-      color: $font-color;
-    }
-  }
+
 
   .playInfo {
     ul.info {
@@ -720,19 +919,8 @@ $grayDark: #555;
     color: $font-color;
   }
 
-  .thisMag {
-    .headerGroup {
-      .date {
-        time {
-          color: $font-color;
-        }
-      }
-    }
-  }
 
-  .linkBtn>a {
-    color: $font-color;
-  }
+
 }
 
 

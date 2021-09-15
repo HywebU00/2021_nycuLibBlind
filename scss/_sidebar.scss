@@ -1,16 +1,14 @@
+// 行動版側欄選單
 .sidebar{
   position: fixed; top:0;  z-index: 890;
-  width: $sidebarWidth; left:-1*$sidebarWidth;
-  padding: 0;
-  background: $primaryColor; transition: .5s;
-  height: 100vh;
-  overflow-y: auto;
+  width: $sidebarWidth; left:-1*$sidebarWidth;transition: .5s;
+  padding: 0; height: 100vh; overflow-y: auto;
+  background: $primaryColor; 
 
   // menu ////////////////////////////////////////////////
   .menu, .topLinks{
     ul{ list-style: none; margin: 0; padding: 0; line-height: 1.3; }
     li{ border-bottom: 1px solid transparentize($secondaryColor, .7);
-      // &:last-child{border-top: none;}
       a{ 
         display: block; text-decoration: none;
         color: $secondaryColor; transition: .2s;

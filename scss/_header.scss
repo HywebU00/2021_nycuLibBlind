@@ -2,6 +2,7 @@
   position: relative; padding:0;
   min-height: 52px;
   border-bottom: 4px solid $primaryColor;
+  background-color: #fff;
 
   h1{ margin: 0 110px 0 56px; padding:4px 0; overflow: hidden;
     a{ display: block; margin: 0 auto;
@@ -53,7 +54,7 @@
   // -----
   @media screen and (min-width: $wwNormal){
     padding: 2.4em 0 0; z-index: 9;
-    border-bottom: none;
+    border-bottom: none; background-color: transparent;
     h1{
       width: 92vw; max-width: $wwWide; padding: 16px 0 ; margin: 0 auto;
       a{float: left;}

@@ -17,23 +17,3 @@
     box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
   }
 }
-
-.linkBtn {
-  display: inline-block;
-  &>a {
-    display: block; text-align: center;
-    height: 2.5em; line-height: 2.4; padding: 0 1em; margin: 3px;
-    color: $font-color; text-decoration: none;
-    border: 1px solid $border-color; border-radius: 2em;outline: none;
-    transition: .2s; 
-    &:hover, &:focus {
-      border-color: #fff;
-    }
-    &:hover {
-      box-shadow: $primaryColor 0 0 0 1px;
-    }
-    &:focus {
-      box-shadow: $primaryColor 0 0 0 2px;
-    }
-  }
-}
