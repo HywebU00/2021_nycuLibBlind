@@ -1,8 +1,8 @@
 .preferences{ display: none;
-  background: #fff; padding: 20px 16px 16px;
-  box-shadow: #0004 0 0 25px;
+  background: $bodyBgc; padding: 20px 16px 16px;
+  box-shadow: $shadow 0 0 25px;
 
-  a{color: $font-color; text-decoration: none; outline: none; cursor: pointer; transition: .2s;}
+  a{text-decoration: none; outline: none; cursor: pointer; transition: .2s;}
 
   .closeBtn{
     display: block; text-align: center; padding:8px 3px 3px;
@@ -29,11 +29,12 @@
     }
     &+.label{margin-top: 16px;}
   }
-  .label{display: block; color: $font-color-light; padding:2px 4px;}
+  .label{display: block; color: $font-color; padding:2px 4px;}
 
-  .fontSize{display: inline-block; border-radius: 100px; border: 1px solid $border-color-light; 
+  .fontSize{display: inline-block; border-radius: 100px; 
+    border: 1px solid $border-color-light; background-color: #fff;
     &>li{padding: 2px;
-      &>a{ background-color: $grayLight;border-radius: 50%; 
+      &>a{ background-color: $grayLight;border-radius: 50%; color: #000; 
         &:hover{box-shadow: $gray 0 0 0 2px; background: #fff;}
         &:focus{ box-shadow: $primaryColor 0 0 0 1px; background: $secondaryColor;}
       }
@@ -49,11 +50,12 @@
 
   .colorSet{border-radius: 8px;
     &>li{
-      padding:4px 4px 4px 24px; position: relative;
-      border: 1px solid $border-color-light;border-radius: 6px;
+      padding:4px 4px 4px 24px; position: relative; border-radius: 6px;
+      background: #fff;
+      box-shadow: $border-color-light 0 0 0 1px;
       &::before{ opacity: 0;
        content: ''; position: absolute; left:5px; top: 19px;
-       width: 10px; height: 6px; border: 3px solid $primaryColor; border-top: none; border-right: none;
+       width: 10px; height: 6px; border: 3px solid #000; border-top: none; border-right: none;
        transform: rotate(-45deg);
       }
       &>a{border-radius: 4px;
@@ -61,12 +63,9 @@
         &:focus{ box-shadow: $importantColor 0 0 0 2px, #fff 0 0 0 1px inset;border-radius: 2px; }
       }
       &.active{
-         border-color: $primaryColor;
+        box-shadow:$primaryColor 0 0 0 2px;
         &::before{ opacity: 1;}
-        &>a{
-          cursor: default;
-          // &:hover{box-shadow: none !important; border-radius: 4px;}
-        }
+        &>a{cursor: default;}
       }
       &.color1>a{
         background-color: #000; color: #fff;

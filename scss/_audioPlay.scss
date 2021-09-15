@@ -1,4 +1,3 @@
-@import "_colorScheme";
 ////////// 音檔播放 //////////
 // 快速鍵說明
 .playGuide{
@@ -11,20 +10,21 @@
     padding: 15px 25px;
     background: $grayDark; border-radius: 7px;
 
-    .label{float: left;height: 2.8em; line-height: 2.8em;color: #fff;}
+    .label{float: left;height: 2.8em; line-height: 2.8em;color: $invert-font;}
 
     dl{
       padding: 0; margin: 0; line-height: 1.1; overflow: hidden;
       &>div{
         float: left; overflow: hidden;
         margin:3px 5px 3px 0; padding: 2px; overflow: hidden;
-        background: #fff;border-radius: 5px;
+        background: $bodyBgc;border-radius: 5px;
       }
     }
     dt{
       float: left;
-      color: $invert-font;background:lighten($grayDark, 10%); border-radius: 3px;
+      border-radius: 3px;
       height: 2em; line-height: 2em; padding: 0 .7em; margin: 0;
+      color: $invert-font; background:lighten($grayDark, 10%); 
     }
     dd{
       float: left; height: 2em; line-height: 2em;
@@ -36,11 +36,8 @@
 
 // 放播放器
 .playArea{
-  // outline: 1px dotted blue;
-  margin-bottom: 20px;
+  margin-bottom: 20px;overflow: hidden;border-radius: 6px;
   box-shadow: $border-color 0 0 0 1px;
-  overflow: hidden;
-  border-radius: 6px;
 
   img{display: block; width: 100%;}
 }
@@ -56,34 +53,27 @@
 
   &::before{content: '';
     position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -6px;
-    width: 10px; height: 10px;
-    border: 3px solid $primaryColor; border-radius: 0 0 2px 0;
-    border-left: none; border-top: none;
+    width: 10px; height: 10px;border-radius: 0 0 2px 0;
     transform: rotate(45deg); transition:transform .3s;
+    border: 3px solid $primaryColor; 
+    border-left: none; border-top: none;
   }
-  &:hover {
-    background-color:#fff
-  }
+  &:hover {background-color:$bodyBgc;}
   &:focus{
     background-color: lighten($gray, 4%);
     box-shadow: $primaryColor 0 0 0 2px;
   }
 
   &.closeIt{
-    &::before{content: '';
-      transform: rotate(225deg);
-      margin-top: -4px;
-    }
+    &::before{content: '';transform: rotate(225deg);margin-top: -4px;}
   }
 
 }
 
 // 正在播放的檔案內容
 .playInfo{
-  position: relative;
+  position: relative;border-radius: 6px;padding: 20px; 
   box-shadow: $border-color 0 0 0 1px;
-  border-radius: 6px;
-  padding: 20px; 
 
   .slideCtrl{
     position: absolute; right: 8px;top: 8px;
@@ -94,30 +84,33 @@
     overflow: hidden;
     li{
       margin:0; padding: 0;
-      em{display: inline-block; font-weight: bold; font-style: normal; color: $font-color;}
+      em{
+        display: inline-block; font-weight: bold; font-style: normal; 
+        color: $font-color;
+      }
       &.title{
-        font-size: 1.35em; padding: 5px 0;
-        min-height: 44px; margin:0 56px 5px 0;
+        font-size: 1.35em; min-height: 44px; 
+        padding: 5px 0;margin:0 56px 5px 0;
       }
       &.clickCount{
-        height: 2.4em;  line-height:2.4em; 
-         color: $font-color-light;float: left; margin-right: 1em;
-        }
+        float: left; margin-right: 1em;
+        height: 2.4em; line-height:2.4em; 
+        color: $font-color-light;
+      }
       &.icon_download{
         float: left; margin-top: -.2em;
         &>a{
-          position: relative;display: block;
+          position: relative; display: block;
           height: 44px;  line-height:44px; 
-          color: $font-color; text-decoration: none;outline: none;
-          padding: 0 16px 0 50px;
-          // background:#ccc url(../images/icons.png) center -300px no-repeat;
-          border-radius: 2em;
-          box-shadow: $border-color 0 0 0 1px;
+          text-decoration: none; outline: none;
+          padding: 0 16px 0 50px; border-radius: 2em;
+          color: $font-color;box-shadow: $border-color 0 0 0 1px;
           &::before{
             content: ''; position: absolute; left: 2px; top: 2px;
             width: 40px; height: 40px; border-radius: 50%;
-            background: $primaryColor url(../images/icons.png) center -300px no-repeat;
+            background: url(../images/icons.png) center -300px no-repeat;
             background-size: 44px;
+            background-color:$primaryColor;
           }
           &:hover{ box-shadow: $primaryColor 0 0 0 1px; }
           &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
@@ -141,8 +134,8 @@
   }
 
   .description{
-    .label{display: block; color: $font-color-light;}
     line-height: 1.8;
+    .label{display: block; color: $font-color-light;}
   }
 
   // 隱藏區
@@ -163,10 +156,9 @@
 // 待播清單
 .playList{ 
   position: relative;
-  padding: 20px 6px;border-radius: 8px;
+  padding: 20px 6px;margin-top: 20px;border-radius: 8px;
   background-color:$grayLight;
   box-shadow: $grayLight 0 0 0 1px;
-  margin-top: 20px;
 
   a{color: $font-color; text-decoration: none; outline: none;}
 
@@ -185,9 +177,8 @@
         padding:8px 10px 8px 28px;border-radius: 3px; 
         transition: .2s;
         &:hover, &:focus{
-          background: #fff8;
-          box-shadow: #ffff 0 0 0 2px;
           transition: background-color .15s,  box-shadow .3s;
+          background: transparency($bodyBgc, .5); box-shadow: $bodyBgc 0 0 0 2px;
         }
         &:focus{outline: none;}
         &::before{
@@ -200,7 +191,7 @@
           width: 0; height: 0; box-sizing: content-box;
           border-style: solid;
           border-width: 5px 0 5px 7px;
-          border-color: transparent transparent transparent #fff;
+          border-color: transparent transparent transparent $invert-font;
         }
       }
 

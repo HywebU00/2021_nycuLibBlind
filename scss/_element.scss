@@ -74,7 +74,7 @@
   &.show{bottom: 10px; transition: .4s;}
   a{ display: block;
     width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
-    background-color: #555b;
+    background-color: darken($bodyBgc, 40%);
     transition:.2s; cursor: pointer; outline: none;
     &::before, &::after{ content: '';position: absolute;}
     &::before{
@@ -219,37 +219,36 @@
   margin: 0; padding: 0; background: none; border: none; outline: none;
   font-size: .88em; line-height: 25px; width: 52px; height: 24px;
   text-indent: calc(-100% - 1em); text-align: left; color: $font-color;
-  text-indent: -4.5em;
-  background: $grayDark; border-radius: 12px;
-  box-shadow: $grayDark 0 0 0 2px;
+  text-indent: -4.5em; border-radius: 12px; 
+  background: $grayDark; box-shadow: $grayDark 0 0 0 2px;
+  &:hover{
+    background: $grayDark; box-shadow:$grayDark 0 0 0 2px;
+    border: none; color: $font-color;
+    &::before{ box-shadow:#fff 0 0 0 6px inset ;}
+  }
+  &:focus{
+    background: $grayDark; 
+    box-shadow: $grayDark 0 0 0 4px;
+  }
   &::before {
     content: "";
     position: absolute;left: 0;top: 0;
-    width: 24px;height: 24px;
-    background: #fff; border-radius: 50%; z-index: 2;
-    transition: left 0.12s linear; outline: none;
+    width: 24px;height: 24px; border-radius: 50%; z-index: 2;
+    transition: left 0.12s linear, box-shadow .2s; outline: none;
+    background: #999; box-shadow:#fff 0 0 0 8px inset;
   }
   &::after {
-    content: "關"; text-indent: 0;
-    position: absolute;right: 9px; color: #fff; 
-  }
-  &:hover, &:focus{
-    background: $grayDark; box-shadow:$grayDark 0 0 0 3px;
-    border: none; color: $font-color;
-  }
-  &:focus{
-    box-shadow:$grayDark 0 0 0 2px, #fff 0 0 0 3px, $grayDark 0 0 0 4px;
+    content: "關"; text-indent: 0;position: absolute;right: 9px;
+    color:#fff; 
   }
 
   &.on {
-    background: $primaryColor; box-shadow: $primaryColor 0 0 0 2px;
-    &::before {left: calc(100% - 24px);}
-    &::after {content: "開";left: 8px;right: auto; }
-    &:hover, &:focus{
-      background: $primaryColor; box-shadow: $primaryColor 0 0 0 3px;
+    &::before {left: calc(100% - 24px);
+      background: #87da00; box-shadow:#fff 0 0 0 6px inset;
     }
-    &:focus{
-      box-shadow:$primaryColor 0 0 0 2px, #fff 0 0 0 3px, $primaryColor 0 0 0 4px;
+    &::after {content: "開";left: 8px;right: auto; }
+    &:hover{
+      &::before{box-shadow:#fff 0 0 0 8px inset;}
     }
   }
 }
