@@ -248,10 +248,10 @@
     display: block; text-align: center;
     height: 2.5em; line-height: 2.4; padding: 0 1em; margin: 3px;
     color: $font-color; text-decoration: none;
-    border: 1px solid $border-color; border-radius: 2em;outline: none;
+    border: 1px solid $primaryColor; border-radius: 2em;outline: none;
     transition: .2s; 
     &:hover, &:focus {
-      border-color: #fff;
+      border-color: transparent; color: $primaryColor;
     }
     &:hover {
       box-shadow: $primaryColor 0 0 0 1px;
@@ -267,17 +267,18 @@
   position: absolute; right: 12px;top: 20px;
   margin: 0; padding: 0; background: none; border: none; outline: none;
   font-size: .88em; line-height: 25px; width: 52px; height: 24px;
-  text-indent: calc(-100% - 1em); text-align: left; color: $font-color;
+  text-indent: calc(-100% - 1em); text-align: left; color:$font-color;
   text-indent: -4.5em; border-radius: 12px; 
-  background: $grayDark; box-shadow: $grayDark 0 0 0 2px;
+  background: #444; box-shadow: #444 0 0 0 2px;
   &:hover{
-    background: $grayDark; box-shadow:$grayDark 0 0 0 2px;
-    border: none; color: $font-color;
+    background: #444; box-shadow:#444 0 0 0 2px;
+    border: none; 
+    color: $font-color;
     &::before{ box-shadow:#fff 0 0 0 6px inset ;}
   }
   &:focus{
-    background: $grayDark; 
-    box-shadow: $grayDark 0 0 0 4px;
+    background: #000; 
+    box-shadow: #000 0 0 0 4px;
   }
   &::before {
     content: "";
@@ -293,11 +294,11 @@
 
   &.on {
     &::before {left: calc(100% - 24px);
-      background: #87da00; box-shadow:#fff 0 0 0 6px inset;
+      background: #87da00; box-shadow:#fff 0 0 0 8px inset;
     }
     &::after {content: "開";left: 8px;right: auto; }
     &:hover{
-      &::before{box-shadow:#fff 0 0 0 8px inset;}
+      &::before{box-shadow:#fff 0 0 0 6px inset;}
     }
   }
 }

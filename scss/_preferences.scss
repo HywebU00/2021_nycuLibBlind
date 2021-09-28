@@ -1,6 +1,7 @@
 .preferences{ display: none;
-  background: $bodyBgc; padding: 20px 16px 16px;
-  box-shadow: $shadow 0 0 25px;
+  padding: 20px 16px 16px;
+  background: #fff; color: #333;
+  box-shadow: #0005 0 0 25px;
 
   a{text-decoration: none; outline: none; cursor: pointer; transition: .2s;}
 
@@ -11,10 +12,10 @@
       float: right;
       height: 2.2em; line-height: 2.2; padding:0 1em;
       min-width: 4em; border-radius: 1.5em;
-      box-shadow: $border-color 0 0 0 1px; 
+      box-shadow: #bbb 0 0 0 1px; color: #333;
       
-      &:hover{box-shadow: $border-color-dark 0 0 0 2px;}
-      &:focus{box-shadow: $primaryColor 0 0 0 2px;}
+      &:hover{box-shadow: #888 0 0 0 2px;}
+      &:focus{box-shadow: #333 0 0 0 2px;}
 
     }    
   }
@@ -29,18 +30,17 @@
     }
     &+.label{margin-top: 16px;}
   }
-  .label{display: block; color: $font-color; padding:2px 4px;}
+  .label{display: block; padding:2px 4px;}
 
   .fontSize{display: inline-block; border-radius: 100px; 
-    border: 1px solid $border-color-light; background-color: #fff;
+    border: 1px solid #bbb; background-color: #fff;
     &>li{padding: 2px;
-      &>a{ background-color: $grayLight;border-radius: 50%; color: #000; 
-        &:hover{box-shadow: $gray 0 0 0 2px; background: #fff;}
-        &:focus{ box-shadow: $primaryColor 0 0 0 1px; background: $secondaryColor;}
+      &>a{box-shadow: #bbb 0 0 0 1px;border-radius: 50%; color: #000; 
+        &:hover, &:focus{box-shadow: #999 0 0 0 2px;}
       }
       &.active{
-        &>a{ box-shadow: $primaryColor 0 0 0 2px; background: #fff;
-          &:focus{ box-shadow: $primaryColor 0 0 0 3px; }
+        &>a{ box-shadow: #333 0 0 0 2px; 
+          &:focus{ box-shadow: #333 0 0 0 3px; }
         }
       }
       &.small{ font-size: 13px;}
@@ -52,7 +52,7 @@
     &>li{
       padding:4px 4px 4px 24px; position: relative; border-radius: 6px;
       background: #fff;
-      box-shadow: $border-color-light 0 0 0 1px;
+      box-shadow: #bbb 0 0 0 1px;
       &::before{ opacity: 0;
        content: ''; position: absolute; left:5px; top: 19px;
        width: 10px; height: 6px; border: 3px solid #000; border-top: none; border-right: none;
@@ -60,10 +60,10 @@
       }
       &>a{border-radius: 4px;
         &:hover,
-        &:focus{ box-shadow: $importantColor 0 0 0 2px, #fff 0 0 0 1px inset;border-radius: 2px; }
+        &:focus{ box-shadow: #333 0 0 0 2px, #fff 0 0 0 1px inset;border-radius: 2px; }
       }
       &.active{
-        box-shadow:$primaryColor 0 0 0 2px;
+        box-shadow: #333 0 0 0 2px;
         &::before{ opacity: 1;}
         &>a{cursor: default;}
       }
@@ -71,17 +71,17 @@
         background-color: #000; color: #fff;
       }
       &.color2>a{
-        background-color: #eddfb0; color: #000;
+        background-color: #f9f7e9; color: #000;
       }
       &.color3>a{
-        background-color: #000; color: #fe0;
+        background-color: #393c3e; color: #ffffd5;
       }
       &.color4>a{
-        background-color: #214b65; color: #fff;
+        background-color: #285c72; color: #fff;
       }
       &.color0>a{
         background-color: #fff; color: #000;
-        border: $gray 1px solid;
+        border: #ccc 1px solid;
       }
 
     }

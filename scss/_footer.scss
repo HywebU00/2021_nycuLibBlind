@@ -1,9 +1,9 @@
 .webFooter{
   padding: 20px 4vw;line-height: 1.6; font-size: .94rem;
-  background-color: $footerBgc; color: #fff;
+  background-color: $footerBgc; color: darken($invert-font, 25%);
   
 
-  a{ color: #fff; outline: none; }
+  a{ color: $invert-font; outline: none; }
 
   .info{line-height: inherit; margin:1em 0;}
 
@@ -11,7 +11,7 @@
     list-style: none; margin: 0; padding: 0; line-height: 1.2;
     overflow: hidden;
     li{ float: left; padding: 0 .5em 0 .6em; position: relative;
-      &::before{content: '';position: absolute;left: 0; top: 2px; height: .9em; width: 1px; background-color: #999;}
+      &::before{content: '';position: absolute;left: 0; top: 2px; height: .9em; width: 1px; background-color:  $border-color;}
       &:first-child{padding-left: 0;
         &::before{display: none;}
       }

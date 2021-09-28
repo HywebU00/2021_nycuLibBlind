@@ -26,9 +26,8 @@
   border: 1px solid $border-color;
   vertical-align: middle;
   font-size: inherit;
-  background: #fff url(../images/selectBg.png) no-repeat right 1.2em;
-  background-size: 20px auto;
-  // box-sizing: content-box;
+  background: #fff url(../images/selectArrow.svg) no-repeat right 10px top 1.2em;
+  background-size: 12px auto;
   border-radius: 4px;
 
   &:hover{border-color: $border-color-dark;}
