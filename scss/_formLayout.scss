@@ -72,7 +72,7 @@ table.formLayout{
   @media screen and (min-width: $wwMedium){
   }
   @media screen and (min-width: $wwNormal){
-    box-shadow: #0003 0 0 8px 1px;
+    box-shadow: $shadow 0 0 8px 1px;
     padding: 40px 4vw 50px;
   }
 

@@ -247,11 +247,11 @@
     display: block; text-align: center;
     height: 2.5em; line-height: 2.4; padding: 0 1em; margin: 3px;
     color: $font-color; text-decoration: none;
-    border: 1px solid $primaryColor; border-radius: 2em;outline: none;
+    border: 1px solid $border-color; border-radius: 2em;outline: none;
     transition: .2s; 
-    &:hover, &:focus {border-color: transparent; color: $primaryColor;}
-    &:hover {box-shadow: $primaryColor 0 0 0 1px;}
-    &:focus {box-shadow: $primaryColor 0 0 0 2px;}
+    &:hover, &:focus { color: $font-color-dark;}
+    &:hover {border-color: $primaryColor;}
+    &:focus {border-color: transparent;box-shadow: $primaryColor 0 0 0 2px;}
   }
 }
 

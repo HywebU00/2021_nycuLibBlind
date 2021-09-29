@@ -196,7 +196,7 @@ $grayDark: #555;
     border-color: $border-color;
     color: $font-color;
     &:hover{border-color: $border-color-dark;}
-    &:focus{border-color: $bodyBgc; box-shadow: $border-color-dark 0 0 0 3px;}
+    &:focus{border-color: transparent; box-shadow: $border-color-dark 0 0 0 2px;}
   }
   %selectStyle {
     background-color: $bodyBgc;
@@ -205,7 +205,7 @@ $grayDark: #555;
     background-position: right 10px top calc(1.2em - 100px);
 
     &:hover{border-color: $border-color-dark;}
-    &:focus{border-color: $bodyBgc; box-shadow: $border-color-dark 0 0 0 3px;}
+    &:focus{border-color: transparent; box-shadow: $border-color-dark 0 0 0 2px;}
   }
 
   .required{  color: $importantColor ;  }
@@ -241,11 +241,11 @@ $grayDark: #555;
     }
   }
   input[type="checkbox"]{ 
-    &:focus{box-shadow: $btn-bg2 0 0 0 2px; border-color: $bodyBgc;}
+    &:focus{box-shadow: $btn-bg2 0 0 0 2px; border-color: transparent;}
     &:checked{
       background-color: $btn-bg2 ;
       box-shadow: $btn-bg2 0 0 0 2px;
-      border-color: $bodyBgc;
+      border-color: transparent;
       &:focus{box-shadow: $bodyBgc 0 0 0 1px, $btn-bg2 0 0 0 4px;}
     }
   }
@@ -271,6 +271,12 @@ $grayDark: #555;
     }
   }
 
+  // 表單群組
+  fieldset {
+    border-color:$border-color-light;
+    legend {border-color: $border-color-light;}
+  }
+
 
   // 驗證碼
   .captchaSet{
@@ -288,6 +294,29 @@ $grayDark: #555;
       }
     }
   }
+
+  // 顯示密碼
+  button.viewIcon{
+    background-color: $primaryColor;
+    &:hover{ 
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 2px
+    }
+    &:focus{
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 3px, $secondaryColor 0 0 0 2px inset;
+    }
+  }
+
+  .btnDv{border-top-color: $border-color;}
+
+  // 通用表單樣式Ａ
+  .formA{
+    @media screen and (min-width: $wwNormal){
+      box-shadow:$border-color-light 0 0 0 1px, $shadow 0 0 12px 1px;
+    }
+  }
+
   // 表單元件：結束。。。。。。。。。。。。。 //
 
 
@@ -329,10 +358,9 @@ $grayDark: #555;
 
   // goTop 捲動到頁面最上方
   .goTop{ 
-    a{ 
-      background-color: transparentize($primaryColor, .2);
+    a{ background-color: transparentize($primaryColor, .2);
       &:hover, &:focus{background-color: $btn-bg2;}
-      &:focus{box-shadow: $invert-font 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
+      &:focus{box-shadow: $bodyBgc 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
     }
   }
 
@@ -544,6 +572,7 @@ $grayDark: #555;
       &:hover, &:focus{ 
         border-color: lighten($linkColor, 20%);
         color: lighten($linkColor, 20%);
+        &:focus{ outline-color:$linkColor;}
       }
     }
     table{border-color: $border-color;
@@ -566,7 +595,7 @@ $grayDark: #555;
       &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
       a{border-color: $border-color;
         &:hover{border-color: $border-color-dark;}
-        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+        &:focus{border-color: $font-color-dark;}
       }
     }
   }
@@ -588,9 +617,9 @@ $grayDark: #555;
   // 連結，像 button 樣式
   .linkBtn {
     &>a { color: $font-color-dark;  border-color: $border-color;
-      &:hover, &:focus {border-color: transparent;color: $font-color-dark;}
-      &:hover {box-shadow: $border-color-dark 0 0 0 1px;}
-      &:focus {box-shadow: $border-color-dark 0 0 0 2px;}
+      &:hover, &:focus {color: $font-color-dark;}
+      &:hover {border-color: $border-color-dark;}
+      &:focus {border-color: transparent;box-shadow: $border-color-dark 0 0 0 2px;}
     }
   }
 
@@ -724,6 +753,9 @@ $grayDark: #555;
     &:hover{ border-color: $border-color;}
   }
 
+  // 下載中動畫
+  .loadingAni {background-color: $footerBgc; }
+
 } 
 // end of ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ color1
 
@@ -775,7 +807,7 @@ $grayDark: #555;
   
   $gray: #c6c4bb;
   $grayLight: #eeede0;
-  $grayDark: #72726a;
+  $grayDark: #59594e;
 
 
   // .......... ^_^ .......... //
@@ -939,9 +971,10 @@ $grayDark: #555;
   }
   input[type="checkbox"]{
     &:checked{
-      background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
-      background-size: 96%;
-      box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 2px; 
+      border-color: transparent;
+      &:focus{box-shadow: $secondaryColor 0 0 0 1px, $primaryColor 0 0 0 4px;}
     }
     &:focus{box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;}
   }
@@ -973,12 +1006,10 @@ $grayDark: #555;
     }
   }
 
-  // fieldset 表單分群
+  // 表單群組
   fieldset {
     border-color:$border-color-light;
-    legend {
-      border-color: $border-color-light;
-    }
+    legend {border-color: $border-color-light;}
   }
 
 
@@ -987,11 +1018,23 @@ $grayDark: #555;
     background-color: $grayDark;
     &:hover{ 
       background-color: $grayDark;
-      box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+      box-shadow: $grayDark 0 0 0 2px
     }
     &:focus{
       background-color: $primaryColor;
-      box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+      box-shadow: $primaryColor 0 0 0 3px, $secondaryColor 0 0 0 2px inset;
+    }
+  }
+
+
+  .btnDv{
+    border-top-color: $border-color;
+  }
+
+  // 通用表單樣式Ａ
+  .formA{
+    @media screen and (min-width: $wwNormal){
+      box-shadow: $shadow 0 0 8px 1px;
     }
   }
 
@@ -1037,11 +1080,9 @@ $grayDark: #555;
 
   // goTop 捲動到頁面最上方
   .goTop{ 
-    a{ background-color: #6668;
-      &:hover, &:focus{
-        background-color: #555;
-      }
-      &:focus{box-shadow: $border-color 0 0 0 2px;}
+    a{ background-color: transparentize($primaryColor, .2);
+      &:hover, &:focus{background-color: $btn-bg2;}
+      &:focus{box-shadow: $bodyBgc 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
     }
   }
 
@@ -1256,7 +1297,7 @@ $grayDark: #555;
       color: $font-color-dark;
       a{ border-color: $font-color;
        &:hover, &:focus{border-color:$primaryColor;}
-       &:focus{outline: 1px solid $primaryColor;}
+       &:focus{outline-color: $primaryColor;}
       }
     }
 
@@ -1273,7 +1314,7 @@ $grayDark: #555;
   .cpArticle{
     a{color: $linkColor; border-color: $linkColor;
       &:hover, &:focus{ border-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
-      &:focus{ outline-color: $border-color;}
+      &:focus{ outline-color:$linkColor;}
     }
     table{border-color: $border-color;
       th, td{border-color: $border-color;}
@@ -1295,7 +1336,7 @@ $grayDark: #555;
       &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
       a{border-color: $border-color;
         &:hover{border-color: $border-color-dark; }
-        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+        &:focus{border-color: $font-color-dark; }
       }
     }
   }
@@ -1316,17 +1357,10 @@ $grayDark: #555;
 
   // 連結，像 button 樣式
   .linkBtn {
-    &>a {
-      color: $font-color;  border-color: $primaryColor;
-      &:hover, &:focus {
-        border-color: transparent; color: $primaryColor;
-      }
-      &:hover {
-        box-shadow: $primaryColor 0 0 0 1px;
-      }
-      &:focus {
-        box-shadow: $primaryColor 0 0 0 2px;
-      }
+    &>a { color: $font-color;  border-color: $border-color;
+      &:hover, &:focus { color: $font-color-dark;}
+      &:hover {border-color: $primaryColor; color: $font-color-dark;}
+      &:focus {border-color: transparent; box-shadow: $primaryColor 0 0 0 2px;}
     }
   }
 
@@ -1450,6 +1484,10 @@ $grayDark: #555;
     border-color: $border-color-light;
     &:hover{ border-color: $border-color;}
   }
+
+  // 下載中動畫
+  .loadingAni {background-color: $footerBgc; }
+  
 }
 // end of ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ color2
 
@@ -1481,39 +1519,39 @@ $grayDark: #555;
 // --------------------------------- 顏色變換：color3
 // --------------------------------- 顏色變換：color3
 .color3{
-  $primaryColor: #02909d; //主色
-  $secondaryColor: #ffffd5; //輔色
-  $lightColor: #f9ff89; //點綴
+  $primaryColor: #007886; //主色
+  $secondaryColor: #ffffe0; //輔色
+  $lightColor: #5ee4cc; //點綴
   $linkColor: #aafff7; //連結文字顏色
   $importantColor: #ff5697; //重要
   $bodyBgc: #393c3e; //body 背景色
   $footerBgc: lighten($bodyBgc, 5%); //footer 背景色
   
-  $font-color: #ffffd5;
-  $font-color-light:#c7c7a6;
-  $font-color-dark:#ffffd9;
+  $font-color: $secondaryColor;
+  $font-color-light:#bdbd97;
+  $font-color-dark:#ffffef;
   $invert-font:#393c3e;
   
   
   $border-color: #85857d;
-  $border-color-light: #54544a;
+  $border-color-light: #65655b;
   $border-color-dark:#d2d2b6;
-  $shadow:#0005;
-  $shadow2:#0008;
+  $shadow:#0006;
+  $shadow2:#0009;
   
   $btn-bg1: $primaryColor ;
   $btn-bg2:lighten($primaryColor, 6%);
   
   $gray: #53575a;
-  $grayLight: #4d5153;
-  $grayDark: #cbd7de;
+  $grayLight: #454c4d;
+  $grayDark: #d0dfdf;
 
   // .......... 。。。開始。。。 .......... //
   background-color:$bodyBgc; color:$font-color;
 
   a{color:$font-color;}
   h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
-  ::selection{ background: invert($bodyBgc); color: $invert-font;}
+  ::selection{ background: $primaryColor; color: $font-color-dark;}
 
 
   // 版頭
@@ -1522,7 +1560,7 @@ $grayDark: #555;
     .topLinks>ul>li{
 
       &>a{ color: $font-color;
-        &::after{background-color: $primaryColor;}
+        &::after{background-color: $lightColor;}
       }
 
       @media screen and (max-width: $wwNormal - 1px){
@@ -1544,7 +1582,7 @@ $grayDark: #555;
         background: $primaryColor; 
         li{
           a{ color: $secondaryColor;
-            &:hover, &:focus{ background-color: lighten($primaryColor, 6%);}
+            &:hover, &:focus{ background-color: darken($primaryColor, 6%);}
           }
           &.hasChild{
             &>a{
@@ -1553,11 +1591,11 @@ $grayDark: #555;
           }
         }
         &>ul{ 
-          ul{ background: $bodyBgc; box-shadow: $shadow2 0 0 20px;
-            &>li{ border-bottom-color: lighten($bodyBgc, 12%);
-              &::before{ background-color: $primaryColor; }
+          ul{ background: $primaryColor; box-shadow: $shadow2 0 0 20px;
+            &>li{ border-bottom-color: darken($primaryColor, 6%);
+              &::before{ background-color: $lightColor; }
               &>a{ color: $secondaryColor;
-                &:hover, &:focus {color:$secondaryColor; background: $primaryColor; }
+                &:hover, &:focus {color:$secondaryColor; background: darken($primaryColor, 6%); }
               }
               &.hasChild{
                 a{
@@ -1579,7 +1617,7 @@ $grayDark: #555;
     .links li{
       &::before{background-color:  $font-color-light;}
       a{
-        &:hover, &:focus{border-color: $lightColor; color: $lightColor; }
+        &:hover, &:focus{border-color: $font-color-dark; color: $font-color-dark; }
       }
     }
   }
@@ -1684,11 +1722,12 @@ $grayDark: #555;
   }
   input[type="checkbox"]{
     &:checked{
-      background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
-      background-size: 96%;
-      box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 2px;
+      border-color: transparent;
+      &:focus{box-shadow: $secondaryColor 0 0 0 1px, $primaryColor 0 0 0 4px;}
     }
-    &:focus{box-shadow: $primaryColor 0 0 0 2px, $lightColor 0 0 0 4px ; border-color: #fff;}
+    &:focus{box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;}
   }
 
 
@@ -1717,26 +1756,37 @@ $grayDark: #555;
     }
   }
 
-  // fieldset
+  // 表單群組
   fieldset {
     border-color:$border-color-light;
-    legend {
-      border-color: $border-color-light;
-    }
+    legend {border-color: $border-color-light;}
   }
 
 
+  // 顯示密碼
   button.viewIcon{
-    background-color: $grayDark;
+    background-color: $primaryColor;
     &:hover{ 
-      background-color: $grayDark;
-      box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 2px
     }
     &:focus{
       background-color: $primaryColor;
-      box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+      box-shadow: $primaryColor 0 0 0 3px, $secondaryColor 0 0 0 2px inset;
     }
   }
+
+  .btnDv{
+    border-top-color: $border-color;
+  }
+
+  // 通用表單樣式Ａ
+  .formA{
+    @media screen and (min-width: $wwNormal){
+      box-shadow: $shadow 0 0 12px 1px;
+    }
+  }
+  
   // 表單元件：結束。。。。。。 //
 
 
@@ -1746,15 +1796,13 @@ $grayDark: #555;
     .accesskey{ color: $font-color;
       &:focus{ outline: 2px solid $importantColor;}
     }
-    .webFooter .accesskey{
-      color: $invert-font;
-    }
+    .webFooter .accesskey{color: $font-color;}
   }
 
 
   // 現在位置
   .breadcrumb {
-    color: $font-color;
+    color: $font-color-light;
     a{color: $font-color-dark;
       &:hover{border-bottom-color: $font-color-dark;}
       &:focus{box-shadow: $border-color 0 0 0 1px inset; border-bottom-color:transparent; color:$font-color-dark;}
@@ -1780,11 +1828,9 @@ $grayDark: #555;
 
   // goTop 捲動到頁面最上方
   .goTop{ 
-    a{ background-color: #6668;
-      &:hover, &:focus{
-        background-color: #555;
-      }
-      &:focus{box-shadow: $border-color 0 0 0 2px;}
+    a{ background-color: transparentize($primaryColor, .2);
+      &:hover, &:focus{background-color: $btn-bg2;}
+      &:focus{box-shadow: $bodyBgc 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
     }
   }
 
@@ -1802,8 +1848,7 @@ $grayDark: #555;
         background: $bodyBgc; color: $font-color;
         box-shadow: $border-color 0 0 0 1px;
         &:hover, &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 20px 2px; }
-        &:focus{ box-shadow: $border-color-dark 0 0 0 1px, $shadow2 0 0 0 5px; }
-
+        &:focus{ box-shadow: $border-color-dark 0 0 0 2px;}
       }
     }
   }
@@ -1825,16 +1870,9 @@ $grayDark: #555;
       }
       .article{
         a{ 
-          &::before{
-            border-color: transparent transparent transparent $primaryColor;
-          }
-          &:hover{
-            box-shadow:$border-color 0 0 0 1px;
-          }
-          &:focus{
-            box-shadow:$primaryColor 0 0 0 1px;
-          }
-
+          &::before{border-left-color: $secondaryColor;}
+          &:hover{box-shadow:$primaryColor 0 0 0 1px;}
+          &:focus{box-shadow:$secondaryColor 0 0 0 1px;}
         }
       }
       .count{
@@ -1854,13 +1892,11 @@ $grayDark: #555;
         }
         &.active{
           a{background-color:  $primaryColor; color: $font-color-dark;
-            &:hover, &:focus{background-color: darken($primaryColor, 10%);}
+            &:hover, &:focus{background-color: darken($primaryColor, 6%);}
           }
         }
       }
-      .tabContent{
-        border-top-color:  $primaryColor;
-      }
+      .tabContent{border-top-color:  $primaryColor;}
 
     }
   }
@@ -1885,8 +1921,8 @@ $grayDark: #555;
     .list>li{
       box-shadow: $border-color-light 0 0 0 1px;
       &>a{
-        &:hover{ box-shadow: $border-color 0 0 0 1px, transparentize($font-color, .4) 0 0 24px;}
-        &:focus{box-shadow: $border-color-dark 0 0 0 1px, transparentize($font-color, .4) 0 0 0 5px;}
+        &:hover{ box-shadow: $border-color 0 0 0 1px, $shadow2 0 0 24px;}
+        &:focus{box-shadow: $border-color-dark 0 0 0 1px, $border-color 0 0 0 5px;}
       }
       .title{
         color: $font-color-dark;
@@ -1959,23 +1995,22 @@ $grayDark: #555;
     &:first-child{border-color: $border-color-light;}
   
     .type{
-      background-color: transparentize($font-color, .8);
+      background-color: $grayLight;
       border-color: $border-color-light;
-      &::before{ background-color:  $lightColor;}
+      &::before{ background-color:  $primaryColor;}
     }
   
     .articleHeader{
-      color: $font-color-dark;
-      a{
-        border-color: $border-color;
-       &:hover, &:focus{border-color:$lightColor;}
-       &:focus{outline: 1px solid $lightColor;}
+      color: $font-color;
+      a{ border-color: $font-color-light; color: $font-color;
+       &:hover{ border-color:$font-color;}
+       &:focus{ outline-color: $font-color;border-color:$font-color-dark;}
       }
     }
 
     dt{
       color: $font-color-light;
-      &::after{background-color: $lightColor;}
+      &::after{background-color: $primaryColor;}
     }
     dd{ color: $font-color-dark;  }
    
@@ -1985,8 +2020,8 @@ $grayDark: #555;
   // 最新消息內容頁
   .cpArticle{
     a{color: $linkColor; border-color: $linkColor;
-      &:hover, &:focus{ border-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
-      &:focus{ outline-color: $border-color;}
+      &:hover, &:focus{ border-color: $linkColor; color: $linkColor;}
+      &:focus{ outline-color:$linkColor;}
     }
     table{border-color: $border-color;
       th, td{border-color: $border-color;}
@@ -2006,9 +2041,9 @@ $grayDark: #555;
   .attachment{
     li{ 
       &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
-      a{border-color: $border-color-light;
+      a{border-color: $border-color;
         &:hover{border-color: $border-color-dark; }
-        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+        &:focus{border-color: $font-color-dark; }
       }
     }
   }
@@ -2029,19 +2064,15 @@ $grayDark: #555;
 
   // 連結，像 button 樣式
   .linkBtn {
-    &>a {
-      color: $font-color;  border-color: $primaryColor;
+    &>a { color: $font-color;  border-color: $border-color;
       &:hover, &:focus {
-        border-color: transparent; color: $primaryColor;
+        color: $font-color-dark;
       }
-      &:hover {
-        box-shadow: $primaryColor 0 0 0 1px;
-      }
-      &:focus {
-        box-shadow: $primaryColor 0 0 0 2px;
-      }
+      &:hover {border-color: $border-color-dark; box-shadow: none;}
+      &:focus {border-color: transparent; box-shadow: $border-color-dark 0 0 0 2px;}
     }
   }
+
 
 
   
@@ -2148,7 +2179,23 @@ $grayDark: #555;
   .notice{
     background-color: $grayLight;
     &>a, p a{ color: $font-color;}
-  }    
+  }
+
+  // 網路辦證，申辦說明
+  .statement{
+    box-shadow: $border-color 0 0 0 1px;
+    .pageHeader{ border-bottom-color: $border-color-light; }
+  }
+  
+
+  // 單獨存在的區塊型 checkbox //
+  label.readAndAgree{
+    border-color: $border-color-light;
+    &:hover{ border-color: $border-color;}
+  }
+
+  // 下載中動畫
+  .loadingAni {background-color: $footerBgc; }
 }
 // end of ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ color3
 
@@ -2183,11 +2230,11 @@ $grayDark: #555;
   $secondaryColor: #ffffff; //輔色
   $lightColor: #ffe839; //點綴
   $linkColor: #58d8ff; //連結文字顏色
-  $importantColor: #ff5a86; //重要
-  $bodyBgc: #285c72; //body 背景色
+  $importantColor: #ff5fa4; //重要
+  $bodyBgc: #264b5b; //body 背景色
 
-  $font-color: #eee;
-  $font-color-light:#ccc;
+  $font-color: #c6ced2;
+  $font-color-light:#a3aaae;
   $font-color-dark:#fff;
   $invert-font:#000;
   
@@ -2195,15 +2242,15 @@ $grayDark: #555;
   $border-color: #81959e;
   $border-color-light: #76868d;
   $border-color-dark:#d8e2e6;
-  $shadow:#0005;
-  $shadow2:#0008;
+  $shadow:#0006;
+  $shadow2:#0009;
   
   $btn-bg1: $primaryColor ;
   $btn-bg2:lighten($primaryColor, 6%);
   
-  $gray: #5f6a6f;
-  $grayLight: #486f80;
-  $grayDark: #b1c6d0;
+  $gray: #455861;
+  $grayLight: #444a4d;
+  $grayDark: #b9c4c9;
   // .......... ^_^ .......... //
   background-color:$bodyBgc; color:$font-color;
   a{color:$font-color;}
@@ -2245,7 +2292,7 @@ $grayDark: #555;
         background: $primaryColor; 
         &>ul>li{
           &>a{ color: $secondaryColor;
-            &:hover{ background-color: lighten($primaryColor, 15%);}
+            &:hover{ background-color: darken($bodyBgc, 5%);}
             &:focus{background-color:$primaryColor; box-shadow: $lightColor 0 0 0 1px inset;}
           }
           &.hasChild{
@@ -2257,7 +2304,7 @@ $grayDark: #555;
             &>li{ border-bottom-color: lighten($bodyBgc , 8%);
               &::before{ background-color: lighten($bodyBgc , 18%); }
               &>a{ color: $font-color;
-                &:hover, &:focus {color:$font-color; background: lighten($bodyBgc, 8%); }
+                &:hover, &:focus {color:$font-color; background: darken($bodyBgc, 5%); }
               }
               &.hasChild{
                 a{
@@ -2406,26 +2453,38 @@ $grayDark: #555;
     }
   }
 
-  // fieldset
+  // 表單群組
   fieldset {
     border-color:$border-color-light;
-    legend {
-      border-color: $border-color-light;
-    }
+    legend {border-color: $border-color-light;}
   }
 
 
+  // 顯示密碼
   button.viewIcon{
-    background-color: $grayDark;
+    background-color: $primaryColor;
     &:hover{ 
       background-color: $grayDark;
-      box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+      box-shadow: $grayDark 0 0 0 2px;
     }
     &:focus{
       background-color: $primaryColor;
       box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
     }
   }
+
+  .btnDv{
+    border-top-color: $border-color;
+  }
+
+
+  // 通用表單樣式Ａ
+  .formA{
+    @media screen and (min-width: $wwNormal){
+      box-shadow: $shadow 0 0 12px 1px;
+    }
+  }
+
   // 表單元件：結束。。。。。。 //
 
 
@@ -2436,7 +2495,7 @@ $grayDark: #555;
       &:focus{ outline: 2px solid $importantColor;}
     }
     .webFooter .accesskey{
-      color: $invert-font;
+      color:$font-color;
     }
   }
 
@@ -2469,11 +2528,9 @@ $grayDark: #555;
 
   // goTop 捲動到頁面最上方
   .goTop{ 
-    a{ background-color: #6668;
-      &:hover, &:focus{
-        background-color: #555;
-      }
-      &:focus{box-shadow: $border-color 0 0 0 2px;}
+    a{ background-color: transparentize($primaryColor, .2);
+      &:hover, &:focus{background-color: $btn-bg2;}
+      &:focus{box-shadow: $bodyBgc 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
     }
   }
 
@@ -2649,10 +2706,9 @@ $grayDark: #555;
   
     .articleHeader{
       color: $font-color-dark;
-      a{
-        border-color: $border-color;
+      a{ border-color: $border-color;
        &:hover, &:focus{border-color:$lightColor;}
-       &:focus{outline: 1px solid $lightColor;}
+       &:focus{outline-color: $lightColor;}
       }
     }
 
@@ -2691,7 +2747,7 @@ $grayDark: #555;
       &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
       a{border-color: $border-color-light;
         &:hover{border-color: $border-color-dark; }
-        &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
+        &:focus{border-color: $font-color-dark; }
       }
     }
   }
@@ -2712,17 +2768,12 @@ $grayDark: #555;
 
   // 連結，像 button 樣式
   .linkBtn {
-    &>a {
-      color: $font-color;  border-color: $primaryColor;
+    &>a { color: $font-color;  border-color: $border-color;
       &:hover, &:focus {
-        border-color: transparent; color: $primaryColor;
+        color: $font-color-dark;
       }
-      &:hover {
-        box-shadow: $primaryColor 0 0 0 1px;
-      }
-      &:focus {
-        box-shadow: $primaryColor 0 0 0 2px;
-      }
+      &:hover {border-color: $border-color-dark; box-shadow: none;}
+      &:focus {border-color: transparent; box-shadow: $border-color-dark 0 0 0 2px;}
     }
   }
 
@@ -2833,10 +2884,7 @@ $grayDark: #555;
         // background: $grayDark; box-shadow:$grayDark 0 0 0 2px;
         color: $font-color;
       }
-      &:focus{
-        // background: $grayDark; 
-        // box-shadow: $grayDark 0 0 0 4px;
-      }
+
     }
   }
 
@@ -2846,5 +2894,22 @@ $grayDark: #555;
     background-color: $grayLight;
     &>a, p a{ color: $font-color;}
   }    
+
+  // 網路辦證，申辦說明
+  .statement{
+    box-shadow: $border-color 0 0 0 1px;
+    .pageHeader{ border-bottom-color: $border-color-light; }
+  }
+  
+
+  // 單獨存在的區塊型 checkbox //
+  label.readAndAgree{
+    border-color: $border-color-light;
+    &:hover{ border-color: $border-color;}
+  }
+
+
+  // 下載中動畫
+  .loadingAni {background-color: $footerBgc; }
 }
 // end of ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ color4 

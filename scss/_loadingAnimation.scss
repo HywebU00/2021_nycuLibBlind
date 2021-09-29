@@ -3,9 +3,11 @@
   display: block; z-index: 999; font-size: 1rem;
   position: relative;left: 50%; top: auto; 
   width: 80px; height:44px; margin: 0 0 60px -40px ;
-  background:rgba(0,0,0,.6);border-radius: 22px;
-  box-shadow: #fff8 0 0 2px 1px;
+  border-radius: 22px;
+  // box-shadow: #fff8 0 0 2px 1px;
   text-align: center;
+  // background:rgba(0,0,0,.6);
+  background-color:$footerBgc;
 
   &::after{
     content: attr(title); display: inline-block; width: auto; white-space: nowrap;

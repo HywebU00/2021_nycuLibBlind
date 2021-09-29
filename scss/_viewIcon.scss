@@ -10,10 +10,10 @@ button.viewIcon{
   background-size: 32px; transition: .2s;
   &:hover{ 
     background-color: $grayDark;
-    box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+    box-shadow: $grayDark 0 0 0 2px;
   }
   &:focus{
     background-color: $primaryColor;
-    box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+    box-shadow: $primaryColor 0 0 0 3px, $secondaryColor 0 0 0 2px inset;
   }
 }
