@@ -711,6 +711,13 @@ $grayDark: #555;
     }
   }
 
+  // 網路辦證，申辦說明
+  .statement{
+    box-shadow: $border-color 0 0 0 1px;
+    .pageHeader{ border-bottom-color: $border-color-light; }
+  }
+  
+
   // 單獨存在的區塊型 checkbox //
   label.readAndAgree{
     border-color: $border-color-light;
@@ -776,7 +783,7 @@ $grayDark: #555;
 
   a{color:$font-color;}
   h1, h2, h3, h4, h5, h6{color: $font-color-dark;}
-  ::selection{ background: invert($bodyBgc); color: $invert-font;}
+  ::selection{ background: $primaryColor; color: $invert-font;}
 
 
 
@@ -934,9 +941,9 @@ $grayDark: #555;
     &:checked{
       background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
       background-size: 96%;
-      box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+      box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;
     }
-    &:focus{box-shadow: $primaryColor 0 0 0 2px, $lightColor 0 0 0 4px ; border-color: #fff;}
+    &:focus{box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;}
   }
 
 
@@ -1240,23 +1247,22 @@ $grayDark: #555;
     &:first-child{border-color: $border-color-light;}
   
     .type{
-      background-color: transparentize($font-color, .8);
+      background-color: $grayLight;
       border-color: $border-color-light;
-      &::before{ background-color:  $lightColor;}
+      &::before{ background-color:  $primaryColor;}
     }
   
     .articleHeader{
       color: $font-color-dark;
-      a{
-        border-color: $border-color;
-       &:hover, &:focus{border-color:$lightColor;}
-       &:focus{outline: 1px solid $lightColor;}
+      a{ border-color: $font-color;
+       &:hover, &:focus{border-color:$primaryColor;}
+       &:focus{outline: 1px solid $primaryColor;}
       }
     }
 
     dt{
       color: $font-color-light;
-      &::after{background-color: $lightColor;}
+      &::after{background-color: $primaryColor;}
     }
     dd{ color: $font-color-dark;  }
    
@@ -1287,7 +1293,7 @@ $grayDark: #555;
   .attachment{
     li{ 
       &::before{background-color: $font-color; box-shadow: $grayLight 2px 3px 0;}
-      a{border-color: $border-color-light;
+      a{border-color: $border-color;
         &:hover{border-color: $border-color-dark; }
         &:focus{border-color: $font-color-dark; border-bottom-width: 2px;}
       }
@@ -1427,9 +1433,23 @@ $grayDark: #555;
   // notice：注意事項、附加說明
   .notice{
     background-color: $grayLight;
-    &>a, p a{ color: $font-color;}
+    &>a, p a{ color: $font-color; border-bottom-color: $font-color-light;
+      &:hover, &:focus{ border-bottom-color: $font-color-dark;}
+      &:focus{outline-color: $font-color-dark;}
+    }
   }
 
+  // 網路辦證，申辦說明
+  .statement{
+    box-shadow: $border-color 0 0 0 1px;
+    .pageHeader{ border-bottom-color: $border-color-light; }
+  }
+
+  // 單獨存在的區塊型 checkbox //
+  label.readAndAgree{
+    border-color: $border-color-light;
+    &:hover{ border-color: $border-color;}
+  }
 }
 // end of ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ color2
 
