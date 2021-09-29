@@ -182,12 +182,12 @@
 .sidebarCtrl{
   position:absolute; left:0; top:0;  z-index:980; cursor:pointer;
   width:52px; height:52px; box-sizing: content-box;
-  box-shadow: none;
+  // box-shadow: none;
   transition:  .5s;
   
-  background:#fff; border:none; border-radius:0; outline:none;
+  background:transparent; border:none; border-radius:0; outline:none;
   margin:0; padding:0; 
-  &:hover, &:focus { background:$lightColor;box-shadow: none; }
+  &:hover, &:focus {background:transparent; box-shadow: none;}
   &::before, &::after{
     content: ''; position: absolute; top: 50%; left: 50%;
     width:16px; margin-left: -8px;
@@ -210,9 +210,7 @@
       border: 2px solid $primaryColor;
       border-top: none; border-right: none; transform: rotate(45deg);
     }
-    &:hover { background: lighten($lightColor, 20%);
-      // &::before{border-color: #fff;}
-    }
+    // &:hover { background: $lightColor;}
     &::after { display: none;}
   }
 

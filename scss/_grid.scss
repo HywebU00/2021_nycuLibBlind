@@ -17,8 +17,8 @@
       display: block; margin: -10px; padding: 10px;
       text-decoration: none; outline: none;
       transition: .2s;
-      &:hover{ box-shadow: #0003 0 0 24px;}
-      &:focus{box-shadow: $primaryColor 0 0 0 1px, #0003 0 0 24px;}
+      &:hover{ box-shadow: $shadow 0 0 24px;}
+      &:focus{box-shadow: $primaryColor 0 0 0 1px, $shadow 0 0 24px;}
     }
 
     // box-shadow: $border-color-light 0 0 0 1px;

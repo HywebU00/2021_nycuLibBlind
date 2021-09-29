@@ -15,9 +15,9 @@
     img{display: block; width: 100%;}
   }
 
-  a{ color: $linkColor; border-bottom: 1px solid $linkColor; text-decoration: none; outline: none;
-    &:hover, &:focus{ text-decoration: none; border-bottom-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
-    &:focus{outline: 1px solid $border-color;}
+  a{ color: $linkColor; border-bottom: 2px solid $linkColor; text-decoration: none; outline: none;
+    &:hover, &:focus{ text-decoration: none; border-bottom-width:3px ; border-bottom-color: lighten($linkColor, 20%); color: lighten($linkColor, 20%);}
+    // &:focus{outline: 1px solid $border-color;}
   }
 
   table{width:100%;margin:.2em auto;border-collapse:collapse;line-height:1.8;border:2px solid $border-color;
@@ -102,9 +102,7 @@
       position: relative; 
       border-bottom: $border-color dotted 1px;
       &:hover{ border-bottom: 1px solid $border-color-dark; }
-      &:focus{ border-bottom: 1px solid $primaryColor; 
-        &::before{ left: 5px;}
-      }
+      &:focus{ border-bottom: 1px solid $primaryColor;}
       &::before{
         content: ''; position: absolute; left: 3px; top: .6em;
         width: 6px; height: 6px;  border: 3px solid $primaryColor;

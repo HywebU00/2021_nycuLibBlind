@@ -73,11 +73,8 @@ select {
 }
 
 // 按鈕樣式
-.button>a,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+.button>a, button,
+input[type="submit"], input[type="reset"], input[type="button"] {
   -webkit-appearance: none;
   box-sizing: border-box;
   height: 2.8em; line-height: 2.8em;
@@ -95,9 +92,9 @@ input[type="button"] {
     color: $invert-font;
   }
   &:focus{
-    background-color: $btn-bg1;
+    background-color: $btn-bg2;
     border-color: $invert-font;
-    box-shadow: $btn-bg1 0 0 0 2px;
+    box-shadow: $btn-bg2 0 0 0 3px;
   }
 }
 .button{
@@ -116,9 +113,10 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
   -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  border: 1px solid $border-color-dark;
   box-sizing: border-box;outline: none ;
   margin:1px 10px 0 4px; vertical-align: middle;
-  width: 1em; height: 1em; line-height: 1; border: 1px solid $grayDark;
+  width: 1em; height: 1em; line-height: 1; 
   transition: .1s;
 }
 input[type="radio"] {
@@ -132,13 +130,13 @@ input[type="radio"] {
 }
 input[type="checkbox"]{ 
   border-radius: 3px;
-  border: 1px solid $grayDark;
+  &:focus{box-shadow: $primaryColor 0 0 0 2px; border-color: $bodyBgc;}
   &:checked{
     background: $primaryColor url(../images/icon_check.svg) no-repeat center center;
     background-size: 96%;
-    box-shadow: $primaryColor 0 0 0 2px; border-color: #fff;
+    box-shadow: $primaryColor 0 0 0 2px; border-color: $bodyBgc;
+    &:focus{box-shadow: $bodyBgc 0 0 0 1px, $primaryColor 0 0 0 4px;}
   }
-  &:focus{box-shadow: $primaryColor 0 0 0 2px, darken($lightColor, 15%) 0 0 0 4px ; border-color: #fff;}
 }
 
 // disabled
@@ -225,7 +223,6 @@ label.readAndAgree{
   border: 1px solid $border-color-light;
   &:hover{ border-color: $border-color;}
   input{margin-top: -3px;}
-
 }
 
 

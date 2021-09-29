@@ -109,7 +109,6 @@ $(function(){
   var _astPreferences = $('.assistant').find('.preferences');
   var _options = _astPreferences.find('.fontSize, .colorSet');
   var _closePref = _astPreferences.find('.closeBtn>a');
-  // var _lastAndOut = _options.filter('.colorSet').find('li:last>a');
   const hideSpeed = 250;
 
   _options.each(function(){
@@ -161,8 +160,8 @@ $(function(){
 
   // 輔助偏好設定：更換配色
   var _prefColorset = _options.filter('.colorSet').children('li').children('a');
-  const colorsetNow = _prefColorset.parent().filter('.active').attr('class').replace(' active','');
-  _body.addClass(colorsetNow);
+  // const colorsetNow = _prefColorset.parent().filter('.active').attr('class').replace(' active','');
+  // _body.addClass(colorsetNow);
   _prefColorset.click(function(e){
     let colorSet = $(this).parent().attr('class').replace(' active','');
     e.preventDefault();

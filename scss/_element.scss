@@ -74,17 +74,17 @@
   &.show{bottom: 10px; transition: .4s;}
   a{ display: block;
     width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
-    background-color: darken($bodyBgc, 40%);
+    // background-color: darken($bodyBgc, 40%);
+    background-color: transparentize($primaryColor, .2);
     transition:.2s; cursor: pointer; outline: none;
     &::before, &::after{ content: '';position: absolute;}
     &::before{
       left: 50%; top: 50%; margin: -4px auto auto -6px;
       width: 12px; height: 12px; transform: rotate(45deg);
-      border: 2px solid #fff; border-bottom: none; border-right: none;  
+      border: 2px solid $invert-font; border-bottom: none; border-right: none;  
     }
-    &:hover, &:focus{
-      background-color: $primaryColor;
-    }
+    &:hover, &:focus{background-color: $btn-bg2;}
+    &:focus{box-shadow: $invert-font 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
   }
 }
 
@@ -242,23 +242,16 @@
 
 
 // 連結，像 button 樣式
-.linkBtn {
-  display: inline-block;
+.linkBtn { display: inline-block;
   &>a {
     display: block; text-align: center;
     height: 2.5em; line-height: 2.4; padding: 0 1em; margin: 3px;
     color: $font-color; text-decoration: none;
     border: 1px solid $primaryColor; border-radius: 2em;outline: none;
     transition: .2s; 
-    &:hover, &:focus {
-      border-color: transparent; color: $primaryColor;
-    }
-    &:hover {
-      box-shadow: $primaryColor 0 0 0 1px;
-    }
-    &:focus {
-      box-shadow: $primaryColor 0 0 0 2px;
-    }
+    &:hover, &:focus {border-color: transparent; color: $primaryColor;}
+    &:hover {box-shadow: $primaryColor 0 0 0 1px;}
+    &:focus {box-shadow: $primaryColor 0 0 0 2px;}
   }
 }
 
@@ -269,24 +262,25 @@
   font-size: .88em; line-height: 25px; width: 52px; height: 24px;
   text-indent: calc(-100% - 1em); text-align: left; color:$font-color;
   text-indent: -4.5em; border-radius: 12px; 
-  background: #444; box-shadow: #444 0 0 0 2px;
-  &:hover{
-    background: #444; box-shadow:#444 0 0 0 2px;
-    border: none; 
-    color: $font-color;
-    &::before{ box-shadow:#fff 0 0 0 6px inset ;}
-  }
-  &:focus{
-    background: #000; 
-    box-shadow: #000 0 0 0 4px;
-  }
+  background: #333; box-shadow: #333 0 0 0 2px;
   &::before {
     content: "";
     position: absolute;left: 0;top: 0;
     width: 24px;height: 24px; border-radius: 50%; z-index: 2;
     transition: left 0.12s linear, box-shadow .2s; outline: none;
-    background: #999; box-shadow:#fff 0 0 0 8px inset;
+    background: #888; box-shadow:#fff 0 0 0 6px inset;
   }
+  &:hover, &:focus{
+    background: #333; box-shadow:#333 0 0 0 2px;
+    border: none; 
+    color: $font-color;
+    &::before{ box-shadow:#fff 0 0 0 4px inset;}
+  }
+  // &:focus{
+  //   background: #000; 
+  //   box-shadow: #000 0 0 0 4px;
+  // }
+
   &::after {
     content: "關"; text-indent: 0;position: absolute;right: 9px;
     color:#fff; 
@@ -294,11 +288,8 @@
 
   &.on {
     &::before {left: calc(100% - 24px);
-      background: #87da00; box-shadow:#fff 0 0 0 8px inset;
+      background: #87da00;
     }
     &::after {content: "開";left: 8px;right: auto; }
-    &:hover{
-      &::before{box-shadow:#fff 0 0 0 6px inset;}
-    }
   }
 }

@@ -4,7 +4,10 @@
   background-color: $grayLight;
   line-height: 1.8;
 
-  &>a, p a{ color: $font-color; text-decoration: underline;}
+  &>a, p a{ color: $font-color; text-decoration: none; border-bottom: 2px solid $font-color-light;
+    &:hover, &:focus{ border-bottom-width: 3px;}
+    &:focus{outline: 1px solid $primaryColor;}
+  }
   p+p{margin-top: 2em;}
   em{ font-weight: bold; font-style: normal; display: inline-block; margin: 0 5px;
     &.enlarge{ font-size: 1.4em; font-weight: normal;}
