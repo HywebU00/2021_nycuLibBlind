@@ -49,7 +49,7 @@
   position: absolute;
   width: 40px; height: 40px; border-radius: 50%;
   border: none; outline: none;
-  background-color: lighten($gray, 5%);
+  background-color: transparent;
 
   &::before{content: '';
     position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -6px;
@@ -58,9 +58,9 @@
     border: 3px solid $primaryColor; 
     border-left: none; border-top: none;
   }
-  &:hover {background-color:$bodyBgc;}
+  &:hover {background-color:$gray; box-shadow: $gray 0 0 0 2px;}
   &:focus{
-    background-color: lighten($gray, 4%);
+    background-color: transparent;
     box-shadow: $primaryColor 0 0 0 2px;
   }
 

@@ -76,8 +76,8 @@ $grayDark: #555;
   $btn-bg1: $primaryColor ;
   $btn-bg2: lighten($primaryColor, 12%);
   
-  $gray: #2a2a2a;
-  $grayLight: #181818;
+  $gray: #333;
+  $grayLight: #262626;
   $grayDark: #bbb;
 
   // .......... ^_^ .......... //
@@ -657,12 +657,12 @@ $grayDark: #555;
   }
 
   // 控制開合的button
-  .slideCtrl{ background-color: $gray;
-    &::before{border-color: $grayLight; }
-    &:hover {background-color:$font-color-dark;}
+  .slideCtrl{ background-color: transparent;
+    &::before{border-color: $font-color-dark; }
+    &:hover {background-color:$gray; box-shadow: $gray 0 0 0 2px;}
     &:focus{
-      background-color: $font-color-dark;
-      box-shadow: $font-color-dark 0 0 0 2px;
+      background-color: transparent;
+      box-shadow: $grayDark 0 0 0 2px;
     }
   }
 
@@ -671,19 +671,12 @@ $grayDark: #555;
     box-shadow: $border-color 0 0 0 1px;
     ul.info{
       li{
-        em{
-          color: $font-color;
-        }
-
-        &.clickCount{
-          color: $font-color-light;
-        }
+        em{color: $font-color;}
+        &.clickCount{color: $font-color-light;}
         &.icon_download{
           &>a{
             color: $font-color;box-shadow: $border-color 0 0 0 1px;
-            &::before{
-              background-color:$primaryColor;
-            }
+            &::before{background-color:$primaryColor;}
             &:hover{ box-shadow: $border-color-dark 0 0 0 1px; }
             &:focus{ box-shadow: $border-color-dark 0 0 0 2px;}
           }
@@ -1413,12 +1406,12 @@ $grayDark: #555;
   }
 
   // 控制開合的button
-  .slideCtrl{ background-color: $gray;
-    &::before{border-color: $grayLight; }
-    &:hover {background-color:$font-color-dark;}
+  .slideCtrl{ background-color: transparent;
+    &::before{border-color: $primaryColor; }
+    &:hover {background-color:$grayLight; box-shadow: $grayLight 0 0 0 2px;}
     &:focus{
-      background-color: $font-color-dark;
-      box-shadow: $font-color-dark 0 0 0 2px;
+      background-color: transparent;
+      box-shadow: $primaryColor 0 0 0 2px;
     }
   }
 
@@ -2153,12 +2146,12 @@ $grayDark: #555;
   }
 
   // 控制開合的button
-  .slideCtrl{ background-color: $gray;
-    &::before{border-color: $grayLight; }
-    &:hover {background-color:$font-color-dark;}
+  .slideCtrl{ background-color: transparent;
+    &::before{border-color: $secondaryColor; }
+    &:hover {background-color:$grayLight; box-shadow: $grayLight 0 0 0 2px;}
     &:focus{
-      background-color: $font-color-dark;
-      box-shadow: $font-color-dark 0 0 0 2px;
+      background-color: transparent;
+      box-shadow: $primaryColor 0 0 0 2px;
     }
   }
 
@@ -2876,12 +2869,12 @@ $grayDark: #555;
   }
 
   // 控制開合的button
-  .slideCtrl{ background-color: $gray;
+  .slideCtrl{ background-color: transparent;
     &::before{border-color: $font-color-dark; }
-    &:hover {background-color: $gray;box-shadow: $gray 0 0 0 2px;}
+    &:hover {background-color: $grayLight;box-shadow: $grayLight 0 0 0 2px;}
     &:focus{
-      background-color: $gray;
-      box-shadow: $font-color-dark 0 0 0 2px;
+      background-color: transparent;
+      box-shadow: $border-color-dark 0 0 0 2px;
       &::before{border-color: $font-color-dark; }
     }
   }
