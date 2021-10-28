@@ -350,7 +350,8 @@ $(function(){
   _playList.each(function(){
     let _playItem = $(this).find('li>a');
     _playItem.click(function(){
-      $(this).parent().addClass('playing').attr('aria-label','播放中').siblings().removeClass('playing').removeAttr('aria-label')
+      _playItem.attr('aria-selected','false').parent().removeClass('playing');
+      $(this).attr('aria-selected','true').parent().addClass('playing');
     })
   })
 
