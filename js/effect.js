@@ -46,6 +46,26 @@ $(function(){
   })
 
 
+  // 右上選單（桌機版）
+  var _topLink = $('.webHeader').find('.topLinks');
+  _topLink.children('ul').children('li').not('.assistant').has('ul').addClass('hasChild');
+  var _hasChildLi = _topLink.find('.hasChild');
+  var _slideUl = _hasChildLi.children('ul');
+  _hasChildLi.find('a').click(function(){
+    let _slideTarget = $(this).next('ul');
+    if (_slideTarget.is(':visible')) {
+      _slideTarget.stop(true, false).slideUp();
+    } else {
+      _slideTarget.stop(true, false).slideDown();
+    }
+  })
+  _slideUl.mouseleave( function(){
+    $(this).slideUp();
+  })
+  _hasChildLi.siblings().children('a').focus(function(){
+    _slideUl.slideUp();
+  })
+
 
 
 

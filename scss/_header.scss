@@ -41,7 +41,6 @@
             background-position: center -50px;
           }
         }
-
       }
     }
   }
@@ -86,6 +85,53 @@
             }
           }
 
+          // 補「個人專區」子選單 20211029
+          &.hasChild{
+            &>a{
+              position: relative; padding-right: 20px;
+              &::before{
+                content: ''; width: 7px; height: 7px;
+                border: 2px solid $border-color; border-top: none; border-left: none;
+                transform: rotate(45deg);
+                position: absolute; left: auto; right: 5px; top: 48%;
+                background-color: transparent;
+                transition: .15s;
+              }
+              &:hover, &:focus{
+                &::before{border-color: $primaryColor;}
+              }
+            }
+            &>ul{ 
+              display: none;
+              position: absolute; z-index: 9;
+              background: $bodyBgc; color: $font-color;
+              box-shadow: #0006 0 0 25px;
+              line-height: 1.5; min-width: 8em;
+              li{
+                &>a{
+                  display: block;position: relative; text-decoration: none;
+                  border-bottom: 1px solid $border-color-light;
+                  padding: .55em 1em .6em;
+                  color: $font-color;
+                  &::before{
+                    content: ''; position: absolute; top: 0; left: 0;bottom: 0;
+                    width: 0; background: transparent;
+                    transition: .15s;
+                  }
+      
+                  &:hover,  &:focus{
+                    color: $primaryColor; outline: none;
+                    &::before{
+                      background: $primaryColor; width: 4px;
+                    }
+                  }
+                }
+                &:last-child>a{border-bottom: none;}
+              }
+            }
+  
+          }  
+
           &.assistant, &.loginBtn{
             &>a{
               width: auto; height: 2.8em; border-radius:0; box-shadow: none;
@@ -120,7 +166,7 @@
       }
       &>ul{ 
         display: flex; flex-flow: row nowrap; justify-content: space-between;
-         margin: 0 auto; width:92vw ; max-width: $wwWide;
+        margin: 0 auto; width:92vw ; max-width: $wwWide;
         font-size: 1.125rem; line-height: 1;
         &>li{
           flex: 1 1 auto; margin-right: 15px;

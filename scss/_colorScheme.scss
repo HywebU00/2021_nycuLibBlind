@@ -98,6 +98,29 @@ $grayDark: #555;
       &>a{ color: $font-color;
         &::after{background-color: $lightColor;}
       }
+
+      &.hasChild{
+        &>a{
+          &::before{border-color: $border-color;}
+          &:hover, &:focus{
+            &::before{border-color: $lightColor;}
+          }
+        }
+        &>ul{ 
+          background: $bodyBgc; color: $font-color;
+          box-shadow: #fff5 0 0 25px;
+          li{
+            &>a{
+              border-bottom-color: $border-color-light; color: $font-color;
+              &:hover,  &:focus{
+                color: $lightColor;
+                &::before{ background: $lightColor;}
+              }
+            }
+          }
+        }
+      }  
+
       @media screen and (max-width: $wwNormal - 1px){
         &.assistant, &.loginBtn{
           &>a{
@@ -839,6 +862,28 @@ $grayDark: #555;
       &>a{ color: $font-color;
         &::after{background-color: $primaryColor;}
       }
+      &.hasChild{
+        &>a{
+          &::before{border-color: $border-color;}
+          &:hover, &:focus{
+            &::before{border-color: $primaryColor;}
+          }
+        }
+        &>ul{ 
+          background: $bodyBgc; color: $font-color;
+          box-shadow: #0006 0 0 25px;
+          li{
+            &>a{
+              border-bottom-color: $border-color-light; color: $font-color;
+              &:hover,  &:focus{
+                color: $primaryColor;
+                &::before{ background: $primaryColor;}
+              }
+            }
+          }
+        }
+      }  
+
 
       @media screen and (max-width: $wwNormal - 1px){
         &.assistant, &.loginBtn{
@@ -1584,10 +1629,31 @@ $grayDark: #555;
   .webHeader{
     border-bottom-color: $primaryColor;
     .topLinks>ul>li{
-
       &>a{ color: $font-color;
         &::after{background-color: $lightColor;}
       }
+      &.hasChild{
+        &>a{
+          &::before{border-color: $border-color;}
+          &:hover, &:focus{
+            &::before{border-color: $lightColor;}
+          }
+        }
+        &>ul{ 
+          background: $bodyBgc; color: $font-color;
+          box-shadow: #0008 0 0 25px;
+          li{
+            &>a{
+              border-bottom-color: $border-color-light; color: $font-color;
+              &:hover,  &:focus{
+                color: $lightColor;
+                &::before{ background: $lightColor;}
+              }
+            }
+          }
+        }
+      }  
+
 
       @media screen and (max-width: $wwNormal - 1px){
         &.assistant, &.loginBtn{
@@ -2323,6 +2389,29 @@ $grayDark: #555;
       &>a{ color: $font-color;
         &::after{background-color: $secondaryColor;}
       }
+
+      &.hasChild{
+        &>a{
+          &::before{border-color: $border-color;}
+          &:hover, &:focus{
+            &::before{border-color: $secondaryColor;}
+          }
+        }
+        &>ul{
+          background: $bodyBgc; color: $font-color;
+          box-shadow: #0008 0 0 25px;
+          li{
+            &>a{
+              border-bottom-color: $border-color-light; color: $font-color;
+              &:hover,  &:focus{
+                color: $lightColor;
+                &::before{ background: $lightColor;}
+              }
+            }
+          }
+        }
+      }  
+
 
       @media screen and (max-width: $wwNormal - 1px){
         &.assistant, &.loginBtn{
