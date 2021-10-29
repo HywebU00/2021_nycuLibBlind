@@ -108,10 +108,9 @@ $grayDark: #555;
         }
         &>ul{ 
           background: $bodyBgc; color: $font-color;
-          box-shadow: #fff5 0 0 25px;
-          li{
-            &>a{
-              border-bottom-color: $border-color-light; color: $font-color;
+          box-shadow: #fff8 0 0 25px, #fff8 0 0 1px 1px;
+          li{ border-bottom-color: $border-color-light;
+            &>a{ color: $font-color;
               &:hover,  &:focus{
                 color: $lightColor;
                 &::before{ background: $lightColor;}
@@ -122,12 +121,22 @@ $grayDark: #555;
       }  
 
       @media screen and (max-width: $wwNormal - 1px){
-        &.assistant, &.loginBtn{
+        &.assistant, &.loginBtn, &.member {
           &>a{
             background-color: lighten($grayLight, 18%);
             &:hover, &:focus{
               background-color: $grayLight;
               box-shadow: $grayLight 0 0 0 2px;
+            }
+          }
+        }
+        &.member{
+          &>ul{
+            &>li{
+              border-bottom-color: $border-color-light;
+              &>a{
+                &:hover{ background: $primaryColor; color: $font-color-dark}
+              }
             }
           }
         }
@@ -872,9 +881,8 @@ $grayDark: #555;
         &>ul{ 
           background: $bodyBgc; color: $font-color;
           box-shadow: #0006 0 0 25px;
-          li{
-            &>a{
-              border-bottom-color: $border-color-light; color: $font-color;
+          li{ border-bottom-color: $border-color-light;
+            &>a{ color: $font-color;
               &:hover,  &:focus{
                 color: $primaryColor;
                 &::before{ background: $primaryColor;}
@@ -886,7 +894,7 @@ $grayDark: #555;
 
 
       @media screen and (max-width: $wwNormal - 1px){
-        &.assistant, &.loginBtn{
+        &.assistant, &.loginBtn, &.member{
           &>a{
             background-color:$grayDark;
             &:hover, &:focus{
@@ -895,6 +903,17 @@ $grayDark: #555;
             }
           }
         }
+        &.member{
+          &>ul{
+            &>li{
+              border-bottom-color: $border-color-light;
+              &>a{
+                &:hover{ background: $primaryColor; color: $invert-font;}
+              }
+            }
+          }
+        }
+
       }
     }
 
@@ -1642,9 +1661,8 @@ $grayDark: #555;
         &>ul{ 
           background: $bodyBgc; color: $font-color;
           box-shadow: #0008 0 0 25px;
-          li{
-            &>a{
-              border-bottom-color: $border-color-light; color: $font-color;
+          li{border-bottom-color: $border-color-light;
+            &>a{ color: $font-color;
               &:hover,  &:focus{
                 color: $lightColor;
                 &::before{ background: $lightColor;}
@@ -1656,12 +1674,22 @@ $grayDark: #555;
 
 
       @media screen and (max-width: $wwNormal - 1px){
-        &.assistant, &.loginBtn{
+        &.assistant, &.loginBtn, &.member{
           &>a{
             background-color: lighten($grayLight, 18%);
             &:hover, &:focus{
               background-color: $grayLight;
               box-shadow: $grayLight 0 0 0 2px;
+            }
+          }
+        }
+        &.member{
+          &>ul{
+            &>li{
+              border-bottom-color: $border-color-light;
+              &>a{
+                &:hover{ background: $primaryColor; color: $secondaryColor;}
+              }
             }
           }
         }
@@ -2400,9 +2428,9 @@ $grayDark: #555;
         &>ul{
           background: $bodyBgc; color: $font-color;
           box-shadow: #0008 0 0 25px;
-          li{
+          li{ border-bottom-color: $border-color-light;
             &>a{
-              border-bottom-color: $border-color-light; color: $font-color;
+              color: $font-color;
               &:hover,  &:focus{
                 color: $lightColor;
                 &::before{ background: $lightColor;}
@@ -2414,7 +2442,7 @@ $grayDark: #555;
 
 
       @media screen and (max-width: $wwNormal - 1px){
-        &.assistant, &.loginBtn{
+        &.assistant, &.loginBtn, &.member{
           &>a{
             background-color: lighten($grayLight, 18%);
             &:hover, &:focus{
@@ -2423,6 +2451,17 @@ $grayDark: #555;
             }
           }
         }
+        &.member{
+          &>ul{
+            &>li{
+              border-bottom-color: $border-color-light;
+              &>a{
+                &:hover{ background: darken($bodyBgc, 8%); color: $font-color-dark;}
+              }
+            }
+          }
+        }
+
       }
     }
 

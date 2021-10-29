@@ -20,7 +20,7 @@
         display: none;
         margin: 0 4px; padding:0; float: left;
         &>a{display: block; text-decoration: none; cursor: pointer; transition: .2s;}
-        &.assistant, &.loginBtn{ display: block;
+        &.assistant, &.loginBtn, &.member{ display: block;
           &>a{
             width: 44px; height: 44px; border-radius: 50%; 
             text-indent: -20em; overflow: hidden;
@@ -33,12 +33,31 @@
             }
           }
         }
-        &.loginBtn>a{
+        &.loginBtn>a, &.member>a{
           background-position: center 0;
         }
         &.assistant{ position: relative;
           &>a{
             background-position: center -50px;
+          }
+        }
+        // 已登入，圖示與未登入時相同
+        &.member{
+          &>ul{
+            display: none;position: absolute;
+            right: 0; left: auto; top: auto; margin: 2px 0 0 0; min-width: 10em;
+            background: #fff; box-shadow: #0006 0 0 25px;
+            font-size: 1.1rem; line-height: 1.5;
+            z-index: 99;
+            &>li{
+              border-bottom: 1px solid $border-color-light;
+              &>a{
+                display: block; padding: .8em 1em;
+                text-decoration: none;
+                &:hover{ background: $primaryColor; color: $invert-font;}
+              }
+              &:last-child{border-bottom: none;}
+            }
           }
         }
       }
@@ -70,7 +89,7 @@
           &:last-child{margin-right: 0;}
           &>a{
             position: relative;
-            height: 2.8em; line-height: 3.6; padding: 0 2px;  color: #000;
+            height: 2.8em; line-height: 3.6; padding: 0 2px;  color: $font-color-dark;
             outline: none;
             &::after{ content: ''; 
               position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
@@ -86,7 +105,7 @@
           }
 
           // 補「個人專區」子選單 20211029
-          &.hasChild{
+          &.hasChild{ position: relative;
             &>a{
               position: relative; padding-right: 20px;
               &::before{
@@ -108,10 +127,10 @@
               box-shadow: #0006 0 0 25px;
               line-height: 1.5; min-width: 8em;
               li{
+                border-bottom: 1px solid $border-color-light;
                 &>a{
                   display: block;position: relative; text-decoration: none;
-                  border-bottom: 1px solid $border-color-light;
-                  padding: .55em 1em .6em;
+                  padding: .6em 1em .6em;
                   color: $font-color;
                   &::before{
                     content: ''; position: absolute; top: 0; left: 0;bottom: 0;
@@ -129,10 +148,9 @@
                 &:last-child>a{border-bottom: none;}
               }
             }
-  
           }  
 
-          &.assistant, &.loginBtn{
+          &.assistant, &.loginBtn , &.member{
             &>a{
               width: auto; height: 2.8em; border-radius:0; box-shadow: none;
               background: none; text-indent: 0; overflow: visible;
@@ -140,6 +158,11 @@
                 box-shadow: none;
                 background: none !important;
               }
+            }
+          }
+          &.member{
+            &>ul{ font-size: 1rem; right: auto; left: 0; margin: 0;
+              &>li>a{background: none !important; }
             }
           }
         }

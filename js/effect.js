@@ -81,7 +81,7 @@ $(function(){
 
   _sidebarMenu.after('<nav class="topLinks"><ul></ul></nav>');
   _sidebar.find('.topLinks>ul').html(
-    $('.webHeader .topLinks').children('ul').children('li').not('.assistant, .loginBtn').clone()
+    _topLink.children('ul').children('li').not('.assistant, .loginBtn, .member').clone()
   )
 
   _sidebarCtrl.click(function(){
