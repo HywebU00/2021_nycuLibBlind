@@ -76,7 +76,7 @@
     h1{
       width: 92vw; max-width: $wwWide; padding: 16px 0 ; margin: 0 auto;
       a{float: left;}
-      img{ height: 54px; margin: 0;}
+      img{  margin: 0; /* height: 54px; */height: 70px;}
     }
 
     .topLinks{
