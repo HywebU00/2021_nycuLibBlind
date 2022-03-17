@@ -264,6 +264,12 @@ $(function(){
     let _hideLightbox = _this.find('.closeThis>a');
     let _cover = _this.prev('.cover');
 
+    _this.append('<button class="skipToClose" type="button">跳回關閉燈箱</button>');
+    let _skipToClose = _this.find('.skipToClose');
+    _skipToClose.focus(function(){
+      _hideLightbox.trigger('focus');
+    })
+
     _hideLightbox.add(_cover).on( 'click', closeLightbox);
 
     function closeLightbox(){

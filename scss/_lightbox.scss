@@ -10,6 +10,8 @@
     margin: 0 0 15px; padding: 0;text-align: center; 
     line-height: 1.2; font-size: 1.8em; letter-spacing: 5px; font-weight: normal;
   }
+
+  button.skipToClose{ position: absolute; right: 0; bottom: 0; width: 1px; height: 1px; background-color: transparent; overflow: hidden; text-indent: -20em; padding: 0; border: none;}
 }
 
 // 會員登入 iframe 燈箱
