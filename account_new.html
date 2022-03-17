@@ -103,15 +103,15 @@
   
         <table class="formLayout">
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 身分證字號</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="XXX01">身分證字號</label></td>
             <td>
-              <input type="text" class="full" aria-label="請輸入身份證字號" placeholder="請輸入身份證字號" required="required" aria-required="true">
+              <input id="XXX01" type="text" class="full" aria-label="請輸入身份證字號" placeholder="請輸入身份證字號" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 姓名</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label  for="XXX02">姓名</label></td>
             <td>
-              <input type="text" class="full" aria-label="請輸入姓名" placeholder="請輸入姓名" required="required" aria-required="true">
+              <input id="XXX02" type="text" class="full" aria-label="請輸入姓名" placeholder="請輸入姓名" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
@@ -125,21 +125,21 @@
             </td>
           </tr>
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 密碼</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="XXX03">密碼</label></td>
             <td>
-              <input type="password" class="full" aria-label="密碼" required="required" aria-required="true">
+              <input id="XXX03" type="password" class="full" aria-label="密碼" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 確認密碼</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="XXX04">確認密碼</label></td>
             <td>
-              <input type="password" class="full" aria-label="確認密碼" required="required" aria-required="true">
+              <input id="XXX04" type="password" class="full" aria-label="確認密碼" required="required" aria-required="true">
             </td>
           </tr>
           <tr>
-            <td>職業</td>
+            <td><label for="XXX05">職業</label></td>
             <td>
-              <select class="half" aria-label="選擇職業">
+              <select id="XXX05" class="half" aria-label="選擇職業">
                 <option value="預設">預設</option>
                 <option value="學齡前">學齡前</option>
                 <option value="醫護">醫護</option>
@@ -158,9 +158,9 @@
             </td>
           </tr>
           <tr>
-            <td>學歷</td>
+            <td><label for="XXX06">學歷</label></td>
             <td>
-              <select class="half" aria-label="選擇學歷">
+              <select id="XXX06" class="half" aria-label="選擇學歷">
                 <option value="學齡前">學齡前</option>
                 <option value="小學">小學</option>
                 <option value="中學">中學</option>
@@ -172,9 +172,9 @@
             </td>
           </tr>
           <tr>
-            <td>出生日期</td>
+            <td><label for="XXX07">出生日期</label></td>
             <td>
-              <input type="date" class="half" aria-label="出生日期">
+              <input id="XXX07" type="date" class="half" aria-label="出生日期">
               <p class="hint">範例：2001-01-01 , 西元年為民國年+1911</p>
             </td>
           </tr>
@@ -184,10 +184,10 @@
       <fieldset><legend>聯絡方式</legend>
         <table class="formLayout">
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 聯絡地址</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="YYY01">聯絡地址</label></td>
             <td>
               <div class="addressSet">
-                <select aria-label="選擇縣、市" required="required" aria-required="true">
+                <select id="YYY01" aria-label="選擇縣、市" required="required" aria-required="true">
                   <option value="" selected="selected">臺北市</option>
                   <option value="">基隆市</option>
                   <option value="">新北市</option>
@@ -224,11 +224,11 @@
             </td>
           </tr>
           <tr>
-            <td>戶籍地址</td>
+            <td><label for="YYY02">戶籍地址</label></td>
             <td>
               <label class="singleCheck"><input type="checkbox">同聯絡地址</label>
               <div class="addressSet">
-                <select aria-label="選擇縣、市">
+                <select id="YYY02" aria-label="選擇縣、市">
                   <option value="" selected="selected">臺北市</option>
                   <option value="">基隆市</option>
                   <option value="">新北市</option>
@@ -265,44 +265,44 @@
             </td>
           </tr>
           <tr>
-            <td>電話號碼</td>
-            <td><input type="tel" class="full" aria-label="電話號碼" placeholder="請輸入電話號碼"></td>
+            <td><label for="YYY03">電話號碼</label></td>
+            <td><input id="YYY03" type="tel" class="full" aria-label="電話號碼" placeholder="請輸入電話號碼"></td>
           </tr>
           <tr>
-            <td>行動電話</td>
-            <td><input type="tel" class="full" aria-label="行動電話" placeholder="請輸入行動電話"></td>
+            <td><label for="YYY04">行動電話</label></td>
+            <td><input id="YYY04" type="tel" class="full" aria-label="行動電話" placeholder="請輸入行動電話"></td>
           </tr>
           <tr>
-            <td>戶籍地電話</td>
-            <td><input type="tel" class="full" aria-label="戶籍地電話" placeholder="請輸入戶籍地電話"></td>
+            <td><label for="YYY05">戶籍地電話</label></td>
+            <td><input id="YYY05" type="tel" class="full" aria-label="戶籍地電話" placeholder="請輸入戶籍地電話"></td>
           </tr>
           <tr>
-            <td>辦公室電話</td>
-            <td><input type="tel" class="full" aria-label="辦公室電話" placeholder="請輸入辦公室電話"></td>
+            <td><label for="YYY06">辦公室電話</label></td>
+            <td><input id="YYY06" type="tel" class="full" aria-label="辦公室電話" placeholder="請輸入辦公室電話"></td>
           </tr>
           <tr>
-            <td>電子郵件信箱</td>
-            <td><input type="email" class="full" aria-label="電子郵件信箱" placeholder="請輸入Email"></td>
+            <td><label for="YYY07">電子郵件信箱</label></td>
+            <td><input id="YYY07" type="email" class="full" aria-label="電子郵件信箱" placeholder="請輸入Email"></td>
           </tr>
           <tr>
-            <td>常用電子郵件信箱</td>
-            <td><input type="email" class="full" aria-label="請輸入常用電子郵件信箱" placeholder="請輸入常用電子郵件信箱"></td>
+            <td><label for="YYY08">常用電子郵件信箱</label></td>
+            <td><input id="YYY08" type="email" class="full" aria-label="請輸入常用電子郵件信箱" placeholder="請輸入常用電子郵件信箱"></td>
           </tr>
           <tr>
-            <td>證明影本</td>
-            <td><input type="file" class="full" aria-label="證明文件影本"> <p class="hint">請上傳身心障礙手冊</p></td>
+            <td><label for="YYY09">證明影本</label></td>
+            <td><input id="YYY09" type="file" class="full" aria-label="證明文件影本"> <p class="hint">請上傳身心障礙手冊</p></td>
           </tr>
           <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr> 驗證碼</td>
-              <td>
-                <div class="captchaSet">
-                  <img alt="驗證碼" class="captcha" id="imgCaptcha" src="images/CaptchaImage.png">
-                  <input type="text" placeholder="輸入驗證碼" aria-label="輸入驗證碼">
-                  <button class="btn" type="button"><i class="i_play"></i>語音播放</button>
-                  <button class="btn" type="button"><i class="i_reflash"></i>更換驗證碼</button>
-                </div>
-              </td>
-            </tr>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="YYY10">驗證碼</label></td>
+            <td>
+              <div class="captchaSet">
+                <img alt="驗證碼" class="captcha" id="imgCaptcha" src="images/CaptchaImage.png">
+                <input id="YYY10" type="text" placeholder="輸入驗證碼" aria-label="輸入驗證碼">
+                <button class="btn" type="button"><i class="i_play"></i>語音播放</button>
+                <button class="btn" type="button"><i class="i_reflash"></i>更換驗證碼</button>
+              </div>
+            </td>
+          </tr>
         </table>
       </fieldset>
   

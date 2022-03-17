@@ -4,7 +4,9 @@ table.formLayout{
 
   td{
     vertical-align: top;
-    &:nth-child(odd){text-align: right; padding: 1.15em 8px 6px 0; width: 20%;font-weight: bold;}
+    &:nth-child(odd){text-align: right; padding: 1.15em 8px 6px 0; width: 20%;font-weight: bold;
+      label{font-weight: bold;}
+    }
     &:nth-child(even){padding:6px 0;}
     // outline: 1px dashed lightblue;
   }

@@ -123,10 +123,9 @@
 
   // 頁籤
   .tabs{
-    .tabItem{ font-size: 1.125rem;
-      overflow: hidden; padding-top: 4px;
+    .tabItem{ font-size: 1.125rem; overflow: hidden; padding-top: 4px;
       ::before{display: none;}
-      a{
+      a{position: relative;
         padding: 0 2em; margin: 0 2px; height:100%; line-height: 3;
         background-color: $secondaryColor; color:$primaryColor;
         border-radius: 4px 4px 0 0; outline: none; cursor: pointer;
@@ -135,8 +134,11 @@
       }
       &.active{
         padding-top: 0;
-        a{background-color: $primaryColor; color: $secondaryColor;
-          &:focus{background-color: darken($primaryColor, 10%); color: #fff; }
+        a{background-color: $primaryColor; color: $secondaryColor; 
+          &::after{content: ''; position: absolute; left: 3px;right: 3px;top: 3px;bottom: 0; border: 1px solid transparent;}
+          &:focus{background-color: darken($primaryColor, 10%); color: #fff;
+            &::after{ border-color: $invert-font;}
+          }
         }
       }
 

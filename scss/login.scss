@@ -1,4 +1,7 @@
+$wwSlim: 500px;
+$wwMedium: 700px;
 $wwNormal: 1000px;
+$wwWide: 1200px;
 
 // 會員登入 ============================================
 // 在燈箱中，由 iframe 連結
@@ -74,7 +77,9 @@ input[type="password"] { @extend %textInput; }
     margin:0 auto; line-height: 1.5; width: 100%;
     td{
       vertical-align: top;
-      &:nth-child(odd){text-align: right;white-space: nowrap; padding: 1.2em 8px 6px 0; width: 4em;}
+      &:nth-child(odd){text-align: right;white-space: nowrap; padding: 1.2em 8px 6px 0; width: 4em; font-weight: bold;
+        label{ font-weight: bold;}
+      }
       &:nth-child(even){padding:6px 0;}
       input{width: calc(96% - 50px);}
     }
@@ -89,5 +94,15 @@ input[type="password"] { @extend %textInput; }
   }
 }
 
-// // 忘記密碼 （＊介面待確認）
-// .fetchPassword{}
+.linkBtn { display: inline-block;
+  &>a {
+    display: block; text-align: center;
+    height: 2.5em; line-height: 2.4; padding: 0 1em; margin: 3px;
+    color: $font-color; text-decoration: none;
+    border: 1px solid $border-color; border-radius: 2em;outline: none;
+    transition: .2s; 
+    &:hover, &:focus { color: $font-color-dark;}
+    &:hover {border-color: $primaryColor;}
+    &:focus {border-color: transparent;box-shadow: $primaryColor 0 0 0 2px;}
+  }
+}

@@ -111,19 +111,19 @@
             </td>
           </tr>
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 問題主題</td>
-            <td><input type="text" aria-label="問題主題" placeholder="請輸入主題" class="full"></td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="XXXX1">問題主題</label></td>
+            <td><input id="XXXX1" type="text" aria-label="問題主題" placeholder="請輸入主題" class="full"></td>
           </tr>
           <tr>
-            <td>其他備註</td>
-            <td><textarea aria-label="其他備註" name="" id=""></textarea></td>
+            <td><label for="XXXX2">其他備註</label></td>
+            <td><textarea id="XXXX2" aria-label="其他備註" name="" id=""></textarea></td>
           </tr>
           <tr>
-            <td><abbr class="required" title="必填欄位">*</abbr> 驗證碼</td>
+            <td><abbr class="required" title="必填欄位">*</abbr> <label for="captcha">驗證碼</label></td>
             <td>
               <div class="captchaSet">
                 <img alt="驗證碼" class="captcha" id="imgCaptcha" src="images/CaptchaImage.png">
-                <input type="text" placeholder="輸入驗證碼" aria-label="輸入驗證碼">
+                <input id="captcha" type="text" placeholder="輸入驗證碼" aria-label="輸入驗證碼">
                 <button class="btn" type="button"><i class="i_play"></i>語音播放</button>
                 <button class="btn" type="button"><i class="i_reflash"></i>更換驗證碼</button>
               </div>
