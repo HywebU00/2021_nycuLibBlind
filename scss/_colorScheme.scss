@@ -17,18 +17,16 @@ $border-color-dark:#777;
 $shadow:#0003;
 $shadow2:#0006;
 
-$btn-bg1: $primaryColor ;
-$btn-bg2:darken($primaryColor, 12%);
+$btn-bg1: $primaryColor;
+$btn-bg2: darken($primaryColor, 12%);
 
 $gray: #ddd;
 $grayLight: #ececec;
 $grayDark: #555;
 
 
- // --------------------------------- 顏色變換：color0
+ // --------------------------------- 顏色變換：color0 //
 .color0{ // 預設值
-  // background-color:$bodyBgc; color:$font-color;
-
   .main{
     &.mp{
       background-image: linear-gradient( $secondaryColor 0% , #fff 400px );
@@ -120,7 +118,7 @@ $grayDark: #555;
         }
       }  
 
-      @media screen and (max-width: $wwNormal - 1px){
+      @media screen and (max-width: calc($wwNormal - 1px)){
         &.assistant, &.loginBtn, &.member {
           &>a{
             background-color: lighten($grayLight, 18%);
@@ -893,7 +891,7 @@ $grayDark: #555;
       }  
 
 
-      @media screen and (max-width: $wwNormal - 1px){
+      @media screen and (max-width: calc($wwNormal - 1px)){
         &.assistant, &.loginBtn, &.member{
           &>a{
             background-color:$grayDark;
@@ -1673,7 +1671,7 @@ $grayDark: #555;
       }  
 
 
-      @media screen and (max-width: $wwNormal - 1px){
+      @media screen and (max-width:calc( $wwNormal - 1px)){
         &.assistant, &.loginBtn, &.member{
           &>a{
             background-color: lighten($grayLight, 18%);
@@ -2441,7 +2439,7 @@ $grayDark: #555;
       }  
 
 
-      @media screen and (max-width: $wwNormal - 1px){
+      @media screen and (max-width: calc($wwNormal - 1px)){
         &.assistant, &.loginBtn, &.member{
           &>a{
             background-color: lighten($grayLight, 18%);

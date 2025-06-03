@@ -104,7 +104,7 @@
   }
 }
 
-@media screen and (min-width: $wwWide + 112){
+@media screen and (min-width: calc($wwWide + 112px)){
   .accesskey{
     left: calc(50vw - #{$wwWide}/2);
   }
@@ -120,7 +120,7 @@
     line-height: 1.2;
     width: 92vw; max-width: $wwWide;
     padding: 0;margin: 0 auto 30px; overflow: hidden;
-    color:lighten($font-color, 40) ;
+    color:lighten($font-color, 13%) ;
     &::before{
       float: left; content: attr(title)"："; padding: 2px 0 0;
     }
@@ -159,7 +159,7 @@
       &::after{transform: scaleX(100%);}
     }
   }
-  @media screen and (min-width: $wwWide + 112){
+  @media screen and (min-width: calc($wwWide + 112px)){
     left: calc(50vw - #{$wwWide}/2);
   }
   
